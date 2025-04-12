@@ -27,7 +27,7 @@ line-length = 120
 [tool.coverage.run]
 branch = true
 
-[tool.setuptoools-git-versioning]
+[tool.setuptools-git-versioning]
 enabled = true
 
 [tool.pylint.messages_control]
