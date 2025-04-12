@@ -1,0 +1,43 @@
+[project]
+name = "cli_wrapper"
+description = "Tool to represent CLI tools as native python objects"
+authors = [{ name = "Reid Orsten", email = "rorsten@gmail.com"}]
+maintainers = [{ name = "Reid Orsten", email = "rorsten@gmail.com"}]
+readme = "README.md"
+requires-python = ">=3.10"
+license = "LGPL-3.0-or-later"
+dependencies = [
+    "attrs",
+]
+dynamic = ["version"]
+
+[build-system]
+requires = ["setuptools>=61.0", "build", "setuptools-git-versioning"]
+build-backend = "setuptools.build_meta"
+
+[project.optional-dependencies]
+test = ["pytest", "pytest-cov", "pytest-asyncio", "pytest-xdist", "ruamel.yaml", "dotted_dict"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.black]
+line-length = 120
+
+[tool.coverage.run]
+branch = true
+
+[tool.setuptoools-git-versioning]
+enabled = true
+
+[tool.pylint.messages_control]
+disable = ["logging-fstring-interpolation"]
+max-line-length = 120
+
+[tool.pytest.ini_options]
+log_level = "DEBUG"
+log_cli = "true"
+testpaths = ["tests"]
+pythonpath = "src"
+addopts = "-n 4 -Walways --cov=cli_wrapper --cov-branch --cov-report html:coverage"
+asyncio_default_fixture_loop_scope = "function"
