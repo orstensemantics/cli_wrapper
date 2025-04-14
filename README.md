@@ -38,6 +38,17 @@ kubectl._update_command("get", default_flags={"output": "json"}, parse=["json", 
 a = kubectl.get("pods", namespace="kube-system")
 print(a.items[0].metadata.name)  # prints a pod name
 
+# you can do your own parsing:
+def skip_lists(result):
+    if result["kind"] == "List":
+        return result["items"]
+    return result
+kubectl._update_command("get", default_flags={"output": "json"}, parse=["json", skip_lists, "dotted_dict"])
+a = kubectl.get("pods", namespace="kube-system")
+assert isinstance(a, list)
+a = kubectl.get("pods", a[0].metadata.name, namespace="kube-system")
+assert isinstance(a, dict)
+
 # If you want async:
 kubectl.async_ = True  # or use CLIWrapper("kubectl", async_=True)
 a = await kubectl.get("pods", namespace="kube-system")
@@ -50,14 +61,25 @@ kubectl.env = {
 a = await kubectl.get("pods", namespace="kube-system")  # use the context from the env vars
 ```
 
+## Installation
+
+Requires python 3.10 or later.
+
+```bash
+pip install cli-wrapper # for just the wrapper
+pip install ruamel.yaml # for yaml support
+pip install dotted_dict # for dotted_dict support shown above
+```
+
 ## Todo
 
-- [ ] build and publish to PyPI
+- [x] build and publish to PyPI
 - [x] Core wrapper functionality, trusting mode by default
     - [x] args and kwargs mapping to positional and flag arguments
     - [x] support for default flags
-    - [ ] support for argument transformation (e.g., `kubectl.create(a_dict)` would write that dict to a file and
+    - [x] support for argument transformation (e.g., `kubectl.create(a_dict)` would write that dict to a file and
       become `kubectl.create(filename=a_dict_filename)`)
+      - [ ] document how to do this
     - [x] support for input validation
       - possibly wrap this into argument transformation
 - [x] Support for parsing output
