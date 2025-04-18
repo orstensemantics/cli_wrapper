@@ -24,7 +24,7 @@ class CallableChain(ABC):
             name, args, kwargs = params_from_kwargs(config)
             self.chain = [source.get(name, args, kwargs)]
 
-    def _to_dict(self):
+    def to_dict(self):
         return self.config
 
     @abstractmethod

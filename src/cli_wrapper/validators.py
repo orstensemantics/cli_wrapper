@@ -31,9 +31,9 @@ class Validator(CallableChain):
 
     def __init__(self, config):
         if callable(config):
-            id = str(uuid4())
-            validators.register(id, config)
-            config = id
+            id_ = str(uuid4())
+            validators.register(id_, config)
+            config = id_
         self.config = config
         super().__init__(config, validators)
 
@@ -46,7 +46,7 @@ class Validator(CallableChain):
             result = result and validator_result
         return result
 
-    def _to_dict(self):
+    def to_dict(self):
         """
         Converts the validator configuration to a dictionary.
         """

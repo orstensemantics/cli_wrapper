@@ -1,0 +1,29 @@
+---
+name: static-analysis
+on: push
+jobs:
+  static-analysis:
+    name: Static Analysis
+    runs-on: ubuntu-latest
+    container: python:3.12
+    steps:
+      - uses: actions/checkout@v4
+      - name: install prerequisites
+        run: |
+          pip install .[check] .[test] black pylint
+          curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 --output cc-test-reporter
+          chmod +x cc-test-reporter
+      - name: run black
+        run: |
+          black --check --diff .
+      - name: run pylint
+        run: |
+          pylint --fail-under 10 src
+          pylint --fail-under 10 --disable=protected-access tests
+      - name: run tests
+        env:
+          CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
+        run: |
+          ./cc-test-reporter before-build
+          pytest . --cov-report lcov
+          ./cc-test-reporter after-build --exit-code $?

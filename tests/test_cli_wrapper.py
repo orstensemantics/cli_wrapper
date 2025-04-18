@@ -1,11 +1,9 @@
-import json
 import logging
 from json import loads
 
 import pytest
 
 from cli_wrapper.cli_wrapper import CLIWrapper, Argument, Command
-from cli_wrapper.transformers import transformers
 from cli_wrapper.validators import validators
 
 logger = logging.getLogger(__name__)
@@ -98,7 +96,7 @@ class TestCommand:
         validators._all.pop("test_command_group")
 
     def test_command_from_dict(self):
-        command = Command._from_dict(
+        command = Command.from_dict(
             {
                 "cli_command": "get",
                 "default_flags": {"namespace": "default"},
@@ -120,7 +118,7 @@ class TestCommand:
             "--namespace=kube-system",
         ]
 
-        command = Command._from_dict({"cli_command": "get", "args": {}})
+        command = Command.from_dict({"cli_command": "get", "args": {}})
 
 
 class TestCLIWrapper:

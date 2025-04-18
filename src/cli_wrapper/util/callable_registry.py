@@ -40,22 +40,22 @@ class CallableRegistry:
             raise KeyError(f"{self.callable_name} '{name}' not found.")
         return lambda *fargs: callable_(*fargs, *args, **kwargs)
 
-    def register(self, name: str, callable: callable, group="core"):
+    def register(self, name: str, callable_: callable, group="core"):
         """
         Registers a new parser function with the specified name.
 
         :param name: The name to associate with the parser.
-        :param callable: The callable function to register.
+        :param callable_: The callable function to register.
         """
         ngroup, name = self._parse_name(name)
         if ngroup is not None:
             if group != "core":
                 # approximately, raise an exception if a group is specified in the name and the group arg
-                raise KeyError(f"'{callable}' already specifies a group.")
+                raise KeyError(f"'{callable_}' already specifies a group.")
             group = ngroup
         if name in self._all[group]:
             raise KeyError(f"{self.callable_name} '{name}' already registered.")
-        self._all[group][name] = callable
+        self._all[group][name] = callable_
 
     def register_group(self, name: str, parsers: dict = None):
         """
@@ -87,6 +87,6 @@ class CallableRegistry:
             return None, name
         try:
             group, name = name.split(".")
-        except ValueError:
-            raise KeyError(f"{self.callable_name} name '{name}' is not valid.")
+        except ValueError as err:
+            raise KeyError(f"{self.callable_name} name '{name}' is not valid.") from err
         return group, name

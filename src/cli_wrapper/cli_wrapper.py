@@ -46,7 +46,7 @@ Attributes:
         to `command --arg=val`. If you want to use spaces instead, set this to ' '
 """
 
-import asyncio
+import asyncio.subprocess
 import logging
 import os
 import subprocess
@@ -87,7 +87,7 @@ class Argument:
             transformer=arg_dict.get("transformer", None),
         )
 
-    def _to_dict(self):
+    def to_dict(self):
         """
         Convert the Argument to a dictionary
         :return: the dictionary representation of the Argument
@@ -96,7 +96,7 @@ class Argument:
         return {
             "literal_name": self.literal_name,
             "default": self.default,
-            "validator": self.validator._to_dict() if self.validator is not None else None,
+            "validator": self.validator.to_dict() if self.validator is not None else None,
         }
 
     def is_valid(self, value):
@@ -139,7 +139,7 @@ def arg_converter(value: dict):
 
 
 @define
-class Command(object):
+class Command:  # pylint: disable=too-many-instance-attributes
     """
     Command represents a command to be run with the cli_wrapper
     """
@@ -154,7 +154,7 @@ class Command(object):
     arg_separator: str = field(repr=False, default="=")
 
     @classmethod
-    def _from_dict(cls, command_dict, **kwargs):
+    def from_dict(cls, command_dict, **kwargs):
         """
         Create a Command from a dictionary
         :param command_dict: the dictionary to be converted
@@ -172,7 +172,7 @@ class Command(object):
             **kwargs,
         )
 
-    def _to_dict(self):
+    def to_dict(self):
         """
         Convert the Command to a dictionary.
         Excludes prefixes/separators, because they are set in the CLIWrapper
@@ -182,8 +182,8 @@ class Command(object):
         return {
             "cli_command": self.cli_command,
             "default_flags": self.default_flags,
-            "args": {k: v._to_dict() for k, v in self.args.items()},
-            "parse": self.parse._to_dict() if self.parse is not None else None,
+            "args": {k: v.to_dict() for k, v in self.args.items()},
+            "parse": self.parse.to_dict() if self.parse is not None else None,
         }
 
     def validate_args(self, *args, **kwargs):
@@ -231,12 +231,13 @@ class Command(object):
 
 
 @define
-class CLIWrapper:
+class CLIWrapper:  # pylint: disable=too-many-instance-attributes
     path: str
     env: dict[str, str] = None
     commands: dict[str, Command] = {}
 
     trusting: bool = True
+    raise_exc: bool = False
     async_: bool = False
     default_transformer: str = "snake2kebab"
     short_prefix: str = "-"
@@ -263,17 +264,19 @@ class CLIWrapper:
             return c
         return self.commands[command]
 
-    def _update_command(
+    def _update_command(  # pylint: disable=too-many-arguments
         self,
         command: str,
-        cli_command: str = None,
+        *,
+        cli_command: str | list[str] = None,
         args: dict[str | int, any] = None,
         default_flags: dict = None,
         parse=None,
     ):
         """
         update the command to be run with the cli_wrapper
-        :param command: the subcommand for the cli tool
+        :param command: the command name for the wrapper
+        :param cli_command: the command to be run, if different from the command name
         :param default_flags: default flags to be used with the command
         :param parse: function to parse the output of the command
         :return:
@@ -303,7 +306,7 @@ class CLIWrapper:
         env = os.environ.copy().update(self.env if self.env is not None else {})
         logger.debug(f"Running command: {' '.join(command_args)}")
         # run the command
-        result = subprocess.run(command_args, capture_output=True, text=True, env=env)
+        result = subprocess.run(command_args, capture_output=True, text=True, env=env, check=self.raise_exc)
         if result.returncode != 0:
             raise RuntimeError(f"Command {command} failed with error: {result.stderr}")
         return command_obj.parse(result.stdout)
@@ -314,7 +317,7 @@ class CLIWrapper:
         command_args = [self.path] + list(command_obj.build_args(*args, **kwargs))
         env = os.environ.copy().update(self.env if self.env is not None else {})
         logger.error(f"Running command: {', '.join(command_args)}")
-        proc = await asyncio.subprocess.create_subprocess_exec(
+        proc = await asyncio.subprocess.create_subprocess_exec(  # pylint: disable=no-member
             *command_args,
             stdout=asyncio.subprocess.PIPE,
             stderr=asyncio.subprocess.PIPE,
@@ -351,14 +354,14 @@ class CLIWrapper:
             else:
                 if "cli_command" not in config:
                     config["cli_command"] = command
-            commands[command] = Command._from_dict(config)
+            commands[command] = Command.from_dict(config)
 
         return CLIWrapper(
             commands=commands,
             **cliwrapper_dict,
         )
 
-    def _to_dict(self):
+    def to_dict(self):
         """
         Convert the CLIWrapper to a dictionary
         :return:
@@ -366,7 +369,7 @@ class CLIWrapper:
         return {
             "path": self.path,
             "env": self.env,
-            "commands": {k: v._to_dict() for k, v in self.commands.items()},
+            "commands": {k: v.to_dict() for k, v in self.commands.items()},
             "trusting": self.trusting,
             "async_": self.async_,
         }

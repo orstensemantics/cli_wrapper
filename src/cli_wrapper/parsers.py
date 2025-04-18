@@ -1,6 +1,6 @@
 import logging
 
-from .util.callable_chain import params_from_kwargs, CallableChain
+from .util.callable_chain import CallableChain
 from .util.callable_registry import CallableRegistry
 
 logger = logging.getLogger(__name__)
@@ -71,13 +71,16 @@ parsers = CallableRegistry({"core": core_parsers}, callable_name="Parser")
 
 
 class Parser(CallableChain):
+    """
+    Parser class that allows for the chaining of multiple parsers.
+    """
 
     def __init__(self, config):
         super().__init__(config, parsers)
 
-    def __call__(self, input):
+    def __call__(self, src):
         # For now, parser expects to be called with one input.
-        result = input
+        result = src
         for parser in self.chain:
             logger.debug(result)
             result = parser(result)

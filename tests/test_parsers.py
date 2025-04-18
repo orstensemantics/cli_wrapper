@@ -22,7 +22,7 @@ class TestParsers:
         parser = Parser(["json", custom_extract])
         assert parser(testdata) == "baz"
 
-        testdata = "foo:\n" "  bar: baz\n"
+        testdata = "foo:\n  bar: baz\n"
         parser = Parser(["yaml", "dotted_dict"])
         assert parser(testdata).foo.bar == "baz"
 

@@ -14,11 +14,11 @@ class TestSerialization:
             },
         )
 
-        config = kubectl._to_dict()
+        config = kubectl.to_dict()
 
         kubectl2 = CLIWrapper.from_dict(config)
 
-        assert kubectl2._to_dict() == config
+        assert kubectl2.to_dict() == config
 
     def test_argument_to_dict(self):
         arg = Argument(
@@ -27,8 +27,8 @@ class TestSerialization:
             validator=["is_alnum", "starts_alpha"],
         )
 
-        config = arg._to_dict()
+        config = arg.to_dict()
 
         arg2 = Argument.from_dict(config)
 
-        assert arg2._to_dict() == config
+        assert arg2.to_dict() == config
