@@ -1,5 +1,6 @@
 import logging
 from json import loads
+from pathlib import Path
 
 import pytest
 
@@ -123,8 +124,9 @@ class TestCommand:
 
 class TestCLIWrapper:
     def test_cliwrapper(self):
-        logger.info("Testing CLIWrapper, trusting with get json/loads")
-        kubectl = CLIWrapper("kubectl", trusting=False)
+        # fake kubectl script for github actions
+        fake_kubectl = Path(__file__).parent / "data/fake_kubectl"
+        kubectl = CLIWrapper(fake_kubectl.as_posix(), trusting=False)
 
         with pytest.raises(ValueError):
             kubectl.get("pods", namespace="kube-system")
@@ -161,7 +163,8 @@ class TestCLIWrapper:
 
     @pytest.mark.asyncio
     async def test_subprocessor_async(self):
-        kubectl = CLIWrapper("kubectl", trusting=True, async_=True)
+        fake_kubectl = Path(__file__).parent / "data/fake_kubectl"
+        kubectl = CLIWrapper(fake_kubectl.as_posix(), trusting=True, async_=True)
         kubectl._update_command("get", default_flags={"output": "json"}, parse=loads)
         r = await kubectl.get("pods", namespace="kube-system")
         assert r["kind"] == "List"
