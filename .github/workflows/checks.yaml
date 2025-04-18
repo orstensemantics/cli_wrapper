@@ -22,8 +22,7 @@ jobs:
           pylint --fail-under 10 --disable=protected-access tests
       - name: run tests
         run: |
-          pytest . --cov-report lcov
-      - uses: qltysh/qlty-action/coverage@main
+          pytest -n 4 -Walways --cov=cli_wrapper --cov-branch --cov-report xml .
+      - uses: codecov/codecov-action@v5
         with:
-          token: ${{secrets.QLTY_COVERAGE_TOKEN}}
-          files: coverage.lcov
+          token: ${{ secrets.CODECOV_TOKEN }}
