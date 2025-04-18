@@ -16,7 +16,7 @@ requires = ["setuptools>=61.0", "build", "setuptools-git-versioning"]
 build-backend = "setuptools.build_meta"
 
 [project.optional-dependencies]
-test = ["pytest", "pytest-cov", "pytest-asyncio", "pytest-xdist", "ruamel.yaml", "dotted_dict"]
+test = ["pytest", "pytest-cov", "pytest-asyncio", "pytest-xdist", "ruamel.yaml", "dotted_dict", "black", "pylint"]
 
 [tool.setuptools.packages.find]
 where = ["src"]
