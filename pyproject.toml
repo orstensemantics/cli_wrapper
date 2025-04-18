@@ -16,7 +16,7 @@ requires = ["setuptools>=61.0", "build", "setuptools-git-versioning"]
 build-backend = "setuptools.build_meta"
 
 [project.optional-dependencies]
-test = ["pytest", "pytest-cov", "pytest-asyncio", "pytest-xdist", "ruamel.yaml", "dotted_dict"]
+test = ["pytest", "pytest-cov", "pytest-asyncio", "pytest-xdist", "ruamel.yaml", "dotted_dict", "black", "pylint"]
 
 [tool.setuptools.packages.find]
 where = ["src"]
@@ -41,3 +41,12 @@ testpaths = ["tests"]
 pythonpath = "src"
 addopts = "-n 4 -Walways --cov=cli_wrapper --cov-branch --cov-report html:coverage"
 asyncio_default_fixture_loop_scope = "function"
+
+[tool.pylint."messages control"]
+disable = [
+    "missing-module-docstring",
+    "missing-class-docstring",
+    "missing-function-docstring",
+    "logging-fstring-interpolation",
+    "fixme"
+]

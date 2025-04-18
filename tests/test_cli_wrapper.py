@@ -1,11 +1,11 @@
-import json
 import logging
 from json import loads
+from pathlib import Path
 
 import pytest
 
 from cli_wrapper.cli_wrapper import CLIWrapper, Argument, Command
-from cli_wrapper.util import snake2kebab
+from cli_wrapper.validators import validators
 
 logger = logging.getLogger(__name__)
 
@@ -18,11 +18,11 @@ class TestArgument:
         assert arg.is_valid("invalid") is False
         assert arg.is_valid(None) is False
 
-        with pytest.raises(ValueError):
+        with pytest.raises(KeyError):
             Argument("test", validator="not callable")
 
     def test_argument_from_dict(self):
-        arg = Argument._from_dict({"literal_name": "test", "default": "default", "validator": lambda x: x == "valid"})
+        arg = Argument.from_dict({"literal_name": "test", "default": "default", "validator": lambda x: x == "valid"})
 
         assert arg.literal_name == "test"
         assert arg.default == "default"
@@ -30,31 +30,48 @@ class TestArgument:
         assert arg.is_valid("invalid") is False
         assert arg.is_valid(None) is False
 
-        arg = Argument._from_dict({})
+        arg = Argument.from_dict({})
         assert arg.literal_name is None
         assert arg.default is None
         assert arg.is_valid("valid") is True
 
-        with pytest.raises(ValueError):
-            Argument._from_dict({"name": "test", "validator": "not callable"})
+        with pytest.raises(KeyError):
+            Argument.from_dict({"name": "test", "validator": "nonexistent_validator"})
 
 
 class TestCommand:
     def test_command(self):
-        def parse_output(output):
-            return output
+        def validator(name):
+            return "You can only get pods because I'm a jerk" if name not in ["pod", "pods"] else True
+
+        validators.register_group(
+            "test_command_group",
+            {
+                "is_pods": validator,
+                "is_kube_system": lambda x: x == "kube-system",
+            },
+        )
 
         command = Command(
             cli_command="get",
             default_flags={"namespace": "default"},
+            default_transformer="snake2kebab",
             args={
-                1: Argument(validator=lambda x: x == "pod-1"),
+                0: {"validator": "test_command_group.is_pods"},
+                "namespace": {"validator": "is_kube_system"},
             },
         )
 
         command.validate_args("pod", "pod-1", namespace="kube-system")
-        with pytest.raises(ValueError):
-            command.validate_args("pod", "pod-2", namespace="kube-system")
+        with pytest.raises(ValueError) as err:
+            command.validate_args("pod", "pod-2", namespace="tube-system")
+        assert str(err.value) == "Value 'tube-system' is invalid for command get arg namespace"
+        with pytest.raises(ValueError) as err:
+            command.validate_args("deployments", "pod-1", namespace="kube-system")
+        assert (
+            str(err.value)
+            == "Value 'deployments' is invalid for command get arg 1: You can only get pods because I'm a jerk"
+        )
 
         args = command.build_args("pod", "pod-1", namespace="kube-system")
         logger.error(args)
@@ -71,14 +88,16 @@ class TestCommand:
             cli_command="create",
             default_flags={"namespace": "default"},
             args={
-                0: Argument(transformer=lambda x, y: ("filename", "filename")),
+                0: {"transformer": lambda x, y: ("filename", "filename")},
             },
         )
         args = command.build_args({"some": "dict"})
         assert args == ["create", "--filename=filename", "--namespace=default"]
 
+        validators._all.pop("test_command_group")
+
     def test_command_from_dict(self):
-        command = Command._from_dict(
+        command = Command.from_dict(
             {
                 "cli_command": "get",
                 "default_flags": {"namespace": "default"},
@@ -90,7 +109,6 @@ class TestCommand:
         assert command.default_flags == {"namespace": "default"}
         assert command.args[1].is_valid("pod-1") is True
         assert command.args[1].is_valid("pod-2") is False
-        assert command.default_transformer == snake2kebab
 
         with pytest.raises(ValueError):
             command.validate_args("pod", "pod-2", namespace="kube-system")
@@ -101,14 +119,26 @@ class TestCommand:
             "--namespace=kube-system",
         ]
 
-        command = Command._from_dict({"cli_command": "get", "args": {}})
+        command = Command.from_dict({"cli_command": "get", "args": {}})
 
 
 class TestCLIWrapper:
     def test_cliwrapper(self):
-        logger.info("Testing CLIWrapper, trusting with get json/loads")
-        kubectl = CLIWrapper("kubectl", trusting=True)
-        kubectl._update_command("get", default_flags={"output": "json"}, parse=loads)
+        # fake kubectl script for github actions
+        fake_kubectl = Path(__file__).parent / "data/fake_kubectl"
+        kubectl = CLIWrapper(fake_kubectl.as_posix(), trusting=False)
+
+        with pytest.raises(ValueError):
+            kubectl.get("pods", namespace="kube-system")
+
+        kubectl.trusting = True
+
+        kubectl._update_command("get")
+        r = kubectl.get("pods", namespace="kube-system")
+
+        assert isinstance(r, str)
+        kubectl.commands["get"].default_flags = {"output": "json"}
+        kubectl.commands["get"].parse = ["json"]
 
         r = kubectl.get("pods", "-A")
         assert r["kind"] == "List"
@@ -133,7 +163,8 @@ class TestCLIWrapper:
 
     @pytest.mark.asyncio
     async def test_subprocessor_async(self):
-        kubectl = CLIWrapper("kubectl", trusting=True, async_=True)
+        fake_kubectl = Path(__file__).parent / "data/fake_kubectl"
+        kubectl = CLIWrapper(fake_kubectl.as_posix(), trusting=True, async_=True)
         kubectl._update_command("get", default_flags={"output": "json"}, parse=loads)
         r = await kubectl.get("pods", namespace="kube-system")
         assert r["kind"] == "List"

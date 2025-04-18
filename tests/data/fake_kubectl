@@ -1,0 +1,53 @@
+#!/bin/bash
+
+if [ "$1" == "get" ]; then
+  if [ "$2" == "pods" ]; then
+    echo "
+    {
+      \"apiVersion\": \"v1\",
+      \"kind\": \"List\",
+      \"items\": [
+        {
+          \"metadata\": {
+            \"name\": \"example-pod\",
+            \"namespace\": \"default\"
+          },
+          \"spec\": {
+            \"containers\": [
+              {
+                \"name\": \"example-container\",
+                \"image\": \"example-image:latest\"
+              }
+            ]
+          }
+        }
+      ]
+    }"
+  fi
+  if [ "$2" == "pod" ]; then
+    echo "
+    {
+      \"apiVersion\": \"v1\",
+      \"kind\": \"Pod\",
+      \"metadata\": {
+        \"name\": \"$3\",
+        \"namespace\": \"default\"
+      },
+      \"spec\": {
+        \"containers\": [
+          {
+            \"name\": \"example-container\",
+            \"image\": \"example-image:latest\"
+          }
+        ]
+      }
+    }"
+  fi
+fi
+if [ $1 == "describe" ]; then
+  echo "some output or other"
+fi
+if [ $1 == "fake" ]; then
+  echo "no! this is wrong!"
+  exit 1
+fi

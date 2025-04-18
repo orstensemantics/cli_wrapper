@@ -46,18 +46,17 @@ Attributes:
         to `command --arg=val`. If you want to use spaces instead, set this to ' '
 """
 
-import asyncio
+import asyncio.subprocess
 import logging
 import os
 import subprocess
-from copy import deepcopy
 from itertools import chain
-from typing import Callable
 
-from attrs import define
+from attrs import define, field
 
-from cli_wrapper.parsers import Parser
-from cli_wrapper.util import snake2kebab
+from .parsers import Parser
+from .transformers import transformers
+from .validators import validators, Validator
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.DEBUG)
@@ -71,22 +70,11 @@ class Argument:
 
     literal_name: str | None = None
     default: str = None
-    validator: Callable[[str], bool | str] = None
-    transformer: Callable[[str, str], tuple[str, str]] = None
-
-    def __attrs_post_init__(self):
-        if self.validator is None:
-            self.validator = lambda x: True
-        if not callable(self.validator):
-            raise ValueError("Validator is not callable")
-        if self.transformer is None:
-            self.transformer = lambda name, value: (name, value)
-        # TODO: support parser-style transformers (e.g. turn kubectl.create(dict) -> kubectl.create(filename=tmpfile(dict))
-        # if isinstance(self.transformer, str):
-        #     self.transformer = Parser(self.transformer)
+    validator: Validator | str | dict | list[str | dict] = field(converter=Validator, default=None)
+    transformer: str = "snake2kebab"
 
     @classmethod
-    def _from_dict(cls, arg_dict):
+    def from_dict(cls, arg_dict):
         """
         Create an Argument from a dictionary
         :param arg_dict: the dictionary to be converted
@@ -99,15 +87,16 @@ class Argument:
             transformer=arg_dict.get("transformer", None),
         )
 
-    def _to_dict(self):
+    def to_dict(self):
         """
         Convert the Argument to a dictionary
         :return: the dictionary representation of the Argument
         """
+        logger.debug(f"Converting argument {self.literal_name} to dict")
         return {
             "literal_name": self.literal_name,
             "default": self.default,
-            "validator": self.validator,
+            "validator": self.validator.to_dict() if self.validator is not None else None,
         }
 
     def is_valid(self, value):
@@ -116,7 +105,8 @@ class Argument:
         :param value: the value to be validated
         :return: True if valid, False otherwise
         """
-        return self.validator(value) if self.validator is not None else True
+        logger.debug(f"Validating {self.literal_name} with value {value}")
+        return validators.get(self.validator)(value) if self.validator is not None else True
 
     def transform(self, name, value, **kwargs):
         """
@@ -125,87 +115,106 @@ class Argument:
         :param value: the value to be transformed
         :return: the transformed value
         """
-        return self.transformer(name, value, **kwargs)
+        return (
+            transformers.get(self.transformer)(name, value, **kwargs) if self.transformer is not None else (name, value)
+        )
+
+
+def arg_converter(value: dict):
+    """
+    Convert the value of the argument to a string
+    :param value: the value to be converted
+    :return: the converted value
+    """
+    value = value.copy()
+    for k, v in value.items():
+        if isinstance(v, dict):
+            if "literal_name" not in v:
+                v["literal_name"] = k
+            value[k] = Argument.from_dict(v)
+        if isinstance(v, Argument):
+            if v.literal_name is None:
+                v.literal_name = k
+    return value
 
 
 @define
-class Command(object):
+class Command:  # pylint: disable=too-many-instance-attributes
     """
     Command represents a command to be run with the cli_wrapper
     """
 
     cli_command: str
     default_flags: dict = {}
-    args: dict[str | int, Argument] = {}
-    parse: Callable[[str], any] = None
-    default_transformer: Callable[[str, str], tuple[str, str]] = snake2kebab
-    arg_separator: str = "="
-
-    def __attrs_post_init__(self):
-        if not callable(self.parse):
-            logger.debug("Parse is not callable")
-            self.parse = Parser(self.parse)
+    args: dict[str | int, any] = field(factory=dict, converter=arg_converter)
+    parse: Parser = field(converter=Parser, default=None)
+    default_transformer: str = "snake2kebab"
+    short_prefix: str = field(repr=False, default="-")
+    long_prefix: str = field(repr=False, default="--")
+    arg_separator: str = field(repr=False, default="=")
 
     @classmethod
-    def _from_dict(cls, command_dict):
+    def from_dict(cls, command_dict, **kwargs):
         """
         Create a Command from a dictionary
         :param command_dict: the dictionary to be converted
         :return: Command object
         """
-        parse = command_dict.get("parse", None)
-        if parse is not None:
-            parse = Parser(parse)
+        command_dict = command_dict.copy()
+        if "args" in command_dict:
+            for k, v in command_dict["args"].items():
+                if "literal_name" not in v:
+                    v["literal_name"] = k
+        if "cli_command" not in command_dict:
+            command_dict["cli_command"] = kwargs.pop("cli_command", None)
         return Command(
-            cli_command=command_dict.get("cli_command", None),
-            default_flags=command_dict.get("default_flags", {}),
-            args={k: Argument._from_dict(v) for k, v in command_dict.get("args", {}).items()},
-            parse=parse,
-            default_transformer=snake2kebab,
-            arg_separator="=",
+            **command_dict,
+            **kwargs,
         )
 
-    def _to_dict(self):
+    def to_dict(self):
         """
-        Convert the Command to a dictionary
+        Convert the Command to a dictionary.
+        Excludes prefixes/separators, because they are set in the CLIWrapper
         :return: the dictionary representation of the Command
         """
+        logger.debug(f"Converting command {self.cli_command} to dict")
         return {
             "cli_command": self.cli_command,
             "default_flags": self.default_flags,
-            "args": {k: v._to_dict() for k, v in self.args.items()},
-            "parse": self.parse,
-            "default_transformer": self.default_transformer,
-            "arg_separator": self.arg_separator,
+            "args": {k: v.to_dict() for k, v in self.args.items()},
+            "parse": self.parse.to_dict() if self.parse is not None else None,
         }
 
     def validate_args(self, *args, **kwargs):
         # TODO: validate everything and raise comprehensive exception instead of just the first one
         for name, arg in chain(enumerate(args), kwargs.items()):
+            logger.debug(f"Validating arg {name} with value {arg}")
             if name in self.args:
+                logger.debug("Argument found in args")
                 v = self.args[name].is_valid(arg)
                 if isinstance(name, int):
                     name += 1  # let's call positional arg 0, "Argument 1"
                 if isinstance(v, str):
-                    raise ValueError(f"Argument {name} is invalid for command {self.cli_command}: {v}")
+                    raise ValueError(f"Value '{arg}' is invalid for command {self.cli_command} arg {name}: {v}")
                 if not v:
-                    raise ValueError(f"Argument {name} is invalid for command {self.cli_command}")
+                    raise ValueError(f"Value '{arg}' is invalid for command {self.cli_command} arg {name}")
 
     def build_args(self, *args, **kwargs):
         positional = [self.cli_command]
         params = []
         for arg, value in chain(
-                enumerate(args), kwargs.items(), [(k, v) for k, v in self.default_flags.items() if k not in kwargs]
+            enumerate(args), kwargs.items(), [(k, v) for k, v in self.default_flags.items() if k not in kwargs]
         ):
             logger.debug(f"arg: {arg}, value: {value}")
             if arg in self.args:
                 arg = self.args[arg].literal_name if self.args[arg].literal_name is not None else arg
                 arg, value = self.args[arg].transform(arg, value)
             else:
-                arg, value = self.default_transformer(arg, value)
+                arg, value = transformers.get(self.default_transformer)(arg, value)
             logger.debug(f"after: arg: {arg}, value: {value}")
             if isinstance(arg, str):
-                prefix = "--" if len(arg) > 1 else "-"
+                prefix = self.long_prefix if len(arg) > 1 else self.short_prefix
                 if value is not None:
                     if self.arg_separator != " ":
                         params.append(f"{prefix}{arg}{self.arg_separator}{value}")
@@ -222,14 +231,17 @@ class Command(object):
 
 
 @define
-class CLIWrapper:
+class CLIWrapper:  # pylint: disable=too-many-instance-attributes
     path: str
     env: dict[str, str] = None
     commands: dict[str, Command] = {}
 
     trusting: bool = True
+    raise_exc: bool = False
     async_: bool = False
-    default_transformer: Callable[[str, str], tuple[str, str]] = snake2kebab
+    default_transformer: str = "snake2kebab"
+    short_prefix: str = "-"
+    long_prefix: str = "--"
     arg_separator: str = "="
 
     def _get_command(self, command: str):
@@ -243,36 +255,40 @@ class CLIWrapper:
                 raise ValueError(f"Command {command} not found in {self.path}")
             c = Command(
                 cli_command=command,
-                arg_separator=self.arg_separator,
                 default_transformer=self.default_transformer,
+                short_prefix=self.short_prefix,
+                long_prefix=self.long_prefix,
+                arg_separator=self.arg_separator,
             )
             logger.error(c.parse.__dict__)
             return c
         return self.commands[command]
 
-    def _update_command(
-            self,
-            command: str,
-            cli_command: str = None,
-            args: dict[str | int, Argument] = None,
-            default_flags: dict = None,
-            parse=None,
+    def _update_command(  # pylint: disable=too-many-arguments
+        self,
+        command: str,
+        *,
+        cli_command: str | list[str] = None,
+        args: dict[str | int, any] = None,
+        default_flags: dict = None,
+        parse=None,
     ):
         """
         update the command to be run with the cli_wrapper
-        :param command: the subcommand for the cli tool
+        :param command: the command name for the wrapper
+        :param cli_command: the command to be run, if different from the command name
         :param default_flags: default flags to be used with the command
         :param parse: function to parse the output of the command
         :return:
         """
-        if default_flags is None:
-            default_flags = {}
         self.commands[command] = Command(
             cli_command=command if cli_command is None else cli_command,
             args=args if args is not None else {},
             default_flags=default_flags if default_flags is not None else {},
             parse=parse,
             default_transformer=self.default_transformer,
+            short_prefix=self.short_prefix,
+            long_prefix=self.long_prefix,
             arg_separator=self.arg_separator,
         )
 
@@ -290,12 +306,10 @@ class CLIWrapper:
         env = os.environ.copy().update(self.env if self.env is not None else {})
         logger.debug(f"Running command: {' '.join(command_args)}")
         # run the command
-        result = subprocess.run(command_args, capture_output=True, text=True, env=env)
+        result = subprocess.run(command_args, capture_output=True, text=True, env=env, check=self.raise_exc)
         if result.returncode != 0:
             raise RuntimeError(f"Command {command} failed with error: {result.stderr}")
-        if command_obj.parse is not None:
-            return command_obj.parse(result.stdout)
-        return result.stdout
+        return command_obj.parse(result.stdout)
 
     async def _run_async(self, command: str, *args, **kwargs):
         command_obj = self._get_command(command)
@@ -303,7 +317,7 @@ class CLIWrapper:
         command_args = [self.path] + list(command_obj.build_args(*args, **kwargs))
         env = os.environ.copy().update(self.env if self.env is not None else {})
         logger.error(f"Running command: {', '.join(command_args)}")
-        proc = await asyncio.subprocess.create_subprocess_exec(
+        proc = await asyncio.subprocess.create_subprocess_exec(  # pylint: disable=no-member
             *command_args,
             stdout=asyncio.subprocess.PIPE,
             stderr=asyncio.subprocess.PIPE,
@@ -313,9 +327,7 @@ class CLIWrapper:
         stdout, stderr = await proc.communicate()
         if proc.returncode != 0:
             raise RuntimeError(f"Command {command} failed with error: {stderr.decode()}")
-        if command_obj.parse is not None:
-            return command_obj.parse(stdout.decode())
-        return stdout.decode()
+        return command_obj.parse(stdout.decode())
 
     def __getattr__(self, item):
         """
@@ -323,8 +335,6 @@ class CLIWrapper:
         :param item: the command to be run
         :return:
         """
-        if item not in self.commands and not self.trusting:
-            raise ValueError(f"Command {item} not found in {self.path}")
         if self.async_:
             return lambda *args, **kwargs: self._run_async(item, *args, **kwargs)
         return lambda *args, **kwargs: self._run(item, *args, **kwargs)
@@ -336,21 +346,30 @@ class CLIWrapper:
         :param cliwrapper_dict: the dictionary to be converted
         :return: CLIWrapper object
         """
+        cliwrapper_dict = cliwrapper_dict.copy()
         commands = {}
-        for command, config in cliwrapper_dict.get("commands", {}).items():
+        for command, config in cliwrapper_dict.pop("commands", {}).items():
             if isinstance(config, str):
                 config = {"cli_command": config}
             else:
                 if "cli_command" not in config:
                     config["cli_command"] = command
-            commands[command] = Command._from_dict(config)
+            commands[command] = Command.from_dict(config)
 
         return CLIWrapper(
-            path=cliwrapper_dict.get("path"),
-            env=cliwrapper_dict.get("env", {}),
             commands=commands,
-            trusting=cliwrapper_dict.get("trusting", True),
-            async_=cliwrapper_dict.get("async_", False),
-            default_transformer=snake2kebab,
-            arg_separator=cliwrapper_dict.get("arg_separator", "="),
+            **cliwrapper_dict,
         )
+
+    def to_dict(self):
+        """
+        Convert the CLIWrapper to a dictionary
+        :return:
+        """
+        return {
+            "path": self.path,
+            "env": self.env,
+            "commands": {k: v.to_dict() for k, v in self.commands.items()},
+            "trusting": self.trusting,
+            "async_": self.async_,
+        }
