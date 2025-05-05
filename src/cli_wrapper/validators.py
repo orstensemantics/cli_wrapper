@@ -1,4 +1,5 @@
 import logging
+from pathlib import Path
 from uuid import uuid4
 
 from .util.callable_chain import CallableChain
@@ -16,6 +17,7 @@ core_validators = {
     "is_alnum": lambda x: isinstance(x, str) and x.isalnum(),
     "is_alpha": lambda x: isinstance(x, str) and x.isalpha(),
     "is_digit": lambda x: isinstance(x, str) and x.isdigit(),
+    "is_path": lambda x: isinstance(x, Path),
     "starts_alpha": lambda x: isinstance(x, str) and x[0].isalpha(),
     "startswith": lambda x, prefix: isinstance(x, str) and x.startswith(prefix),
 }

@@ -120,6 +120,14 @@ class Argument:
         )
 
 
+def cli_command_converter(value: str | list[str]):
+    if value is None:
+        return []
+    if isinstance(value, str):
+        return [value]
+    return value
+
+
 def arg_converter(value: dict):
     """
     Convert the value of the argument to a string
@@ -128,6 +136,8 @@ def arg_converter(value: dict):
     """
     value = value.copy()
     for k, v in value.items():
+        if isinstance(v, str):
+            v = {"validator": v}
         if isinstance(v, dict):
             if "literal_name" not in v:
                 v["literal_name"] = k
@@ -144,7 +154,7 @@ class Command:  # pylint: disable=too-many-instance-attributes
     Command represents a command to be run with the cli_wrapper
     """
 
-    cli_command: str
+    cli_command: list[str] | str = field(converter=cli_command_converter)
     default_flags: dict = {}
     args: dict[str | int, any] = field(factory=dict, converter=arg_converter)
     parse: Parser = field(converter=Parser, default=None)
@@ -201,7 +211,7 @@ class Command:  # pylint: disable=too-many-instance-attributes
                     raise ValueError(f"Value '{arg}' is invalid for command {self.cli_command} arg {name}")
 
     def build_args(self, *args, **kwargs):
-        positional = [self.cli_command]
+        positional = self.cli_command if self.cli_command is not None else []
         params = []
         for arg, value in chain(
             enumerate(args), kwargs.items(), [(k, v) for k, v in self.default_flags.items() if k not in kwargs]
@@ -215,7 +225,7 @@ class Command:  # pylint: disable=too-many-instance-attributes
             logger.debug(f"after: arg: {arg}, value: {value}")
             if isinstance(arg, str):
                 prefix = self.long_prefix if len(arg) > 1 else self.short_prefix
-                if value is not None:
+                if value is not None and not isinstance(value, bool):
                     if self.arg_separator != " ":
                         params.append(f"{prefix}{arg}{self.arg_separator}{value}")
                     else:
@@ -260,7 +270,6 @@ class CLIWrapper:  # pylint: disable=too-many-instance-attributes
                 long_prefix=self.long_prefix,
                 arg_separator=self.arg_separator,
             )
-            logger.error(c.parse.__dict__)
             return c
         return self.commands[command]
 
@@ -316,7 +325,7 @@ class CLIWrapper:  # pylint: disable=too-many-instance-attributes
         command_obj.validate_args(*args, **kwargs)
         command_args = [self.path] + list(command_obj.build_args(*args, **kwargs))
         env = os.environ.copy().update(self.env if self.env is not None else {})
-        logger.error(f"Running command: {', '.join(command_args)}")
+        logger.debug(f"Running command: {', '.join(command_args)}")
         proc = await asyncio.subprocess.create_subprocess_exec(  # pylint: disable=no-member
             *command_args,
             stdout=asyncio.subprocess.PIPE,
@@ -329,7 +338,7 @@ class CLIWrapper:  # pylint: disable=too-many-instance-attributes
             raise RuntimeError(f"Command {command} failed with error: {stderr.decode()}")
         return command_obj.parse(stdout.decode())
 
-    def __getattr__(self, item):
+    def __getattr__(self, item, *args, **kwargs):
         """
         get the command from the cli_wrapper
         :param item: the command to be run
@@ -338,6 +347,9 @@ class CLIWrapper:  # pylint: disable=too-many-instance-attributes
         if self.async_:
             return lambda *args, **kwargs: self._run_async(item, *args, **kwargs)
         return lambda *args, **kwargs: self._run(item, *args, **kwargs)
+
+    def __call__(self, *args, **kwargs):
+        return (self.__getattr__(None))(*args, **kwargs)
 
     @classmethod
     def from_dict(cls, cliwrapper_dict):
@@ -348,12 +360,19 @@ class CLIWrapper:  # pylint: disable=too-many-instance-attributes
         """
         cliwrapper_dict = cliwrapper_dict.copy()
         commands = {}
+        command_config = {
+            "arg_separator": cliwrapper_dict.get("arg_separator", "="),
+            "default_transformer": cliwrapper_dict.get("default_transformer", "snake2kebab"),
+            "short_prefix": cliwrapper_dict.get("short_prefix", "-"),
+            "long_prefix": cliwrapper_dict.get("long_prefix", "--"),
+        }
         for command, config in cliwrapper_dict.pop("commands", {}).items():
             if isinstance(config, str):
                 config = {"cli_command": config}
             else:
                 if "cli_command" not in config:
                     config["cli_command"] = command
+                config = command_config | config
             commands[command] = Command.from_dict(config)
 
         return CLIWrapper(
@@ -372,4 +391,8 @@ class CLIWrapper:  # pylint: disable=too-many-instance-attributes
             "commands": {k: v.to_dict() for k, v in self.commands.items()},
             "trusting": self.trusting,
             "async_": self.async_,
+            "default_transformer": self.default_transformer,
+            "short_prefix": self.short_prefix,
+            "long_prefix": self.long_prefix,
+            "arg_separator": self.arg_separator,
         }

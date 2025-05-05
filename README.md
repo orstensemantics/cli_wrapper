@@ -1,5 +1,10 @@
 # CLI Wrapper
 
+![Codecov](https://img.shields.io/codecov/c/github/orstensemantics/cli_wrapper)
+![PyPI - License](https://img.shields.io/pypi/l/cli_wrapper)
+![PyPI - Version](https://img.shields.io/pypi/v/cli_wrapper)
+
+
 CLI Wrapper uses subprocess to wrap external CLI tools and present an interface that looks more like a python class. CLI
 commands become methods on the class, positional arguments and flags become args and kwargs respectively. It
 supports input validation and output parsing.
@@ -88,11 +93,12 @@ pip install dotted_dict # for dotted_dict support shown above
       - We can already do this by putting a function in the parse list, but it would be nice to make this serializable
 - [ ] Custom error handling
 - [ ] Nested wrappers (e.g., `helm.repos.list()` instead of `helm.repos('list')`)]
+  - currently doing helm.repos_list() from help parser
 - [ ] Tool to create configuration dictionaries by parsing help output recursively
-    - [ ] golang flag style help/usage
+    - [x] golang flag style help/usage
     - [ ] argparse style
 - [ ] Configuration dictionaries for common tools
-    - [ ] kubectl
+    - [x] kubectl
     - [ ] helm
     - [ ] docker
-    - [ ] cilium
+    - [x] cilium
