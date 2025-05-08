@@ -39,16 +39,20 @@ kubectl = CLIWrapper("kubectl")
 # by default, this will translate to `kubectl get pods --namespace default`, and it will return the text output
 kubectl.get("pods", namespace="default")
 # you can refine this by defining the command explicitly:
-kubectl._update_command("get", default_flags={"output": "json"}, parse=["json", "dotted_dict"])
+kubectl.update_command_("get", default_flags={"output": "json"}, parse=["json", "dotted_dict"])
+# (the trailing '_' is to avoid collisions with a cli command)
 a = kubectl.get("pods", namespace="kube-system")
 print(a.items[0].metadata.name)  # prints a pod name
+
 
 # you can do your own parsing:
 def skip_lists(result):
     if result["kind"] == "List":
         return result["items"]
     return result
-kubectl._update_command("get", default_flags={"output": "json"}, parse=["json", skip_lists, "dotted_dict"])
+
+
+kubectl.update_command_("get", default_flags={"output": "json"}, parse=["json", skip_lists, "dotted_dict"])
 a = kubectl.get("pods", namespace="kube-system")
 assert isinstance(a, list)
 a = kubectl.get("pods", a[0].metadata.name, namespace="kube-system")
@@ -99,6 +103,6 @@ pip install dotted_dict # for dotted_dict support shown above
     - [ ] argparse style
 - [ ] Configuration dictionaries for common tools
     - [x] kubectl
-    - [ ] helm
+    - [x] helm
     - [ ] docker
     - [x] cilium

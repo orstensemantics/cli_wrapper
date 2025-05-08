@@ -50,6 +50,7 @@ import asyncio.subprocess
 import logging
 import os
 import subprocess
+from copy import copy
 from itertools import chain
 
 from attrs import define, field
@@ -59,7 +60,6 @@ from .transformers import transformers
 from .validators import validators, Validator
 
 logger = logging.getLogger(__name__)
-logger.setLevel(logging.DEBUG)
 
 
 @define
@@ -206,12 +206,14 @@ class Command:  # pylint: disable=too-many-instance-attributes
                 if isinstance(name, int):
                     name += 1  # let's call positional arg 0, "Argument 1"
                 if isinstance(v, str):
-                    raise ValueError(f"Value '{arg}' is invalid for command {self.cli_command} arg {name}: {v}")
+                    raise ValueError(
+                        f"Value '{arg}' is invalid for command {' '.join(self.cli_command)} arg {name}: {v}"
+                    )
                 if not v:
-                    raise ValueError(f"Value '{arg}' is invalid for command {self.cli_command} arg {name}")
+                    raise ValueError(f"Value '{arg}' is invalid for command {' '.join(self.cli_command)} arg {name}")
 
     def build_args(self, *args, **kwargs):
-        positional = self.cli_command if self.cli_command is not None else []
+        positional = copy(self.cli_command) if self.cli_command is not None else []
         params = []
         for arg, value in chain(
             enumerate(args), kwargs.items(), [(k, v) for k, v in self.default_flags.items() if k not in kwargs]
@@ -234,7 +236,6 @@ class Command:  # pylint: disable=too-many-instance-attributes
                     params.append(f"{prefix}{arg}")
             else:
                 positional.append(value)
-            logger.debug(positional + params)
         result = positional + params
         logger.debug(result)
         return result
@@ -273,7 +274,7 @@ class CLIWrapper:  # pylint: disable=too-many-instance-attributes
             return c
         return self.commands[command]
 
-    def _update_command(  # pylint: disable=too-many-arguments
+    def update_command_(  # pylint: disable=too-many-arguments
         self,
         command: str,
         *,

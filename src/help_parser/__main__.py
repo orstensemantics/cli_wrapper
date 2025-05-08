@@ -1,83 +1,22 @@
 import argparse
+import json
 import logging
+from pathlib import Path
 
 from cli_wrapper.cli_wrapper import CLIWrapper
+from .golang_help import parse_golang_help
 
 logger = logging.getLogger(__name__)
-
-type_validators = {
-    "string": "is_str",
-    "int": "is_int",
-    "float": "is_float",
-    "bool": "is_bool",
-    "stringArray": "is_list",
-}
 
 
 def kebab2snake(name):
     return name.replace("-", "_")
 
 
-def parse_golang_help(output):
-    mode = None
-    commands = []
-    flags = {}
-    for line in output.splitlines():
-        logger.debug(line)
-        if "Usage:" in line:
-            logger.debug("Parsing usage section")
-            mode = "usage"
-            continue
-        if "Options:" in line:
-            logger.debug("Parsing options section")
-            mode = "options"
-            continue
-        if "Flags:" in line:
-            logger.debug("Parsing flags section")
-            mode = "flags"
-            continue
-        if line.endswith(":") and "Commands" in line:
-            logger.debug('Parsing section "%s"', line[:-1])
-            mode = "commands"
-            continue
-        if mode == "flags":
-            if "--" in line:
-                flag_index = line.index("--") + 2
-                flag_tokens = line[flag_index:].split()
-                flag_name = flag_tokens[0]
-                if flag_tokens[1] in type_validators:
-                    validator = type_validators[flag_tokens[1]]
-                else:
-                    validator = type_validators["bool"]
-                flags[flag_name] = validator
-            continue
-        if mode == "commands":
-            if line.startswith("  "):
-                command_name = line.split()[0]
-                commands.append(command_name)
-            continue
-        if mode == "options":
-            if line.startswith("  ") and "--" in line:
-                flag_index = line.index("--") + 2
-                equal_sign = line[flag_index:].index("=")
-                flag_name = line[flag_index : flag_index + equal_sign]
-                default_value = line[flag_index + equal_sign + 1 : -1].strip()
-                match default_value:
-                    case "true" | "false":
-                        validator = type_validators["bool"]
-                    case "[]":
-                        validator = type_validators["stringArray"]  # TODO prove this
-                    case _:
-                        validator = type_validators["string"]
-                flags[flag_name] = validator
-                logger.debug("Flag name: %s, validator: %s", flag_name, validator)
-    return commands, flags
-
-
 def parse_help(config, output):
     match config.style:
         case "golang":
-            commands, flags = parse_golang_help(output)
+            commands, flags = parse_golang_help(output, config.long_prefix)
         case _:
             raise ValueError(f"Unknown style: {config.style}")
 
@@ -124,6 +63,19 @@ def parse_args(argv):
         default=" ",
         help="Default separator to use for command arguments.",
     )
+    parser.add_argument(
+        "--long-prefix",
+        type=str,
+        default="--",
+        help="Default prefix for long flags.",
+    )
+    parser.add_argument(
+        "--output",
+        "-o",
+        type=Path,
+        default=None,
+        help="Output file to save the parsed command.",
+    )
 
     config = parser.parse_args(argv)
     config.default_flags_dict = {}
@@ -148,7 +100,7 @@ def parse_args(argv):
 
 
 def parser_available(args: dict[str], parser: dict[str, str]) -> bool:
-    return all([k in args for k in parser.keys()])
+    return all(k in args for k in parser.keys())
 
 
 def available_defaults(args: dict[str], defaults: list[str]) -> dict[str, str]:
@@ -162,25 +114,25 @@ def first_available_parser(args, parsers):
     return None, {}
 
 
-def main(args):
+def main(args):  # pylint: disable=too-many-locals
     config = parse_args(args)
     command = config.command
     help_flag = config.help_flag
 
-    cmd = CLIWrapper(command, arg_separator=config.default_separator)
+    cmd = CLIWrapper(command, arg_separator=config.default_separator, long_prefix=config.long_prefix)
 
     output = cmd(**{help_flag: True})
 
     commands, global_flags = parse_help(config, output)
     for command in commands:
         cmd_name = kebab2snake(command)
-        cmd._update_command(cmd_name, default_flags=config.default_flags_dict, parse=None)
+        cmd.update_command_(cmd_name, default_flags=config.default_flags_dict, parse=None)
         output = cmd(command, **{help_flag: True})
         logger.info(f"Subcommands of {command}:")
         subcommands, cmd_flags = parse_help(config, output)
         cmd_args = global_flags | cmd_flags
         parser, parserflags = first_available_parser(cmd_args, config.default_parsers)
-        cmd._update_command(
+        cmd.update_command_(
             cmd_name,
             default_flags=available_defaults(cmd_args, config.default_flags_dict) | parserflags,
             parse=parser,
@@ -188,7 +140,7 @@ def main(args):
         )
         for subcommand in subcommands:
             subcommand_name = kebab2snake(f"{command}_{subcommand}")
-            cmd._update_command(
+            cmd.update_command_(
                 subcommand_name,
                 cli_command=[command, subcommand],
                 args=cmd_args,
@@ -198,7 +150,7 @@ def main(args):
             _, subcmd_flags = parse_help(config, output)
             subcmd_args = cmd_args | subcmd_flags
             parser, parserflags = first_available_parser(subcmd_args, config.default_parsers)
-            cmd._update_command(
+            cmd.update_command_(
                 subcommand_name,
                 cli_command=[command, subcommand],
                 args=subcmd_args,
@@ -206,7 +158,12 @@ def main(args):
                 parse=parser,
             )
 
-    print(cmd.to_dict())
+    result = json.dumps(cmd.to_dict(), indent=2)
+    if config.output:
+        with config.output.open("w") as f:
+            f.write(result)
+    else:
+        print(result)
 
 
 if __name__ == "__main__":
@@ -215,12 +172,15 @@ if __name__ == "__main__":
 
     match os.environ.get("LOGLEVEL", "info").lower():
         case "debug":
+            print("Setting loglevel to debug")
             logging.basicConfig(level=logging.DEBUG)
         case "info":
             logging.basicConfig(level=logging.INFO)
         case "warning":
             logging.basicConfig(level=logging.WARNING)
         case "error":
+            print("Setting loglevel to error")
             logging.basicConfig(level=logging.ERROR)
 
+    logging.basicConfig(level=logging.ERROR)
     main(sys.argv[1:])

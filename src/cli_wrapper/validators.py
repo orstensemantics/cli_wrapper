@@ -11,6 +11,7 @@ core_validators = {
     "is_dict": lambda x: isinstance(x, dict),
     "is_list": lambda x: isinstance(x, list),
     "is_str": lambda x: isinstance(x, str),
+    "is_str_or_list": lambda x: isinstance(x, (list, str)),
     "is_int": lambda x: isinstance(x, int),
     "is_bool": lambda x: isinstance(x, bool),
     "is_float": lambda x: isinstance(x, float),
