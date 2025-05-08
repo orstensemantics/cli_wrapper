@@ -52,6 +52,9 @@ class TestCommand:
             },
         )
 
+        command = Command.from_dict({}, cli_command="get")
+        assert command.cli_command == ["get"]
+
         command = Command(
             cli_command="get",
             default_flags={"namespace": "default"},
@@ -88,9 +91,7 @@ class TestCommand:
         command = Command(
             cli_command="create",
             default_flags={"namespace": "default"},
-            args={
-                0: {"transformer": lambda x, y: ("filename", "filename")},
-            },
+            args={0: {"transformer": lambda x, y: ("filename", "filename")}, "namespace": "is_str"},
         )
         args = command.build_args({"some": "dict"})
         assert args == ["create", "--filename=filename", "--namespace=default"]
@@ -120,7 +121,14 @@ class TestCommand:
             "--namespace=kube-system",
         ]
 
-        command = Command.from_dict({"cli_command": "get", "args": {}})
+        command = Command.from_dict(
+            {"args": {0: Argument(), "foo": Argument.from_dict({"literal_name": "food"})}}, cli_command="get"
+        )
+        assert command.cli_command == ["get"]
+        assert command.args["foo"].literal_name == "food"
+        assert command.args[0].literal_name == 0
+
+        assert command.build_args("pod", foo="bar") == ["get", "pod", "--food=bar"]
 
 
 class TestCLIWrapper:

@@ -173,8 +173,12 @@ class Command:  # pylint: disable=too-many-instance-attributes
         command_dict = command_dict.copy()
         if "args" in command_dict:
             for k, v in command_dict["args"].items():
-                if "literal_name" not in v:
-                    v["literal_name"] = k
+                if isinstance(v, dict):
+                    if "literal_name" not in v:
+                        v["literal_name"] = k
+                if isinstance(v, Argument):
+                    if v.literal_name is None:
+                        v.literal_name = k
         if "cli_command" not in command_dict:
             command_dict["cli_command"] = kwargs.pop("cli_command", None)
         return Command(
@@ -220,8 +224,8 @@ class Command:  # pylint: disable=too-many-instance-attributes
         ):
             logger.debug(f"arg: {arg}, value: {value}")
             if arg in self.args:
-                arg = self.args[arg].literal_name if self.args[arg].literal_name is not None else arg
-                arg, value = self.args[arg].transform(arg, value)
+                literal_arg = self.args[arg].literal_name if self.args[arg].literal_name is not None else arg
+                arg, value = self.args[arg].transform(literal_arg, value)
             else:
                 arg, value = transformers.get(self.default_transformer)(arg, value)
             logger.debug(f"after: arg: {arg}, value: {value}")
