@@ -134,6 +134,10 @@ class TestCLIWrapper:
 
         kubectl.trusting = True
 
+        # test direct call (as used by help parser)
+        r = kubectl("get", "pods", namespace="kube-system")
+        assert isinstance(r, str)
+
         kubectl.update_command_("get")
         r = kubectl.get("pods", namespace="kube-system")
 
