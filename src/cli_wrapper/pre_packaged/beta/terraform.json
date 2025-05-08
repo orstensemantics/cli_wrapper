@@ -1,0 +1,348 @@
+{
+  "path": "terraform",
+  "env": null,
+  "commands": {
+    "init": {
+      "cli_command": [
+        "init"
+      ],
+      "default_flags": {},
+      "args": {},
+      "parse": null
+    },
+    "validate": {
+      "cli_command": [
+        "validate"
+      ],
+      "default_flags": {},
+      "args": {},
+      "parse": null
+    },
+    "plan": {
+      "cli_command": [
+        "plan"
+      ],
+      "default_flags": {},
+      "args": {},
+      "parse": null
+    },
+    "apply": {
+      "cli_command": [
+        "apply"
+      ],
+      "default_flags": {},
+      "args": {},
+      "parse": null
+    },
+    "destroy": {
+      "cli_command": [
+        "destroy"
+      ],
+      "default_flags": {},
+      "args": {},
+      "parse": null
+    },
+    "console": {
+      "cli_command": [
+        "console"
+      ],
+      "default_flags": {},
+      "args": {},
+      "parse": null
+    },
+    "fmt": {
+      "cli_command": [
+        "fmt"
+      ],
+      "default_flags": {},
+      "args": {},
+      "parse": null
+    },
+    "force_unlock": {
+      "cli_command": [
+        "force_unlock"
+      ],
+      "default_flags": {},
+      "args": {},
+      "parse": null
+    },
+    "get": {
+      "cli_command": [
+        "get"
+      ],
+      "default_flags": {},
+      "args": {},
+      "parse": null
+    },
+    "graph": {
+      "cli_command": [
+        "graph"
+      ],
+      "default_flags": {},
+      "args": {},
+      "parse": null
+    },
+    "import": {
+      "cli_command": [
+        "import"
+      ],
+      "default_flags": {},
+      "args": {},
+      "parse": null
+    },
+    "login": {
+      "cli_command": [
+        "login"
+      ],
+      "default_flags": {},
+      "args": {},
+      "parse": null
+    },
+    "logout": {
+      "cli_command": [
+        "logout"
+      ],
+      "default_flags": {},
+      "args": {},
+      "parse": null
+    },
+    "metadata": {
+      "cli_command": [
+        "metadata"
+      ],
+      "default_flags": {},
+      "args": {},
+      "parse": null
+    },
+    "metadata_functions": {
+      "cli_command": [
+        "metadata",
+        "functions"
+      ],
+      "default_flags": {},
+      "args": {},
+      "parse": null
+    },
+    "output": {
+      "cli_command": [
+        "output"
+      ],
+      "default_flags": {},
+      "args": {},
+      "parse": null
+    },
+    "providers": {
+      "cli_command": [
+        "providers"
+      ],
+      "default_flags": {},
+      "args": {},
+      "parse": null
+    },
+    "providers_lock": {
+      "cli_command": [
+        "providers",
+        "lock"
+      ],
+      "default_flags": {},
+      "args": {},
+      "parse": null
+    },
+    "providers_mirror": {
+      "cli_command": [
+        "providers",
+        "mirror"
+      ],
+      "default_flags": {},
+      "args": {},
+      "parse": null
+    },
+    "providers_schema": {
+      "cli_command": [
+        "providers",
+        "schema"
+      ],
+      "default_flags": {},
+      "args": {},
+      "parse": null
+    },
+    "refresh": {
+      "cli_command": [
+        "refresh"
+      ],
+      "default_flags": {},
+      "args": {},
+      "parse": null
+    },
+    "show": {
+      "cli_command": [
+        "show"
+      ],
+      "default_flags": {},
+      "args": {},
+      "parse": null
+    },
+    "state": {
+      "cli_command": [
+        "state"
+      ],
+      "default_flags": {},
+      "args": {},
+      "parse": null
+    },
+    "state_list": {
+      "cli_command": [
+        "state",
+        "list"
+      ],
+      "default_flags": {},
+      "args": {},
+      "parse": null
+    },
+    "state_mv": {
+      "cli_command": [
+        "state",
+        "mv"
+      ],
+      "default_flags": {},
+      "args": {},
+      "parse": null
+    },
+    "state_pull": {
+      "cli_command": [
+        "state",
+        "pull"
+      ],
+      "default_flags": {},
+      "args": {},
+      "parse": null
+    },
+    "state_push": {
+      "cli_command": [
+        "state",
+        "push"
+      ],
+      "default_flags": {},
+      "args": {},
+      "parse": null
+    },
+    "state_replace_provider": {
+      "cli_command": [
+        "state",
+        "replace-provider"
+      ],
+      "default_flags": {},
+      "args": {},
+      "parse": null
+    },
+    "state_rm": {
+      "cli_command": [
+        "state",
+        "rm"
+      ],
+      "default_flags": {},
+      "args": {},
+      "parse": null
+    },
+    "state_show": {
+      "cli_command": [
+        "state",
+        "show"
+      ],
+      "default_flags": {},
+      "args": {},
+      "parse": null
+    },
+    "taint": {
+      "cli_command": [
+        "taint"
+      ],
+      "default_flags": {},
+      "args": {},
+      "parse": null
+    },
+    "test": {
+      "cli_command": [
+        "test"
+      ],
+      "default_flags": {},
+      "args": {},
+      "parse": null
+    },
+    "untaint": {
+      "cli_command": [
+        "untaint"
+      ],
+      "default_flags": {},
+      "args": {},
+      "parse": null
+    },
+    "version": {
+      "cli_command": [
+        "version"
+      ],
+      "default_flags": {},
+      "args": {},
+      "parse": null
+    },
+    "workspace": {
+      "cli_command": [
+        "workspace"
+      ],
+      "default_flags": {},
+      "args": {},
+      "parse": null
+    },
+    "workspace_delete": {
+      "cli_command": [
+        "workspace",
+        "delete"
+      ],
+      "default_flags": {},
+      "args": {},
+      "parse": null
+    },
+    "workspace_list": {
+      "cli_command": [
+        "workspace",
+        "list"
+      ],
+      "default_flags": {},
+      "args": {},
+      "parse": null
+    },
+    "workspace_new": {
+      "cli_command": [
+        "workspace",
+        "new"
+      ],
+      "default_flags": {},
+      "args": {},
+      "parse": null
+    },
+    "workspace_select": {
+      "cli_command": [
+        "workspace",
+        "select"
+      ],
+      "default_flags": {},
+      "args": {},
+      "parse": null
+    },
+    "workspace_show": {
+      "cli_command": [
+        "workspace",
+        "show"
+      ],
+      "default_flags": {},
+      "args": {},
+      "parse": null
+    }
+  },
+  "trusting": true,
+  "async_": false,
+  "default_transformer": "snake2kebab",
+  "short_prefix": "-",
+  "long_prefix": "--",
+  "arg_separator": " "
+}

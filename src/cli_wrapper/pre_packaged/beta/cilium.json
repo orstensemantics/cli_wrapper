@@ -1,0 +1,3586 @@
+{
+  "path": "cilium",
+  "env": null,
+  "commands": {
+    "bgp": {
+      "cli_command": [
+        "bgp"
+      ],
+      "default_flags": {},
+      "args": {
+        "as": {
+          "literal_name": "as",
+          "default": null,
+          "validator": "is_str"
+        },
+        "as-group": {
+          "literal_name": "as-group",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "context": {
+          "literal_name": "context",
+          "default": null,
+          "validator": "is_str"
+        },
+        "helm-release-name": {
+          "literal_name": "helm-release-name",
+          "default": null,
+          "validator": "is_str"
+        },
+        "help": {
+          "literal_name": "help",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "kubeconfig": {
+          "literal_name": "kubeconfig",
+          "default": null,
+          "validator": "is_str"
+        },
+        "namespace": {
+          "literal_name": "namespace",
+          "default": null,
+          "validator": "is_str"
+        },
+        "help\"": {
+          "literal_name": "help\"",
+          "default": null,
+          "validator": "is_bool"
+        }
+      },
+      "parse": null
+    },
+    "bgp_peers": {
+      "cli_command": [
+        "bgp",
+        "peers"
+      ],
+      "default_flags": {
+        "output": "json"
+      },
+      "args": {
+        "as": {
+          "literal_name": "as",
+          "default": null,
+          "validator": "is_str"
+        },
+        "as-group": {
+          "literal_name": "as-group",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "context": {
+          "literal_name": "context",
+          "default": null,
+          "validator": "is_str"
+        },
+        "helm-release-name": {
+          "literal_name": "helm-release-name",
+          "default": null,
+          "validator": "is_str"
+        },
+        "help": {
+          "literal_name": "help",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "kubeconfig": {
+          "literal_name": "kubeconfig",
+          "default": null,
+          "validator": "is_str"
+        },
+        "namespace": {
+          "literal_name": "namespace",
+          "default": null,
+          "validator": "is_str"
+        },
+        "help\"": {
+          "literal_name": "help\"",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "agent-pod-selector": {
+          "literal_name": "agent-pod-selector",
+          "default": null,
+          "validator": "is_str"
+        },
+        "node": {
+          "literal_name": "node",
+          "default": null,
+          "validator": "is_str"
+        },
+        "output": {
+          "literal_name": "output",
+          "default": null,
+          "validator": "is_str"
+        },
+        "wait-duration": {
+          "literal_name": "wait-duration",
+          "default": null,
+          "validator": "is_bool"
+        }
+      },
+      "parse": "json"
+    },
+    "bgp_routes": {
+      "cli_command": [
+        "bgp",
+        "routes"
+      ],
+      "default_flags": {
+        "output": "json"
+      },
+      "args": {
+        "as": {
+          "literal_name": "as",
+          "default": null,
+          "validator": "is_str"
+        },
+        "as-group": {
+          "literal_name": "as-group",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "context": {
+          "literal_name": "context",
+          "default": null,
+          "validator": "is_str"
+        },
+        "helm-release-name": {
+          "literal_name": "helm-release-name",
+          "default": null,
+          "validator": "is_str"
+        },
+        "help": {
+          "literal_name": "help",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "kubeconfig": {
+          "literal_name": "kubeconfig",
+          "default": null,
+          "validator": "is_str"
+        },
+        "namespace": {
+          "literal_name": "namespace",
+          "default": null,
+          "validator": "is_str"
+        },
+        "help\"": {
+          "literal_name": "help\"",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "agent-pod-selector": {
+          "literal_name": "agent-pod-selector",
+          "default": null,
+          "validator": "is_str"
+        },
+        "node": {
+          "literal_name": "node",
+          "default": null,
+          "validator": "is_str"
+        },
+        "output": {
+          "literal_name": "output",
+          "default": null,
+          "validator": "is_str"
+        },
+        "wait-duration": {
+          "literal_name": "wait-duration",
+          "default": null,
+          "validator": "is_bool"
+        }
+      },
+      "parse": "json"
+    },
+    "clustermesh": {
+      "cli_command": [
+        "clustermesh"
+      ],
+      "default_flags": {},
+      "args": {
+        "as": {
+          "literal_name": "as",
+          "default": null,
+          "validator": "is_str"
+        },
+        "as-group": {
+          "literal_name": "as-group",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "context": {
+          "literal_name": "context",
+          "default": null,
+          "validator": "is_str"
+        },
+        "helm-release-name": {
+          "literal_name": "helm-release-name",
+          "default": null,
+          "validator": "is_str"
+        },
+        "help": {
+          "literal_name": "help",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "kubeconfig": {
+          "literal_name": "kubeconfig",
+          "default": null,
+          "validator": "is_str"
+        },
+        "namespace": {
+          "literal_name": "namespace",
+          "default": null,
+          "validator": "is_str"
+        },
+        "help\"": {
+          "literal_name": "help\"",
+          "default": null,
+          "validator": "is_bool"
+        }
+      },
+      "parse": null
+    },
+    "clustermesh_connect": {
+      "cli_command": [
+        "clustermesh",
+        "connect"
+      ],
+      "default_flags": {},
+      "args": {
+        "as": {
+          "literal_name": "as",
+          "default": null,
+          "validator": "is_str"
+        },
+        "as-group": {
+          "literal_name": "as-group",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "context": {
+          "literal_name": "context",
+          "default": null,
+          "validator": "is_str"
+        },
+        "helm-release-name": {
+          "literal_name": "helm-release-name",
+          "default": null,
+          "validator": "is_str"
+        },
+        "help": {
+          "literal_name": "help",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "kubeconfig": {
+          "literal_name": "kubeconfig",
+          "default": null,
+          "validator": "is_str"
+        },
+        "namespace": {
+          "literal_name": "namespace",
+          "default": null,
+          "validator": "is_str"
+        },
+        "help\"": {
+          "literal_name": "help\"",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "connection-mode": {
+          "literal_name": "connection-mode",
+          "default": null,
+          "validator": "is_str"
+        },
+        "destination-context": {
+          "literal_name": "destination-context",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "destination-endpoint": {
+          "literal_name": "destination-endpoint",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "parallel": {
+          "literal_name": "parallel",
+          "default": null,
+          "validator": "is_int"
+        },
+        "source-endpoint": {
+          "literal_name": "source-endpoint",
+          "default": null,
+          "validator": "is_bool"
+        }
+      },
+      "parse": null
+    },
+    "clustermesh_disable": {
+      "cli_command": [
+        "clustermesh",
+        "disable"
+      ],
+      "default_flags": {},
+      "args": {
+        "as": {
+          "literal_name": "as",
+          "default": null,
+          "validator": "is_str"
+        },
+        "as-group": {
+          "literal_name": "as-group",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "context": {
+          "literal_name": "context",
+          "default": null,
+          "validator": "is_str"
+        },
+        "helm-release-name": {
+          "literal_name": "helm-release-name",
+          "default": null,
+          "validator": "is_str"
+        },
+        "help": {
+          "literal_name": "help",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "kubeconfig": {
+          "literal_name": "kubeconfig",
+          "default": null,
+          "validator": "is_str"
+        },
+        "namespace": {
+          "literal_name": "namespace",
+          "default": null,
+          "validator": "is_str"
+        },
+        "help\"": {
+          "literal_name": "help\"",
+          "default": null,
+          "validator": "is_bool"
+        }
+      },
+      "parse": null
+    },
+    "clustermesh_disconnect": {
+      "cli_command": [
+        "clustermesh",
+        "disconnect"
+      ],
+      "default_flags": {},
+      "args": {
+        "as": {
+          "literal_name": "as",
+          "default": null,
+          "validator": "is_str"
+        },
+        "as-group": {
+          "literal_name": "as-group",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "context": {
+          "literal_name": "context",
+          "default": null,
+          "validator": "is_str"
+        },
+        "helm-release-name": {
+          "literal_name": "helm-release-name",
+          "default": null,
+          "validator": "is_str"
+        },
+        "help": {
+          "literal_name": "help",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "kubeconfig": {
+          "literal_name": "kubeconfig",
+          "default": null,
+          "validator": "is_str"
+        },
+        "namespace": {
+          "literal_name": "namespace",
+          "default": null,
+          "validator": "is_str"
+        },
+        "help\"": {
+          "literal_name": "help\"",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "connection-mode": {
+          "literal_name": "connection-mode",
+          "default": null,
+          "validator": "is_str"
+        },
+        "destination-context": {
+          "literal_name": "destination-context",
+          "default": null,
+          "validator": "is_bool"
+        }
+      },
+      "parse": null
+    },
+    "clustermesh_enable": {
+      "cli_command": [
+        "clustermesh",
+        "enable"
+      ],
+      "default_flags": {},
+      "args": {
+        "as": {
+          "literal_name": "as",
+          "default": null,
+          "validator": "is_str"
+        },
+        "as-group": {
+          "literal_name": "as-group",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "context": {
+          "literal_name": "context",
+          "default": null,
+          "validator": "is_str"
+        },
+        "helm-release-name": {
+          "literal_name": "helm-release-name",
+          "default": null,
+          "validator": "is_str"
+        },
+        "help": {
+          "literal_name": "help",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "kubeconfig": {
+          "literal_name": "kubeconfig",
+          "default": null,
+          "validator": "is_str"
+        },
+        "namespace": {
+          "literal_name": "namespace",
+          "default": null,
+          "validator": "is_str"
+        },
+        "help\"": {
+          "literal_name": "help\"",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "enable-kvstoremesh": {
+          "literal_name": "enable-kvstoremesh",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "service-type": {
+          "literal_name": "service-type",
+          "default": null,
+          "validator": "is_str"
+        }
+      },
+      "parse": null
+    },
+    "clustermesh_status": {
+      "cli_command": [
+        "clustermesh",
+        "status"
+      ],
+      "default_flags": {
+        "output": "json"
+      },
+      "args": {
+        "as": {
+          "literal_name": "as",
+          "default": null,
+          "validator": "is_str"
+        },
+        "as-group": {
+          "literal_name": "as-group",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "context": {
+          "literal_name": "context",
+          "default": null,
+          "validator": "is_str"
+        },
+        "helm-release-name": {
+          "literal_name": "helm-release-name",
+          "default": null,
+          "validator": "is_str"
+        },
+        "help": {
+          "literal_name": "help",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "kubeconfig": {
+          "literal_name": "kubeconfig",
+          "default": null,
+          "validator": "is_str"
+        },
+        "namespace": {
+          "literal_name": "namespace",
+          "default": null,
+          "validator": "is_str"
+        },
+        "help\"": {
+          "literal_name": "help\"",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "output": {
+          "literal_name": "output",
+          "default": null,
+          "validator": "is_str"
+        },
+        "wait": {
+          "literal_name": "wait",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "wait-duration": {
+          "literal_name": "wait-duration",
+          "default": null,
+          "validator": "is_bool"
+        }
+      },
+      "parse": "json"
+    },
+    "completion": {
+      "cli_command": [
+        "completion"
+      ],
+      "default_flags": {},
+      "args": {
+        "as": {
+          "literal_name": "as",
+          "default": null,
+          "validator": "is_str"
+        },
+        "as-group": {
+          "literal_name": "as-group",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "context": {
+          "literal_name": "context",
+          "default": null,
+          "validator": "is_str"
+        },
+        "helm-release-name": {
+          "literal_name": "helm-release-name",
+          "default": null,
+          "validator": "is_str"
+        },
+        "help": {
+          "literal_name": "help",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "kubeconfig": {
+          "literal_name": "kubeconfig",
+          "default": null,
+          "validator": "is_str"
+        },
+        "namespace": {
+          "literal_name": "namespace",
+          "default": null,
+          "validator": "is_str"
+        },
+        "help\"": {
+          "literal_name": "help\"",
+          "default": null,
+          "validator": "is_bool"
+        }
+      },
+      "parse": null
+    },
+    "completion_bash": {
+      "cli_command": [
+        "completion",
+        "bash"
+      ],
+      "default_flags": {},
+      "args": {
+        "as": {
+          "literal_name": "as",
+          "default": null,
+          "validator": "is_str"
+        },
+        "as-group": {
+          "literal_name": "as-group",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "context": {
+          "literal_name": "context",
+          "default": null,
+          "validator": "is_str"
+        },
+        "helm-release-name": {
+          "literal_name": "helm-release-name",
+          "default": null,
+          "validator": "is_str"
+        },
+        "help": {
+          "literal_name": "help",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "kubeconfig": {
+          "literal_name": "kubeconfig",
+          "default": null,
+          "validator": "is_str"
+        },
+        "namespace": {
+          "literal_name": "namespace",
+          "default": null,
+          "validator": "is_str"
+        },
+        "help\"": {
+          "literal_name": "help\"",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "no-descriptions": {
+          "literal_name": "no-descriptions",
+          "default": null,
+          "validator": "is_bool"
+        }
+      },
+      "parse": null
+    },
+    "completion_fish": {
+      "cli_command": [
+        "completion",
+        "fish"
+      ],
+      "default_flags": {},
+      "args": {
+        "as": {
+          "literal_name": "as",
+          "default": null,
+          "validator": "is_str"
+        },
+        "as-group": {
+          "literal_name": "as-group",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "context": {
+          "literal_name": "context",
+          "default": null,
+          "validator": "is_str"
+        },
+        "helm-release-name": {
+          "literal_name": "helm-release-name",
+          "default": null,
+          "validator": "is_str"
+        },
+        "help": {
+          "literal_name": "help",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "kubeconfig": {
+          "literal_name": "kubeconfig",
+          "default": null,
+          "validator": "is_str"
+        },
+        "namespace": {
+          "literal_name": "namespace",
+          "default": null,
+          "validator": "is_str"
+        },
+        "help\"": {
+          "literal_name": "help\"",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "no-descriptions": {
+          "literal_name": "no-descriptions",
+          "default": null,
+          "validator": "is_bool"
+        }
+      },
+      "parse": null
+    },
+    "completion_powershell": {
+      "cli_command": [
+        "completion",
+        "powershell"
+      ],
+      "default_flags": {},
+      "args": {
+        "as": {
+          "literal_name": "as",
+          "default": null,
+          "validator": "is_str"
+        },
+        "as-group": {
+          "literal_name": "as-group",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "context": {
+          "literal_name": "context",
+          "default": null,
+          "validator": "is_str"
+        },
+        "helm-release-name": {
+          "literal_name": "helm-release-name",
+          "default": null,
+          "validator": "is_str"
+        },
+        "help": {
+          "literal_name": "help",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "kubeconfig": {
+          "literal_name": "kubeconfig",
+          "default": null,
+          "validator": "is_str"
+        },
+        "namespace": {
+          "literal_name": "namespace",
+          "default": null,
+          "validator": "is_str"
+        },
+        "help\"": {
+          "literal_name": "help\"",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "no-descriptions": {
+          "literal_name": "no-descriptions",
+          "default": null,
+          "validator": "is_bool"
+        }
+      },
+      "parse": null
+    },
+    "completion_zsh": {
+      "cli_command": [
+        "completion",
+        "zsh"
+      ],
+      "default_flags": {},
+      "args": {
+        "as": {
+          "literal_name": "as",
+          "default": null,
+          "validator": "is_str"
+        },
+        "as-group": {
+          "literal_name": "as-group",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "context": {
+          "literal_name": "context",
+          "default": null,
+          "validator": "is_str"
+        },
+        "helm-release-name": {
+          "literal_name": "helm-release-name",
+          "default": null,
+          "validator": "is_str"
+        },
+        "help": {
+          "literal_name": "help",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "kubeconfig": {
+          "literal_name": "kubeconfig",
+          "default": null,
+          "validator": "is_str"
+        },
+        "namespace": {
+          "literal_name": "namespace",
+          "default": null,
+          "validator": "is_str"
+        },
+        "help\"": {
+          "literal_name": "help\"",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "no-descriptions": {
+          "literal_name": "no-descriptions",
+          "default": null,
+          "validator": "is_bool"
+        }
+      },
+      "parse": null
+    },
+    "config": {
+      "cli_command": [
+        "config"
+      ],
+      "default_flags": {},
+      "args": {
+        "as": {
+          "literal_name": "as",
+          "default": null,
+          "validator": "is_str"
+        },
+        "as-group": {
+          "literal_name": "as-group",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "context": {
+          "literal_name": "context",
+          "default": null,
+          "validator": "is_str"
+        },
+        "helm-release-name": {
+          "literal_name": "helm-release-name",
+          "default": null,
+          "validator": "is_str"
+        },
+        "help": {
+          "literal_name": "help",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "kubeconfig": {
+          "literal_name": "kubeconfig",
+          "default": null,
+          "validator": "is_str"
+        },
+        "namespace": {
+          "literal_name": "namespace",
+          "default": null,
+          "validator": "is_str"
+        },
+        "help\"": {
+          "literal_name": "help\"",
+          "default": null,
+          "validator": "is_bool"
+        }
+      },
+      "parse": null
+    },
+    "config_delete": {
+      "cli_command": [
+        "config",
+        "delete"
+      ],
+      "default_flags": {},
+      "args": {
+        "as": {
+          "literal_name": "as",
+          "default": null,
+          "validator": "is_str"
+        },
+        "as-group": {
+          "literal_name": "as-group",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "context": {
+          "literal_name": "context",
+          "default": null,
+          "validator": "is_str"
+        },
+        "helm-release-name": {
+          "literal_name": "helm-release-name",
+          "default": null,
+          "validator": "is_str"
+        },
+        "help": {
+          "literal_name": "help",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "kubeconfig": {
+          "literal_name": "kubeconfig",
+          "default": null,
+          "validator": "is_str"
+        },
+        "namespace": {
+          "literal_name": "namespace",
+          "default": null,
+          "validator": "is_str"
+        },
+        "help\"": {
+          "literal_name": "help\"",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "restart": {
+          "literal_name": "restart",
+          "default": null,
+          "validator": "is_bool"
+        }
+      },
+      "parse": null
+    },
+    "config_set": {
+      "cli_command": [
+        "config",
+        "set"
+      ],
+      "default_flags": {},
+      "args": {
+        "as": {
+          "literal_name": "as",
+          "default": null,
+          "validator": "is_str"
+        },
+        "as-group": {
+          "literal_name": "as-group",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "context": {
+          "literal_name": "context",
+          "default": null,
+          "validator": "is_str"
+        },
+        "helm-release-name": {
+          "literal_name": "helm-release-name",
+          "default": null,
+          "validator": "is_str"
+        },
+        "help": {
+          "literal_name": "help",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "kubeconfig": {
+          "literal_name": "kubeconfig",
+          "default": null,
+          "validator": "is_str"
+        },
+        "namespace": {
+          "literal_name": "namespace",
+          "default": null,
+          "validator": "is_str"
+        },
+        "help\"": {
+          "literal_name": "help\"",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "restart": {
+          "literal_name": "restart",
+          "default": null,
+          "validator": "is_bool"
+        }
+      },
+      "parse": null
+    },
+    "config_view": {
+      "cli_command": [
+        "config",
+        "view"
+      ],
+      "default_flags": {},
+      "args": {
+        "as": {
+          "literal_name": "as",
+          "default": null,
+          "validator": "is_str"
+        },
+        "as-group": {
+          "literal_name": "as-group",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "context": {
+          "literal_name": "context",
+          "default": null,
+          "validator": "is_str"
+        },
+        "helm-release-name": {
+          "literal_name": "helm-release-name",
+          "default": null,
+          "validator": "is_str"
+        },
+        "help": {
+          "literal_name": "help",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "kubeconfig": {
+          "literal_name": "kubeconfig",
+          "default": null,
+          "validator": "is_str"
+        },
+        "namespace": {
+          "literal_name": "namespace",
+          "default": null,
+          "validator": "is_str"
+        },
+        "help\"": {
+          "literal_name": "help\"",
+          "default": null,
+          "validator": "is_bool"
+        }
+      },
+      "parse": null
+    },
+    "connectivity": {
+      "cli_command": [
+        "connectivity"
+      ],
+      "default_flags": {},
+      "args": {
+        "as": {
+          "literal_name": "as",
+          "default": null,
+          "validator": "is_str"
+        },
+        "as-group": {
+          "literal_name": "as-group",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "context": {
+          "literal_name": "context",
+          "default": null,
+          "validator": "is_str"
+        },
+        "helm-release-name": {
+          "literal_name": "helm-release-name",
+          "default": null,
+          "validator": "is_str"
+        },
+        "help": {
+          "literal_name": "help",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "kubeconfig": {
+          "literal_name": "kubeconfig",
+          "default": null,
+          "validator": "is_str"
+        },
+        "namespace": {
+          "literal_name": "namespace",
+          "default": null,
+          "validator": "is_str"
+        },
+        "help\"": {
+          "literal_name": "help\"",
+          "default": null,
+          "validator": "is_bool"
+        }
+      },
+      "parse": null
+    },
+    "connectivity_perf": {
+      "cli_command": [
+        "connectivity",
+        "perf"
+      ],
+      "default_flags": {},
+      "args": {
+        "as": {
+          "literal_name": "as",
+          "default": null,
+          "validator": "is_str"
+        },
+        "as-group": {
+          "literal_name": "as-group",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "context": {
+          "literal_name": "context",
+          "default": null,
+          "validator": "is_str"
+        },
+        "helm-release-name": {
+          "literal_name": "helm-release-name",
+          "default": null,
+          "validator": "is_str"
+        },
+        "help": {
+          "literal_name": "help",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "kubeconfig": {
+          "literal_name": "kubeconfig",
+          "default": null,
+          "validator": "is_str"
+        },
+        "namespace": {
+          "literal_name": "namespace",
+          "default": null,
+          "validator": "is_str"
+        },
+        "help\"": {
+          "literal_name": "help\"",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "crr": {
+          "literal_name": "crr",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "debug": {
+          "literal_name": "debug",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "duration": {
+          "literal_name": "duration",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "host-net": {
+          "literal_name": "host-net",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "host-to-pod": {
+          "literal_name": "host-to-pod",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "msg-size": {
+          "literal_name": "msg-size",
+          "default": null,
+          "validator": "is_int"
+        },
+        "namespace-labels": {
+          "literal_name": "namespace-labels",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "net-qos": {
+          "literal_name": "net-qos",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "node-selector-client": {
+          "literal_name": "node-selector-client",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "node-selector-server": {
+          "literal_name": "node-selector-server",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "other-node": {
+          "literal_name": "other-node",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "performance-image": {
+          "literal_name": "performance-image",
+          "default": null,
+          "validator": "is_str"
+        },
+        "pod-net": {
+          "literal_name": "pod-net",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "pod-to-host": {
+          "literal_name": "pod-to-host",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "print-image-artifacts": {
+          "literal_name": "print-image-artifacts",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "report-dir": {
+          "literal_name": "report-dir",
+          "default": null,
+          "validator": "is_str"
+        },
+        "rr": {
+          "literal_name": "rr",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "same-node": {
+          "literal_name": "same-node",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "samples": {
+          "literal_name": "samples",
+          "default": null,
+          "validator": "is_int"
+        },
+        "setup-delay": {
+          "literal_name": "setup-delay",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "streams": {
+          "literal_name": "streams",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "test-namespace": {
+          "literal_name": "test-namespace",
+          "default": null,
+          "validator": "is_str"
+        },
+        "throughput": {
+          "literal_name": "throughput",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "throughput-multi": {
+          "literal_name": "throughput-multi",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "tolerations": {
+          "literal_name": "tolerations",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "udp": {
+          "literal_name": "udp",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "unsafe-capture-kernel-profiles": {
+          "literal_name": "unsafe-capture-kernel-profiles",
+          "default": null,
+          "validator": "is_bool"
+        }
+      },
+      "parse": null
+    },
+    "connectivity_test": {
+      "cli_command": [
+        "connectivity",
+        "test"
+      ],
+      "default_flags": {},
+      "args": {
+        "as": {
+          "literal_name": "as",
+          "default": null,
+          "validator": "is_str"
+        },
+        "as-group": {
+          "literal_name": "as-group",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "context": {
+          "literal_name": "context",
+          "default": null,
+          "validator": "is_str"
+        },
+        "helm-release-name": {
+          "literal_name": "helm-release-name",
+          "default": null,
+          "validator": "is_str"
+        },
+        "help": {
+          "literal_name": "help",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "kubeconfig": {
+          "literal_name": "kubeconfig",
+          "default": null,
+          "validator": "is_str"
+        },
+        "namespace": {
+          "literal_name": "namespace",
+          "default": null,
+          "validator": "is_str"
+        },
+        "help\"": {
+          "literal_name": "help\"",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "agent-daemonset-name": {
+          "literal_name": "agent-daemonset-name",
+          "default": null,
+          "validator": "is_str"
+        },
+        "agent-pod-selector": {
+          "literal_name": "agent-pod-selector",
+          "default": null,
+          "validator": "is_str"
+        },
+        "all-flows": {
+          "literal_name": "all-flows",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "assume-cilium-version": {
+          "literal_name": "assume-cilium-version",
+          "default": null,
+          "validator": "is_str"
+        },
+        "chart-directory": {
+          "literal_name": "chart-directory",
+          "default": null,
+          "validator": "is_str"
+        },
+        "cilium-pod-selector": {
+          "literal_name": "cilium-pod-selector",
+          "default": null,
+          "validator": "is_str"
+        },
+        "collect-sysdump-on-failure": {
+          "literal_name": "collect-sysdump-on-failure",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "conn-disrupt-dispatch-interval": {
+          "literal_name": "conn-disrupt-dispatch-interval",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "conn-disrupt-test-restarts-path": {
+          "literal_name": "conn-disrupt-test-restarts-path",
+          "default": null,
+          "validator": "is_str"
+        },
+        "conn-disrupt-test-setup": {
+          "literal_name": "conn-disrupt-test-setup",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "conn-disrupt-test-xfrm-errors-path": {
+          "literal_name": "conn-disrupt-test-xfrm-errors-path",
+          "default": null,
+          "validator": "is_str"
+        },
+        "connect-timeout": {
+          "literal_name": "connect-timeout",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "curl-image": {
+          "literal_name": "curl-image",
+          "default": null,
+          "validator": "is_str"
+        },
+        "curl-insecure": {
+          "literal_name": "curl-insecure",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "curl-parallel": {
+          "literal_name": "curl-parallel",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "debug": {
+          "literal_name": "debug",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "dns-test-server-image": {
+          "literal_name": "dns-test-server-image",
+          "default": null,
+          "validator": "is_str"
+        },
+        "external-cidr": {
+          "literal_name": "external-cidr",
+          "default": null,
+          "validator": "is_str"
+        },
+        "external-ip": {
+          "literal_name": "external-ip",
+          "default": null,
+          "validator": "is_str"
+        },
+        "external-other-ip": {
+          "literal_name": "external-other-ip",
+          "default": null,
+          "validator": "is_str"
+        },
+        "external-other-target": {
+          "literal_name": "external-other-target",
+          "default": null,
+          "validator": "is_str"
+        },
+        "external-target": {
+          "literal_name": "external-target",
+          "default": null,
+          "validator": "is_str"
+        },
+        "external-target-ca-name": {
+          "literal_name": "external-target-ca-name",
+          "default": null,
+          "validator": "is_str"
+        },
+        "external-target-ca-namespace": {
+          "literal_name": "external-target-ca-namespace",
+          "default": null,
+          "validator": "is_str"
+        },
+        "flow-validation": {
+          "literal_name": "flow-validation",
+          "default": null,
+          "validator": "is_str"
+        },
+        "force-deploy": {
+          "literal_name": "force-deploy",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "frr-image": {
+          "literal_name": "frr-image",
+          "default": null,
+          "validator": "is_str"
+        },
+        "helm-values-secret-name": {
+          "literal_name": "helm-values-secret-name",
+          "default": null,
+          "validator": "is_str"
+        },
+        "hubble": {
+          "literal_name": "hubble",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "hubble-server": {
+          "literal_name": "hubble-server",
+          "default": null,
+          "validator": "is_str"
+        },
+        "include-conn-disrupt-test": {
+          "literal_name": "include-conn-disrupt-test",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "include-conn-disrupt-test-egw": {
+          "literal_name": "include-conn-disrupt-test-egw",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "include-conn-disrupt-test-ns-traffic": {
+          "literal_name": "include-conn-disrupt-test-ns-traffic",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "ip-families": {
+          "literal_name": "ip-families",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "json-mock-image": {
+          "literal_name": "json-mock-image",
+          "default": null,
+          "validator": "is_str"
+        },
+        "junit-file": {
+          "literal_name": "junit-file",
+          "default": null,
+          "validator": "is_str"
+        },
+        "junit-property": {
+          "literal_name": "junit-property",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "k8s-version": {
+          "literal_name": "k8s-version",
+          "default": null,
+          "validator": "is_str"
+        },
+        "multi-cluster": {
+          "literal_name": "multi-cluster",
+          "default": null,
+          "validator": "is_str"
+        },
+        "namespace-labels": {
+          "literal_name": "namespace-labels",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "node-cidr": {
+          "literal_name": "node-cidr",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "node-selector": {
+          "literal_name": "node-selector",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "pause-on-fail": {
+          "literal_name": "pause-on-fail",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "post-test-sleep": {
+          "literal_name": "post-test-sleep",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "print-flows": {
+          "literal_name": "print-flows",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "print-image-artifacts": {
+          "literal_name": "print-image-artifacts",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "request-timeout": {
+          "literal_name": "request-timeout",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "retry": {
+          "literal_name": "retry",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "retry-delay": {
+          "literal_name": "retry-delay",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "secondary-network-iface": {
+          "literal_name": "secondary-network-iface",
+          "default": null,
+          "validator": "is_str"
+        },
+        "service-type": {
+          "literal_name": "service-type",
+          "default": null,
+          "validator": "is_str"
+        },
+        "single-node": {
+          "literal_name": "single-node",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "socat-image": {
+          "literal_name": "socat-image",
+          "default": null,
+          "validator": "is_str"
+        },
+        "sysdump-cilium-bugtool-flags": {
+          "literal_name": "sysdump-cilium-bugtool-flags",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "sysdump-cilium-daemon-set-label-selector": {
+          "literal_name": "sysdump-cilium-daemon-set-label-selector",
+          "default": null,
+          "validator": "is_str"
+        },
+        "sysdump-cilium-envoy-label-selector": {
+          "literal_name": "sysdump-cilium-envoy-label-selector",
+          "default": null,
+          "validator": "is_str"
+        },
+        "sysdump-cilium-helm-release-name": {
+          "literal_name": "sysdump-cilium-helm-release-name",
+          "default": null,
+          "validator": "is_str"
+        },
+        "sysdump-cilium-label-selector": {
+          "literal_name": "sysdump-cilium-label-selector",
+          "default": null,
+          "validator": "is_str"
+        },
+        "sysdump-cilium-namespace": {
+          "literal_name": "sysdump-cilium-namespace",
+          "default": null,
+          "validator": "is_str"
+        },
+        "sysdump-cilium-node-init-selector": {
+          "literal_name": "sysdump-cilium-node-init-selector",
+          "default": null,
+          "validator": "is_str"
+        },
+        "sysdump-cilium-operator-label-selector": {
+          "literal_name": "sysdump-cilium-operator-label-selector",
+          "default": null,
+          "validator": "is_str"
+        },
+        "sysdump-cilium-operator-namespace": {
+          "literal_name": "sysdump-cilium-operator-namespace",
+          "default": null,
+          "validator": "is_str"
+        },
+        "sysdump-cilium-spire-agent-selector": {
+          "literal_name": "sysdump-cilium-spire-agent-selector",
+          "default": null,
+          "validator": "is_str"
+        },
+        "sysdump-cilium-spire-namespace": {
+          "literal_name": "sysdump-cilium-spire-namespace",
+          "default": null,
+          "validator": "is_str"
+        },
+        "sysdump-cilium-spire-server-selector": {
+          "literal_name": "sysdump-cilium-spire-server-selector",
+          "default": null,
+          "validator": "is_str"
+        },
+        "sysdump-clustermesh-apiserver-label-selector": {
+          "literal_name": "sysdump-clustermesh-apiserver-label-selector",
+          "default": null,
+          "validator": "is_str"
+        },
+        "sysdump-cni-config-directory": {
+          "literal_name": "sysdump-cni-config-directory",
+          "default": null,
+          "validator": "is_str"
+        },
+        "sysdump-cni-configmap-name": {
+          "literal_name": "sysdump-cni-configmap-name",
+          "default": null,
+          "validator": "is_str"
+        },
+        "sysdump-collect-logs-from-not-ready-agents": {
+          "literal_name": "sysdump-collect-logs-from-not-ready-agents",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "sysdump-copy-retry-limit": {
+          "literal_name": "sysdump-copy-retry-limit",
+          "default": null,
+          "validator": "is_int"
+        },
+        "sysdump-debug": {
+          "literal_name": "sysdump-debug",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "sysdump-detect-gops-pid": {
+          "literal_name": "sysdump-detect-gops-pid",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "sysdump-extra-label-selectors": {
+          "literal_name": "sysdump-extra-label-selectors",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "sysdump-hubble-flows-count": {
+          "literal_name": "sysdump-hubble-flows-count",
+          "default": null,
+          "validator": "is_int"
+        },
+        "sysdump-hubble-flows-timeout": {
+          "literal_name": "sysdump-hubble-flows-timeout",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "sysdump-hubble-generate-certs-labels": {
+          "literal_name": "sysdump-hubble-generate-certs-labels",
+          "default": null,
+          "validator": "is_str"
+        },
+        "sysdump-hubble-label-selector": {
+          "literal_name": "sysdump-hubble-label-selector",
+          "default": null,
+          "validator": "is_str"
+        },
+        "sysdump-hubble-relay-labels": {
+          "literal_name": "sysdump-hubble-relay-labels",
+          "default": null,
+          "validator": "is_str"
+        },
+        "sysdump-hubble-ui-labels": {
+          "literal_name": "sysdump-hubble-ui-labels",
+          "default": null,
+          "validator": "is_str"
+        },
+        "sysdump-logs-limit-bytes": {
+          "literal_name": "sysdump-logs-limit-bytes",
+          "default": null,
+          "validator": "is_int"
+        },
+        "sysdump-logs-since-time": {
+          "literal_name": "sysdump-logs-since-time",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "sysdump-node-list": {
+          "literal_name": "sysdump-node-list",
+          "default": null,
+          "validator": "is_str"
+        },
+        "sysdump-output-filename": {
+          "literal_name": "sysdump-output-filename",
+          "default": null,
+          "validator": "is_str"
+        },
+        "sysdump-profiling": {
+          "literal_name": "sysdump-profiling",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "sysdump-quick": {
+          "literal_name": "sysdump-quick",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "sysdump-tetragon-helm-release-name": {
+          "literal_name": "sysdump-tetragon-helm-release-name",
+          "default": null,
+          "validator": "is_str"
+        },
+        "sysdump-tetragon-label-selector": {
+          "literal_name": "sysdump-tetragon-label-selector",
+          "default": null,
+          "validator": "is_str"
+        },
+        "sysdump-tetragon-namespace": {
+          "literal_name": "sysdump-tetragon-namespace",
+          "default": null,
+          "validator": "is_str"
+        },
+        "sysdump-tetragon-operator-label-selector": {
+          "literal_name": "sysdump-tetragon-operator-label-selector",
+          "default": null,
+          "validator": "is_str"
+        },
+        "sysdump-tracing": {
+          "literal_name": "sysdump-tracing",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "sysdump-worker-count": {
+          "literal_name": "sysdump-worker-count",
+          "default": null,
+          "validator": "is_int"
+        },
+        "test": {
+          "literal_name": "test",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "test-concurrency": {
+          "literal_name": "test-concurrency",
+          "default": null,
+          "validator": "is_int"
+        },
+        "test-conn-disrupt-image": {
+          "literal_name": "test-conn-disrupt-image",
+          "default": null,
+          "validator": "is_str"
+        },
+        "test-namespace": {
+          "literal_name": "test-namespace",
+          "default": null,
+          "validator": "is_str"
+        },
+        "timeout": {
+          "literal_name": "timeout",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "timestamp": {
+          "literal_name": "timestamp",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "verbose": {
+          "literal_name": "verbose",
+          "default": null,
+          "validator": "is_bool"
+        }
+      },
+      "parse": null
+    },
+    "context": {
+      "cli_command": [
+        "context"
+      ],
+      "default_flags": {},
+      "args": {
+        "as": {
+          "literal_name": "as",
+          "default": null,
+          "validator": "is_str"
+        },
+        "as-group": {
+          "literal_name": "as-group",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "context": {
+          "literal_name": "context",
+          "default": null,
+          "validator": "is_str"
+        },
+        "helm-release-name": {
+          "literal_name": "helm-release-name",
+          "default": null,
+          "validator": "is_str"
+        },
+        "help": {
+          "literal_name": "help",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "kubeconfig": {
+          "literal_name": "kubeconfig",
+          "default": null,
+          "validator": "is_str"
+        },
+        "namespace": {
+          "literal_name": "namespace",
+          "default": null,
+          "validator": "is_str"
+        },
+        "help\"": {
+          "literal_name": "help\"",
+          "default": null,
+          "validator": "is_bool"
+        }
+      },
+      "parse": null
+    },
+    "encryption": {
+      "cli_command": [
+        "encryption"
+      ],
+      "default_flags": {},
+      "args": {
+        "as": {
+          "literal_name": "as",
+          "default": null,
+          "validator": "is_str"
+        },
+        "as-group": {
+          "literal_name": "as-group",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "context": {
+          "literal_name": "context",
+          "default": null,
+          "validator": "is_str"
+        },
+        "helm-release-name": {
+          "literal_name": "helm-release-name",
+          "default": null,
+          "validator": "is_str"
+        },
+        "help": {
+          "literal_name": "help",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "kubeconfig": {
+          "literal_name": "kubeconfig",
+          "default": null,
+          "validator": "is_str"
+        },
+        "namespace": {
+          "literal_name": "namespace",
+          "default": null,
+          "validator": "is_str"
+        },
+        "help\"": {
+          "literal_name": "help\"",
+          "default": null,
+          "validator": "is_bool"
+        }
+      },
+      "parse": null
+    },
+    "encryption_key_status": {
+      "cli_command": [
+        "encryption",
+        "key-status"
+      ],
+      "default_flags": {
+        "output": "json"
+      },
+      "args": {
+        "as": {
+          "literal_name": "as",
+          "default": null,
+          "validator": "is_str"
+        },
+        "as-group": {
+          "literal_name": "as-group",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "context": {
+          "literal_name": "context",
+          "default": null,
+          "validator": "is_str"
+        },
+        "helm-release-name": {
+          "literal_name": "helm-release-name",
+          "default": null,
+          "validator": "is_str"
+        },
+        "help": {
+          "literal_name": "help",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "kubeconfig": {
+          "literal_name": "kubeconfig",
+          "default": null,
+          "validator": "is_str"
+        },
+        "namespace": {
+          "literal_name": "namespace",
+          "default": null,
+          "validator": "is_str"
+        },
+        "help\"": {
+          "literal_name": "help\"",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "output": {
+          "literal_name": "output",
+          "default": null,
+          "validator": "is_str"
+        },
+        "wait-duration": {
+          "literal_name": "wait-duration",
+          "default": null,
+          "validator": "is_bool"
+        }
+      },
+      "parse": "json"
+    },
+    "encryption_rotate_key": {
+      "cli_command": [
+        "encryption",
+        "rotate-key"
+      ],
+      "default_flags": {},
+      "args": {
+        "as": {
+          "literal_name": "as",
+          "default": null,
+          "validator": "is_str"
+        },
+        "as-group": {
+          "literal_name": "as-group",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "context": {
+          "literal_name": "context",
+          "default": null,
+          "validator": "is_str"
+        },
+        "helm-release-name": {
+          "literal_name": "helm-release-name",
+          "default": null,
+          "validator": "is_str"
+        },
+        "help": {
+          "literal_name": "help",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "kubeconfig": {
+          "literal_name": "kubeconfig",
+          "default": null,
+          "validator": "is_str"
+        },
+        "namespace": {
+          "literal_name": "namespace",
+          "default": null,
+          "validator": "is_str"
+        },
+        "help\"": {
+          "literal_name": "help\"",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "auth-algo": {
+          "literal_name": "auth-algo",
+          "default": null,
+          "validator": "is_str"
+        },
+        "wait-duration": {
+          "literal_name": "wait-duration",
+          "default": null,
+          "validator": "is_bool"
+        }
+      },
+      "parse": null
+    },
+    "encryption_status": {
+      "cli_command": [
+        "encryption",
+        "status"
+      ],
+      "default_flags": {
+        "output": "json"
+      },
+      "args": {
+        "as": {
+          "literal_name": "as",
+          "default": null,
+          "validator": "is_str"
+        },
+        "as-group": {
+          "literal_name": "as-group",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "context": {
+          "literal_name": "context",
+          "default": null,
+          "validator": "is_str"
+        },
+        "helm-release-name": {
+          "literal_name": "helm-release-name",
+          "default": null,
+          "validator": "is_str"
+        },
+        "help": {
+          "literal_name": "help",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "kubeconfig": {
+          "literal_name": "kubeconfig",
+          "default": null,
+          "validator": "is_str"
+        },
+        "namespace": {
+          "literal_name": "namespace",
+          "default": null,
+          "validator": "is_str"
+        },
+        "help\"": {
+          "literal_name": "help\"",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "agent-pod-selector": {
+          "literal_name": "agent-pod-selector",
+          "default": null,
+          "validator": "is_str"
+        },
+        "node": {
+          "literal_name": "node",
+          "default": null,
+          "validator": "is_str"
+        },
+        "output": {
+          "literal_name": "output",
+          "default": null,
+          "validator": "is_str"
+        },
+        "per-node-details": {
+          "literal_name": "per-node-details",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "wait-duration": {
+          "literal_name": "wait-duration",
+          "default": null,
+          "validator": "is_bool"
+        }
+      },
+      "parse": "json"
+    },
+    "features": {
+      "cli_command": [
+        "features"
+      ],
+      "default_flags": {},
+      "args": {
+        "as": {
+          "literal_name": "as",
+          "default": null,
+          "validator": "is_str"
+        },
+        "as-group": {
+          "literal_name": "as-group",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "context": {
+          "literal_name": "context",
+          "default": null,
+          "validator": "is_str"
+        },
+        "helm-release-name": {
+          "literal_name": "helm-release-name",
+          "default": null,
+          "validator": "is_str"
+        },
+        "help": {
+          "literal_name": "help",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "kubeconfig": {
+          "literal_name": "kubeconfig",
+          "default": null,
+          "validator": "is_str"
+        },
+        "namespace": {
+          "literal_name": "namespace",
+          "default": null,
+          "validator": "is_str"
+        },
+        "help\"": {
+          "literal_name": "help\"",
+          "default": null,
+          "validator": "is_bool"
+        }
+      },
+      "parse": null
+    },
+    "features_status": {
+      "cli_command": [
+        "features",
+        "status"
+      ],
+      "default_flags": {
+        "output": "json"
+      },
+      "args": {
+        "as": {
+          "literal_name": "as",
+          "default": null,
+          "validator": "is_str"
+        },
+        "as-group": {
+          "literal_name": "as-group",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "context": {
+          "literal_name": "context",
+          "default": null,
+          "validator": "is_str"
+        },
+        "helm-release-name": {
+          "literal_name": "helm-release-name",
+          "default": null,
+          "validator": "is_str"
+        },
+        "help": {
+          "literal_name": "help",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "kubeconfig": {
+          "literal_name": "kubeconfig",
+          "default": null,
+          "validator": "is_str"
+        },
+        "namespace": {
+          "literal_name": "namespace",
+          "default": null,
+          "validator": "is_str"
+        },
+        "help\"": {
+          "literal_name": "help\"",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "agent-pod-selector": {
+          "literal_name": "agent-pod-selector",
+          "default": null,
+          "validator": "is_str"
+        },
+        "node": {
+          "literal_name": "node",
+          "default": null,
+          "validator": "is_str"
+        },
+        "operator-container-command": {
+          "literal_name": "operator-container-command",
+          "default": null,
+          "validator": "is_str"
+        },
+        "operator-node": {
+          "literal_name": "operator-node",
+          "default": null,
+          "validator": "is_str"
+        },
+        "operator-pod-selector": {
+          "literal_name": "operator-pod-selector",
+          "default": null,
+          "validator": "is_str"
+        },
+        "output": {
+          "literal_name": "output",
+          "default": null,
+          "validator": "is_str"
+        },
+        "output-file": {
+          "literal_name": "output-file",
+          "default": null,
+          "validator": "is_str"
+        },
+        "wait-duration": {
+          "literal_name": "wait-duration",
+          "default": null,
+          "validator": "is_bool"
+        }
+      },
+      "parse": "json"
+    },
+    "features_summary": {
+      "cli_command": [
+        "features",
+        "summary"
+      ],
+      "default_flags": {
+        "output": "json"
+      },
+      "args": {
+        "as": {
+          "literal_name": "as",
+          "default": null,
+          "validator": "is_str"
+        },
+        "as-group": {
+          "literal_name": "as-group",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "context": {
+          "literal_name": "context",
+          "default": null,
+          "validator": "is_str"
+        },
+        "helm-release-name": {
+          "literal_name": "helm-release-name",
+          "default": null,
+          "validator": "is_str"
+        },
+        "help": {
+          "literal_name": "help",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "kubeconfig": {
+          "literal_name": "kubeconfig",
+          "default": null,
+          "validator": "is_str"
+        },
+        "namespace": {
+          "literal_name": "namespace",
+          "default": null,
+          "validator": "is_str"
+        },
+        "help\"": {
+          "literal_name": "help\"",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "anchor": {
+          "literal_name": "anchor",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "commit": {
+          "literal_name": "commit",
+          "default": null,
+          "validator": "is_str"
+        },
+        "metrics-directory": {
+          "literal_name": "metrics-directory",
+          "default": null,
+          "validator": "is_str"
+        },
+        "output": {
+          "literal_name": "output",
+          "default": null,
+          "validator": "is_str"
+        },
+        "output-file": {
+          "literal_name": "output-file",
+          "default": null,
+          "validator": "is_str"
+        },
+        "repo": {
+          "literal_name": "repo",
+          "default": null,
+          "validator": "is_str"
+        }
+      },
+      "parse": "json"
+    },
+    "help": {
+      "cli_command": [
+        "help"
+      ],
+      "default_flags": {},
+      "args": {
+        "as": {
+          "literal_name": "as",
+          "default": null,
+          "validator": "is_str"
+        },
+        "as-group": {
+          "literal_name": "as-group",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "context": {
+          "literal_name": "context",
+          "default": null,
+          "validator": "is_str"
+        },
+        "helm-release-name": {
+          "literal_name": "helm-release-name",
+          "default": null,
+          "validator": "is_str"
+        },
+        "help": {
+          "literal_name": "help",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "kubeconfig": {
+          "literal_name": "kubeconfig",
+          "default": null,
+          "validator": "is_str"
+        },
+        "namespace": {
+          "literal_name": "namespace",
+          "default": null,
+          "validator": "is_str"
+        },
+        "help\"": {
+          "literal_name": "help\"",
+          "default": null,
+          "validator": "is_bool"
+        }
+      },
+      "parse": null
+    },
+    "hubble": {
+      "cli_command": [
+        "hubble"
+      ],
+      "default_flags": {},
+      "args": {
+        "as": {
+          "literal_name": "as",
+          "default": null,
+          "validator": "is_str"
+        },
+        "as-group": {
+          "literal_name": "as-group",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "context": {
+          "literal_name": "context",
+          "default": null,
+          "validator": "is_str"
+        },
+        "helm-release-name": {
+          "literal_name": "helm-release-name",
+          "default": null,
+          "validator": "is_str"
+        },
+        "help": {
+          "literal_name": "help",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "kubeconfig": {
+          "literal_name": "kubeconfig",
+          "default": null,
+          "validator": "is_str"
+        },
+        "namespace": {
+          "literal_name": "namespace",
+          "default": null,
+          "validator": "is_str"
+        },
+        "help\"": {
+          "literal_name": "help\"",
+          "default": null,
+          "validator": "is_bool"
+        }
+      },
+      "parse": null
+    },
+    "hubble_disable": {
+      "cli_command": [
+        "hubble",
+        "disable"
+      ],
+      "default_flags": {},
+      "args": {
+        "as": {
+          "literal_name": "as",
+          "default": null,
+          "validator": "is_str"
+        },
+        "as-group": {
+          "literal_name": "as-group",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "context": {
+          "literal_name": "context",
+          "default": null,
+          "validator": "is_str"
+        },
+        "helm-release-name": {
+          "literal_name": "helm-release-name",
+          "default": null,
+          "validator": "is_str"
+        },
+        "help": {
+          "literal_name": "help",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "kubeconfig": {
+          "literal_name": "kubeconfig",
+          "default": null,
+          "validator": "is_str"
+        },
+        "namespace": {
+          "literal_name": "namespace",
+          "default": null,
+          "validator": "is_str"
+        },
+        "help\"": {
+          "literal_name": "help\"",
+          "default": null,
+          "validator": "is_bool"
+        }
+      },
+      "parse": null
+    },
+    "hubble_enable": {
+      "cli_command": [
+        "hubble",
+        "enable"
+      ],
+      "default_flags": {},
+      "args": {
+        "as": {
+          "literal_name": "as",
+          "default": null,
+          "validator": "is_str"
+        },
+        "as-group": {
+          "literal_name": "as-group",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "context": {
+          "literal_name": "context",
+          "default": null,
+          "validator": "is_str"
+        },
+        "helm-release-name": {
+          "literal_name": "helm-release-name",
+          "default": null,
+          "validator": "is_str"
+        },
+        "help": {
+          "literal_name": "help",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "kubeconfig": {
+          "literal_name": "kubeconfig",
+          "default": null,
+          "validator": "is_str"
+        },
+        "namespace": {
+          "literal_name": "namespace",
+          "default": null,
+          "validator": "is_str"
+        },
+        "help\"": {
+          "literal_name": "help\"",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "relay": {
+          "literal_name": "relay",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "ui": {
+          "literal_name": "ui",
+          "default": null,
+          "validator": "is_bool"
+        }
+      },
+      "parse": null
+    },
+    "hubble_port_forward": {
+      "cli_command": [
+        "hubble",
+        "port-forward"
+      ],
+      "default_flags": {},
+      "args": {
+        "as": {
+          "literal_name": "as",
+          "default": null,
+          "validator": "is_str"
+        },
+        "as-group": {
+          "literal_name": "as-group",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "context": {
+          "literal_name": "context",
+          "default": null,
+          "validator": "is_str"
+        },
+        "helm-release-name": {
+          "literal_name": "helm-release-name",
+          "default": null,
+          "validator": "is_str"
+        },
+        "help": {
+          "literal_name": "help",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "kubeconfig": {
+          "literal_name": "kubeconfig",
+          "default": null,
+          "validator": "is_str"
+        },
+        "namespace": {
+          "literal_name": "namespace",
+          "default": null,
+          "validator": "is_str"
+        },
+        "help\"": {
+          "literal_name": "help\"",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "port-forward": {
+          "literal_name": "port-forward",
+          "default": null,
+          "validator": "is_int"
+        }
+      },
+      "parse": null
+    },
+    "hubble_ui": {
+      "cli_command": [
+        "hubble",
+        "ui"
+      ],
+      "default_flags": {},
+      "args": {
+        "as": {
+          "literal_name": "as",
+          "default": null,
+          "validator": "is_str"
+        },
+        "as-group": {
+          "literal_name": "as-group",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "context": {
+          "literal_name": "context",
+          "default": null,
+          "validator": "is_str"
+        },
+        "helm-release-name": {
+          "literal_name": "helm-release-name",
+          "default": null,
+          "validator": "is_str"
+        },
+        "help": {
+          "literal_name": "help",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "kubeconfig": {
+          "literal_name": "kubeconfig",
+          "default": null,
+          "validator": "is_str"
+        },
+        "namespace": {
+          "literal_name": "namespace",
+          "default": null,
+          "validator": "is_str"
+        },
+        "help\"": {
+          "literal_name": "help\"",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "open-browser": {
+          "literal_name": "open-browser",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "port-forward": {
+          "literal_name": "port-forward",
+          "default": null,
+          "validator": "is_int"
+        }
+      },
+      "parse": null
+    },
+    "install": {
+      "cli_command": [
+        "install"
+      ],
+      "default_flags": {},
+      "args": {
+        "as": {
+          "literal_name": "as",
+          "default": null,
+          "validator": "is_str"
+        },
+        "as-group": {
+          "literal_name": "as-group",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "context": {
+          "literal_name": "context",
+          "default": null,
+          "validator": "is_str"
+        },
+        "helm-release-name": {
+          "literal_name": "helm-release-name",
+          "default": null,
+          "validator": "is_str"
+        },
+        "help": {
+          "literal_name": "help",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "kubeconfig": {
+          "literal_name": "kubeconfig",
+          "default": null,
+          "validator": "is_str"
+        },
+        "namespace": {
+          "literal_name": "namespace",
+          "default": null,
+          "validator": "is_str"
+        },
+        "help\"": {
+          "literal_name": "help\"",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "chart-directory": {
+          "literal_name": "chart-directory",
+          "default": null,
+          "validator": "is_str"
+        },
+        "datapath-mode": {
+          "literal_name": "datapath-mode",
+          "default": null,
+          "validator": "is_str"
+        },
+        "dry-run": {
+          "literal_name": "dry-run",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "dry-run-helm-values": {
+          "literal_name": "dry-run-helm-values",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "history-max": {
+          "literal_name": "history-max",
+          "default": null,
+          "validator": "is_int"
+        },
+        "list-versions": {
+          "literal_name": "list-versions",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "nodes-without-cilium": {
+          "literal_name": "nodes-without-cilium",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "repository": {
+          "literal_name": "repository",
+          "default": null,
+          "validator": "is_str"
+        },
+        "set": {
+          "literal_name": "set",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "set-file": {
+          "literal_name": "set-file",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "set-string": {
+          "literal_name": "set-string",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "values": {
+          "literal_name": "values",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "version": {
+          "literal_name": "version",
+          "default": null,
+          "validator": "is_str"
+        },
+        "wait": {
+          "literal_name": "wait",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "wait-duration": {
+          "literal_name": "wait-duration",
+          "default": null,
+          "validator": "is_bool"
+        }
+      },
+      "parse": null
+    },
+    "multicast": {
+      "cli_command": [
+        "multicast"
+      ],
+      "default_flags": {},
+      "args": {
+        "as": {
+          "literal_name": "as",
+          "default": null,
+          "validator": "is_str"
+        },
+        "as-group": {
+          "literal_name": "as-group",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "context": {
+          "literal_name": "context",
+          "default": null,
+          "validator": "is_str"
+        },
+        "helm-release-name": {
+          "literal_name": "helm-release-name",
+          "default": null,
+          "validator": "is_str"
+        },
+        "help": {
+          "literal_name": "help",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "kubeconfig": {
+          "literal_name": "kubeconfig",
+          "default": null,
+          "validator": "is_str"
+        },
+        "namespace": {
+          "literal_name": "namespace",
+          "default": null,
+          "validator": "is_str"
+        },
+        "help\"": {
+          "literal_name": "help\"",
+          "default": null,
+          "validator": "is_bool"
+        }
+      },
+      "parse": null
+    },
+    "multicast_add": {
+      "cli_command": [
+        "multicast",
+        "add"
+      ],
+      "default_flags": {},
+      "args": {
+        "as": {
+          "literal_name": "as",
+          "default": null,
+          "validator": "is_str"
+        },
+        "as-group": {
+          "literal_name": "as-group",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "context": {
+          "literal_name": "context",
+          "default": null,
+          "validator": "is_str"
+        },
+        "helm-release-name": {
+          "literal_name": "helm-release-name",
+          "default": null,
+          "validator": "is_str"
+        },
+        "help": {
+          "literal_name": "help",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "kubeconfig": {
+          "literal_name": "kubeconfig",
+          "default": null,
+          "validator": "is_str"
+        },
+        "namespace": {
+          "literal_name": "namespace",
+          "default": null,
+          "validator": "is_str"
+        },
+        "help\"": {
+          "literal_name": "help\"",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "group-ip": {
+          "literal_name": "group-ip",
+          "default": null,
+          "validator": "is_str"
+        },
+        "wait-duration": {
+          "literal_name": "wait-duration",
+          "default": null,
+          "validator": "is_bool"
+        }
+      },
+      "parse": null
+    },
+    "multicast_delete": {
+      "cli_command": [
+        "multicast",
+        "delete"
+      ],
+      "default_flags": {},
+      "args": {
+        "as": {
+          "literal_name": "as",
+          "default": null,
+          "validator": "is_str"
+        },
+        "as-group": {
+          "literal_name": "as-group",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "context": {
+          "literal_name": "context",
+          "default": null,
+          "validator": "is_str"
+        },
+        "helm-release-name": {
+          "literal_name": "helm-release-name",
+          "default": null,
+          "validator": "is_str"
+        },
+        "help": {
+          "literal_name": "help",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "kubeconfig": {
+          "literal_name": "kubeconfig",
+          "default": null,
+          "validator": "is_str"
+        },
+        "namespace": {
+          "literal_name": "namespace",
+          "default": null,
+          "validator": "is_str"
+        },
+        "help\"": {
+          "literal_name": "help\"",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "group-ip": {
+          "literal_name": "group-ip",
+          "default": null,
+          "validator": "is_str"
+        },
+        "wait-duration": {
+          "literal_name": "wait-duration",
+          "default": null,
+          "validator": "is_bool"
+        }
+      },
+      "parse": null
+    },
+    "multicast_list": {
+      "cli_command": [
+        "multicast",
+        "list"
+      ],
+      "default_flags": {},
+      "args": {
+        "as": {
+          "literal_name": "as",
+          "default": null,
+          "validator": "is_str"
+        },
+        "as-group": {
+          "literal_name": "as-group",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "context": {
+          "literal_name": "context",
+          "default": null,
+          "validator": "is_str"
+        },
+        "helm-release-name": {
+          "literal_name": "helm-release-name",
+          "default": null,
+          "validator": "is_str"
+        },
+        "help": {
+          "literal_name": "help",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "kubeconfig": {
+          "literal_name": "kubeconfig",
+          "default": null,
+          "validator": "is_str"
+        },
+        "namespace": {
+          "literal_name": "namespace",
+          "default": null,
+          "validator": "is_str"
+        },
+        "help\"": {
+          "literal_name": "help\"",
+          "default": null,
+          "validator": "is_bool"
+        }
+      },
+      "parse": null
+    },
+    "status": {
+      "cli_command": [
+        "status"
+      ],
+      "default_flags": {
+        "output": "json"
+      },
+      "args": {
+        "as": {
+          "literal_name": "as",
+          "default": null,
+          "validator": "is_str"
+        },
+        "as-group": {
+          "literal_name": "as-group",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "context": {
+          "literal_name": "context",
+          "default": null,
+          "validator": "is_str"
+        },
+        "helm-release-name": {
+          "literal_name": "helm-release-name",
+          "default": null,
+          "validator": "is_str"
+        },
+        "help": {
+          "literal_name": "help",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "kubeconfig": {
+          "literal_name": "kubeconfig",
+          "default": null,
+          "validator": "is_str"
+        },
+        "namespace": {
+          "literal_name": "namespace",
+          "default": null,
+          "validator": "is_str"
+        },
+        "help\"": {
+          "literal_name": "help\"",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "ignore-warnings": {
+          "literal_name": "ignore-warnings",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "interactive": {
+          "literal_name": "interactive",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "output": {
+          "literal_name": "output",
+          "default": null,
+          "validator": "is_str"
+        },
+        "verbose": {
+          "literal_name": "verbose",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "wait": {
+          "literal_name": "wait",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "wait-duration": {
+          "literal_name": "wait-duration",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "worker-count": {
+          "literal_name": "worker-count",
+          "default": null,
+          "validator": "is_int"
+        }
+      },
+      "parse": "json"
+    },
+    "sysdump": {
+      "cli_command": [
+        "sysdump"
+      ],
+      "default_flags": {},
+      "args": {
+        "as": {
+          "literal_name": "as",
+          "default": null,
+          "validator": "is_str"
+        },
+        "as-group": {
+          "literal_name": "as-group",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "context": {
+          "literal_name": "context",
+          "default": null,
+          "validator": "is_str"
+        },
+        "helm-release-name": {
+          "literal_name": "helm-release-name",
+          "default": null,
+          "validator": "is_str"
+        },
+        "help": {
+          "literal_name": "help",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "kubeconfig": {
+          "literal_name": "kubeconfig",
+          "default": null,
+          "validator": "is_str"
+        },
+        "namespace": {
+          "literal_name": "namespace",
+          "default": null,
+          "validator": "is_str"
+        },
+        "help\"": {
+          "literal_name": "help\"",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "cilium-bugtool-flags": {
+          "literal_name": "cilium-bugtool-flags",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "cilium-daemon-set-label-selector": {
+          "literal_name": "cilium-daemon-set-label-selector",
+          "default": null,
+          "validator": "is_str"
+        },
+        "cilium-envoy-label-selector": {
+          "literal_name": "cilium-envoy-label-selector",
+          "default": null,
+          "validator": "is_str"
+        },
+        "cilium-helm-release-name": {
+          "literal_name": "cilium-helm-release-name",
+          "default": null,
+          "validator": "is_str"
+        },
+        "cilium-label-selector": {
+          "literal_name": "cilium-label-selector",
+          "default": null,
+          "validator": "is_str"
+        },
+        "cilium-namespace": {
+          "literal_name": "cilium-namespace",
+          "default": null,
+          "validator": "is_str"
+        },
+        "cilium-node-init-selector": {
+          "literal_name": "cilium-node-init-selector",
+          "default": null,
+          "validator": "is_str"
+        },
+        "cilium-operator-label-selector": {
+          "literal_name": "cilium-operator-label-selector",
+          "default": null,
+          "validator": "is_str"
+        },
+        "cilium-operator-namespace": {
+          "literal_name": "cilium-operator-namespace",
+          "default": null,
+          "validator": "is_str"
+        },
+        "cilium-spire-agent-selector": {
+          "literal_name": "cilium-spire-agent-selector",
+          "default": null,
+          "validator": "is_str"
+        },
+        "cilium-spire-namespace": {
+          "literal_name": "cilium-spire-namespace",
+          "default": null,
+          "validator": "is_str"
+        },
+        "cilium-spire-server-selector": {
+          "literal_name": "cilium-spire-server-selector",
+          "default": null,
+          "validator": "is_str"
+        },
+        "clustermesh-apiserver-label-selector": {
+          "literal_name": "clustermesh-apiserver-label-selector",
+          "default": null,
+          "validator": "is_str"
+        },
+        "cni-config-directory": {
+          "literal_name": "cni-config-directory",
+          "default": null,
+          "validator": "is_str"
+        },
+        "cni-configmap-name": {
+          "literal_name": "cni-configmap-name",
+          "default": null,
+          "validator": "is_str"
+        },
+        "collect-logs-from-not-ready-agents": {
+          "literal_name": "collect-logs-from-not-ready-agents",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "copy-retry-limit": {
+          "literal_name": "copy-retry-limit",
+          "default": null,
+          "validator": "is_int"
+        },
+        "debug": {
+          "literal_name": "debug",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "detect-gops-pid": {
+          "literal_name": "detect-gops-pid",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "extra-label-selectors": {
+          "literal_name": "extra-label-selectors",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "hubble-flows-count": {
+          "literal_name": "hubble-flows-count",
+          "default": null,
+          "validator": "is_int"
+        },
+        "hubble-flows-timeout": {
+          "literal_name": "hubble-flows-timeout",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "hubble-generate-certs-labels": {
+          "literal_name": "hubble-generate-certs-labels",
+          "default": null,
+          "validator": "is_str"
+        },
+        "hubble-label-selector": {
+          "literal_name": "hubble-label-selector",
+          "default": null,
+          "validator": "is_str"
+        },
+        "hubble-relay-labels": {
+          "literal_name": "hubble-relay-labels",
+          "default": null,
+          "validator": "is_str"
+        },
+        "hubble-ui-labels": {
+          "literal_name": "hubble-ui-labels",
+          "default": null,
+          "validator": "is_str"
+        },
+        "logs-limit-bytes": {
+          "literal_name": "logs-limit-bytes",
+          "default": null,
+          "validator": "is_int"
+        },
+        "logs-since-time": {
+          "literal_name": "logs-since-time",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "node-list": {
+          "literal_name": "node-list",
+          "default": null,
+          "validator": "is_str"
+        },
+        "output-filename": {
+          "literal_name": "output-filename",
+          "default": null,
+          "validator": "is_str"
+        },
+        "profiling": {
+          "literal_name": "profiling",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "quick": {
+          "literal_name": "quick",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "tetragon-helm-release-name": {
+          "literal_name": "tetragon-helm-release-name",
+          "default": null,
+          "validator": "is_str"
+        },
+        "tetragon-label-selector": {
+          "literal_name": "tetragon-label-selector",
+          "default": null,
+          "validator": "is_str"
+        },
+        "tetragon-namespace": {
+          "literal_name": "tetragon-namespace",
+          "default": null,
+          "validator": "is_str"
+        },
+        "tetragon-operator-label-selector": {
+          "literal_name": "tetragon-operator-label-selector",
+          "default": null,
+          "validator": "is_str"
+        },
+        "tracing": {
+          "literal_name": "tracing",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "worker-count": {
+          "literal_name": "worker-count",
+          "default": null,
+          "validator": "is_int"
+        }
+      },
+      "parse": null
+    },
+    "uninstall": {
+      "cli_command": [
+        "uninstall"
+      ],
+      "default_flags": {},
+      "args": {
+        "as": {
+          "literal_name": "as",
+          "default": null,
+          "validator": "is_str"
+        },
+        "as-group": {
+          "literal_name": "as-group",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "context": {
+          "literal_name": "context",
+          "default": null,
+          "validator": "is_str"
+        },
+        "helm-release-name": {
+          "literal_name": "helm-release-name",
+          "default": null,
+          "validator": "is_str"
+        },
+        "help": {
+          "literal_name": "help",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "kubeconfig": {
+          "literal_name": "kubeconfig",
+          "default": null,
+          "validator": "is_str"
+        },
+        "namespace": {
+          "literal_name": "namespace",
+          "default": null,
+          "validator": "is_str"
+        },
+        "help\"": {
+          "literal_name": "help\"",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "test-namespace": {
+          "literal_name": "test-namespace",
+          "default": null,
+          "validator": "is_str"
+        },
+        "timeout": {
+          "literal_name": "timeout",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "wait": {
+          "literal_name": "wait",
+          "default": null,
+          "validator": "is_bool"
+        }
+      },
+      "parse": null
+    },
+    "upgrade": {
+      "cli_command": [
+        "upgrade"
+      ],
+      "default_flags": {},
+      "args": {
+        "as": {
+          "literal_name": "as",
+          "default": null,
+          "validator": "is_str"
+        },
+        "as-group": {
+          "literal_name": "as-group",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "context": {
+          "literal_name": "context",
+          "default": null,
+          "validator": "is_str"
+        },
+        "helm-release-name": {
+          "literal_name": "helm-release-name",
+          "default": null,
+          "validator": "is_str"
+        },
+        "help": {
+          "literal_name": "help",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "kubeconfig": {
+          "literal_name": "kubeconfig",
+          "default": null,
+          "validator": "is_str"
+        },
+        "namespace": {
+          "literal_name": "namespace",
+          "default": null,
+          "validator": "is_str"
+        },
+        "help\"": {
+          "literal_name": "help\"",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "chart-directory": {
+          "literal_name": "chart-directory",
+          "default": null,
+          "validator": "is_str"
+        },
+        "datapath-mode": {
+          "literal_name": "datapath-mode",
+          "default": null,
+          "validator": "is_str"
+        },
+        "dry-run": {
+          "literal_name": "dry-run",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "dry-run-helm-values": {
+          "literal_name": "dry-run-helm-values",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "history-max": {
+          "literal_name": "history-max",
+          "default": null,
+          "validator": "is_int"
+        },
+        "list-versions": {
+          "literal_name": "list-versions",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "nodes-without-cilium": {
+          "literal_name": "nodes-without-cilium",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "repository": {
+          "literal_name": "repository",
+          "default": null,
+          "validator": "is_str"
+        },
+        "reset-then-reuse-values": {
+          "literal_name": "reset-then-reuse-values",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "reset-values": {
+          "literal_name": "reset-values",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "reuse-values": {
+          "literal_name": "reuse-values",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "set": {
+          "literal_name": "set",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "set-file": {
+          "literal_name": "set-file",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "set-string": {
+          "literal_name": "set-string",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "values": {
+          "literal_name": "values",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "version": {
+          "literal_name": "version",
+          "default": null,
+          "validator": "is_str"
+        },
+        "wait": {
+          "literal_name": "wait",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "wait-duration": {
+          "literal_name": "wait-duration",
+          "default": null,
+          "validator": "is_bool"
+        }
+      },
+      "parse": null
+    },
+    "version": {
+      "cli_command": [
+        "version"
+      ],
+      "default_flags": {},
+      "args": {
+        "as": {
+          "literal_name": "as",
+          "default": null,
+          "validator": "is_str"
+        },
+        "as-group": {
+          "literal_name": "as-group",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "context": {
+          "literal_name": "context",
+          "default": null,
+          "validator": "is_str"
+        },
+        "helm-release-name": {
+          "literal_name": "helm-release-name",
+          "default": null,
+          "validator": "is_str"
+        },
+        "help": {
+          "literal_name": "help",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "kubeconfig": {
+          "literal_name": "kubeconfig",
+          "default": null,
+          "validator": "is_str"
+        },
+        "namespace": {
+          "literal_name": "namespace",
+          "default": null,
+          "validator": "is_str"
+        },
+        "help\"": {
+          "literal_name": "help\"",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "client": {
+          "literal_name": "client",
+          "default": null,
+          "validator": "is_bool"
+        }
+      },
+      "parse": null
+    }
+  },
+  "trusting": true,
+  "async_": false,
+  "default_transformer": "snake2kebab",
+  "short_prefix": "-",
+  "long_prefix": "--",
+  "arg_separator": " "
+}

@@ -52,6 +52,9 @@ class TestCommand:
             },
         )
 
+        command = Command.from_dict({}, cli_command="get")
+        assert command.cli_command == ["get"]
+
         command = Command(
             cli_command="get",
             default_flags={"namespace": "default"},
@@ -79,6 +82,7 @@ class TestCommand:
 
         command.arg_separator = " "
         args = command.build_args("pod", "pod-1", namespace="kube-system")
+        logger.debug(args)
         assert args == ["get", "pod", "pod-1", "--namespace", "kube-system"]
 
         args = command.build_args("pod", "pod-1", arg_without_value=None)
@@ -87,9 +91,7 @@ class TestCommand:
         command = Command(
             cli_command="create",
             default_flags={"namespace": "default"},
-            args={
-                0: {"transformer": lambda x, y: ("filename", "filename")},
-            },
+            args={0: {"transformer": lambda x, y: ("filename", "filename")}, "namespace": "is_str"},
         )
         args = command.build_args({"some": "dict"})
         assert args == ["create", "--filename=filename", "--namespace=default"]
@@ -105,7 +107,7 @@ class TestCommand:
             }
         )
 
-        assert command.cli_command == "get"
+        assert command.cli_command == ["get"]
         assert command.default_flags == {"namespace": "default"}
         assert command.args[1].is_valid("pod-1") is True
         assert command.args[1].is_valid("pod-2") is False
@@ -119,7 +121,14 @@ class TestCommand:
             "--namespace=kube-system",
         ]
 
-        command = Command.from_dict({"cli_command": "get", "args": {}})
+        command = Command.from_dict(
+            {"args": {0: Argument(), "foo": Argument.from_dict({"literal_name": "food"})}}, cli_command="get"
+        )
+        assert command.cli_command == ["get"]
+        assert command.args["foo"].literal_name == "food"
+        assert command.args[0].literal_name == 0
+
+        assert command.build_args("pod", foo="bar") == ["get", "pod", "--food=bar"]
 
 
 class TestCLIWrapper:
@@ -133,7 +142,11 @@ class TestCLIWrapper:
 
         kubectl.trusting = True
 
-        kubectl._update_command("get")
+        # test direct call (as used by help parser)
+        r = kubectl("get", "pods", namespace="kube-system")
+        assert isinstance(r, str)
+
+        kubectl.update_command_("get")
         r = kubectl.get("pods", namespace="kube-system")
 
         assert isinstance(r, str)
@@ -165,7 +178,7 @@ class TestCLIWrapper:
     async def test_subprocessor_async(self):
         fake_kubectl = Path(__file__).parent / "data/fake_kubectl"
         kubectl = CLIWrapper(fake_kubectl.as_posix(), trusting=True, async_=True)
-        kubectl._update_command("get", default_flags={"output": "json"}, parse=loads)
+        kubectl.update_command_("get", default_flags={"output": "json"}, parse=loads)
         r = await kubectl.get("pods", namespace="kube-system")
         assert r["kind"] == "List"
         assert r["items"] is not None
@@ -203,7 +216,7 @@ class TestCLIWrapper:
 
         assert cliwrapper.path == "kubectl"
         assert cliwrapper.trusting is True
-        assert cliwrapper.commands["get"].cli_command == "get"
+        assert cliwrapper.commands["get"].cli_command == ["get"]
         assert cliwrapper.commands["get"].default_flags == {"output": "json"}
         assert cliwrapper.commands["get"].parse('"some json"') == "some json"
 

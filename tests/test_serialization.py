@@ -5,7 +5,7 @@ from cli_wrapper.cli_wrapper import Argument
 class TestSerialization:
     def test_wrapper_to_dict(self):
         kubectl = CLIWrapper("kubectl", trusting=True)
-        kubectl._update_command(
+        kubectl.update_command_(
             "get",
             default_flags={"output": "json"},
             parse="json",

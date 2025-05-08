@@ -1,0 +1,5973 @@
+{
+  "path": "kubectl",
+  "env": null,
+  "commands": {
+    "create": {
+      "cli_command": [
+        "create"
+      ],
+      "default_flags": {
+        "output": "json"
+      },
+      "args": {
+        "allow-missing-template-keys": {
+          "literal_name": "allow-missing-template-keys",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "dry-run": {
+          "literal_name": "dry-run",
+          "default": null,
+          "validator": "is_str"
+        },
+        "edit": {
+          "literal_name": "edit",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "field-manager": {
+          "literal_name": "field-manager",
+          "default": null,
+          "validator": "is_str"
+        },
+        "filename": {
+          "literal_name": "filename",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "kustomize": {
+          "literal_name": "kustomize",
+          "default": null,
+          "validator": "is_str"
+        },
+        "output": {
+          "literal_name": "output",
+          "default": null,
+          "validator": "is_str"
+        },
+        "raw": {
+          "literal_name": "raw",
+          "default": null,
+          "validator": "is_str"
+        },
+        "recursive": {
+          "literal_name": "recursive",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "save-config": {
+          "literal_name": "save-config",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "selector": {
+          "literal_name": "selector",
+          "default": null,
+          "validator": "is_str"
+        },
+        "show-managed-fields": {
+          "literal_name": "show-managed-fields",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "template": {
+          "literal_name": "template",
+          "default": null,
+          "validator": "is_str"
+        },
+        "validate": {
+          "literal_name": "validate",
+          "default": null,
+          "validator": "is_str"
+        },
+        "windows-line-endings": {
+          "literal_name": "windows-line-endings",
+          "default": null,
+          "validator": "is_bool"
+        }
+      },
+      "parse": "json"
+    },
+    "create_clusterrole": {
+      "cli_command": [
+        "create",
+        "clusterrole"
+      ],
+      "default_flags": {
+        "output": "json"
+      },
+      "args": {
+        "allow-missing-template-keys": {
+          "literal_name": "allow-missing-template-keys",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "dry-run": {
+          "literal_name": "dry-run",
+          "default": null,
+          "validator": "is_str"
+        },
+        "edit": {
+          "literal_name": "edit",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "field-manager": {
+          "literal_name": "field-manager",
+          "default": null,
+          "validator": "is_str"
+        },
+        "filename": {
+          "literal_name": "filename",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "kustomize": {
+          "literal_name": "kustomize",
+          "default": null,
+          "validator": "is_str"
+        },
+        "output": {
+          "literal_name": "output",
+          "default": null,
+          "validator": "is_str"
+        },
+        "raw": {
+          "literal_name": "raw",
+          "default": null,
+          "validator": "is_str"
+        },
+        "recursive": {
+          "literal_name": "recursive",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "save-config": {
+          "literal_name": "save-config",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "selector": {
+          "literal_name": "selector",
+          "default": null,
+          "validator": "is_str"
+        },
+        "show-managed-fields": {
+          "literal_name": "show-managed-fields",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "template": {
+          "literal_name": "template",
+          "default": null,
+          "validator": "is_str"
+        },
+        "validate": {
+          "literal_name": "validate",
+          "default": null,
+          "validator": "is_str"
+        },
+        "windows-line-endings": {
+          "literal_name": "windows-line-endings",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "aggregation-rule": {
+          "literal_name": "aggregation-rule",
+          "default": null,
+          "validator": "is_str"
+        },
+        "non-resource-url": {
+          "literal_name": "non-resource-url",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "resource": {
+          "literal_name": "resource",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "resource-name": {
+          "literal_name": "resource-name",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "verb": {
+          "literal_name": "verb",
+          "default": null,
+          "validator": "is_str_or_list"
+        }
+      },
+      "parse": "json"
+    },
+    "create_clusterrolebinding": {
+      "cli_command": [
+        "create",
+        "clusterrolebinding"
+      ],
+      "default_flags": {
+        "output": "json"
+      },
+      "args": {
+        "allow-missing-template-keys": {
+          "literal_name": "allow-missing-template-keys",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "dry-run": {
+          "literal_name": "dry-run",
+          "default": null,
+          "validator": "is_str"
+        },
+        "edit": {
+          "literal_name": "edit",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "field-manager": {
+          "literal_name": "field-manager",
+          "default": null,
+          "validator": "is_str"
+        },
+        "filename": {
+          "literal_name": "filename",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "kustomize": {
+          "literal_name": "kustomize",
+          "default": null,
+          "validator": "is_str"
+        },
+        "output": {
+          "literal_name": "output",
+          "default": null,
+          "validator": "is_str"
+        },
+        "raw": {
+          "literal_name": "raw",
+          "default": null,
+          "validator": "is_str"
+        },
+        "recursive": {
+          "literal_name": "recursive",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "save-config": {
+          "literal_name": "save-config",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "selector": {
+          "literal_name": "selector",
+          "default": null,
+          "validator": "is_str"
+        },
+        "show-managed-fields": {
+          "literal_name": "show-managed-fields",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "template": {
+          "literal_name": "template",
+          "default": null,
+          "validator": "is_str"
+        },
+        "validate": {
+          "literal_name": "validate",
+          "default": null,
+          "validator": "is_str"
+        },
+        "windows-line-endings": {
+          "literal_name": "windows-line-endings",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "clusterrole": {
+          "literal_name": "clusterrole",
+          "default": null,
+          "validator": "is_str"
+        },
+        "group": {
+          "literal_name": "group",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "serviceaccount": {
+          "literal_name": "serviceaccount",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "user": {
+          "literal_name": "user",
+          "default": null,
+          "validator": "is_str_or_list"
+        }
+      },
+      "parse": "json"
+    },
+    "create_configmap": {
+      "cli_command": [
+        "create",
+        "configmap"
+      ],
+      "default_flags": {
+        "output": "json"
+      },
+      "args": {
+        "allow-missing-template-keys": {
+          "literal_name": "allow-missing-template-keys",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "dry-run": {
+          "literal_name": "dry-run",
+          "default": null,
+          "validator": "is_str"
+        },
+        "edit": {
+          "literal_name": "edit",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "field-manager": {
+          "literal_name": "field-manager",
+          "default": null,
+          "validator": "is_str"
+        },
+        "filename": {
+          "literal_name": "filename",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "kustomize": {
+          "literal_name": "kustomize",
+          "default": null,
+          "validator": "is_str"
+        },
+        "output": {
+          "literal_name": "output",
+          "default": null,
+          "validator": "is_str"
+        },
+        "raw": {
+          "literal_name": "raw",
+          "default": null,
+          "validator": "is_str"
+        },
+        "recursive": {
+          "literal_name": "recursive",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "save-config": {
+          "literal_name": "save-config",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "selector": {
+          "literal_name": "selector",
+          "default": null,
+          "validator": "is_str"
+        },
+        "show-managed-fields": {
+          "literal_name": "show-managed-fields",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "template": {
+          "literal_name": "template",
+          "default": null,
+          "validator": "is_str"
+        },
+        "validate": {
+          "literal_name": "validate",
+          "default": null,
+          "validator": "is_str"
+        },
+        "windows-line-endings": {
+          "literal_name": "windows-line-endings",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "append-hash": {
+          "literal_name": "append-hash",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "from-env-file": {
+          "literal_name": "from-env-file",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "from-file": {
+          "literal_name": "from-file",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "from-literal": {
+          "literal_name": "from-literal",
+          "default": null,
+          "validator": "is_str_or_list"
+        }
+      },
+      "parse": "json"
+    },
+    "create_cronjob": {
+      "cli_command": [
+        "create",
+        "cronjob"
+      ],
+      "default_flags": {
+        "output": "json"
+      },
+      "args": {
+        "allow-missing-template-keys": {
+          "literal_name": "allow-missing-template-keys",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "dry-run": {
+          "literal_name": "dry-run",
+          "default": null,
+          "validator": "is_str"
+        },
+        "edit": {
+          "literal_name": "edit",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "field-manager": {
+          "literal_name": "field-manager",
+          "default": null,
+          "validator": "is_str"
+        },
+        "filename": {
+          "literal_name": "filename",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "kustomize": {
+          "literal_name": "kustomize",
+          "default": null,
+          "validator": "is_str"
+        },
+        "output": {
+          "literal_name": "output",
+          "default": null,
+          "validator": "is_str"
+        },
+        "raw": {
+          "literal_name": "raw",
+          "default": null,
+          "validator": "is_str"
+        },
+        "recursive": {
+          "literal_name": "recursive",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "save-config": {
+          "literal_name": "save-config",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "selector": {
+          "literal_name": "selector",
+          "default": null,
+          "validator": "is_str"
+        },
+        "show-managed-fields": {
+          "literal_name": "show-managed-fields",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "template": {
+          "literal_name": "template",
+          "default": null,
+          "validator": "is_str"
+        },
+        "validate": {
+          "literal_name": "validate",
+          "default": null,
+          "validator": "is_str"
+        },
+        "windows-line-endings": {
+          "literal_name": "windows-line-endings",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "image": {
+          "literal_name": "image",
+          "default": null,
+          "validator": "is_str"
+        },
+        "restart": {
+          "literal_name": "restart",
+          "default": null,
+          "validator": "is_str"
+        },
+        "schedule": {
+          "literal_name": "schedule",
+          "default": null,
+          "validator": "is_str"
+        }
+      },
+      "parse": "json"
+    },
+    "create_deployment": {
+      "cli_command": [
+        "create",
+        "deployment"
+      ],
+      "default_flags": {
+        "output": "json"
+      },
+      "args": {
+        "allow-missing-template-keys": {
+          "literal_name": "allow-missing-template-keys",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "dry-run": {
+          "literal_name": "dry-run",
+          "default": null,
+          "validator": "is_str"
+        },
+        "edit": {
+          "literal_name": "edit",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "field-manager": {
+          "literal_name": "field-manager",
+          "default": null,
+          "validator": "is_str"
+        },
+        "filename": {
+          "literal_name": "filename",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "kustomize": {
+          "literal_name": "kustomize",
+          "default": null,
+          "validator": "is_str"
+        },
+        "output": {
+          "literal_name": "output",
+          "default": null,
+          "validator": "is_str"
+        },
+        "raw": {
+          "literal_name": "raw",
+          "default": null,
+          "validator": "is_str"
+        },
+        "recursive": {
+          "literal_name": "recursive",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "save-config": {
+          "literal_name": "save-config",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "selector": {
+          "literal_name": "selector",
+          "default": null,
+          "validator": "is_str"
+        },
+        "show-managed-fields": {
+          "literal_name": "show-managed-fields",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "template": {
+          "literal_name": "template",
+          "default": null,
+          "validator": "is_str"
+        },
+        "validate": {
+          "literal_name": "validate",
+          "default": null,
+          "validator": "is_str"
+        },
+        "windows-line-endings": {
+          "literal_name": "windows-line-endings",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "image": {
+          "literal_name": "image",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "port": {
+          "literal_name": "port",
+          "default": null,
+          "validator": "is_str"
+        },
+        "replicas": {
+          "literal_name": "replicas",
+          "default": null,
+          "validator": "is_str"
+        }
+      },
+      "parse": "json"
+    },
+    "create_ingress": {
+      "cli_command": [
+        "create",
+        "ingress"
+      ],
+      "default_flags": {
+        "output": "json"
+      },
+      "args": {
+        "allow-missing-template-keys": {
+          "literal_name": "allow-missing-template-keys",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "dry-run": {
+          "literal_name": "dry-run",
+          "default": null,
+          "validator": "is_str"
+        },
+        "edit": {
+          "literal_name": "edit",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "field-manager": {
+          "literal_name": "field-manager",
+          "default": null,
+          "validator": "is_str"
+        },
+        "filename": {
+          "literal_name": "filename",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "kustomize": {
+          "literal_name": "kustomize",
+          "default": null,
+          "validator": "is_str"
+        },
+        "output": {
+          "literal_name": "output",
+          "default": null,
+          "validator": "is_str"
+        },
+        "raw": {
+          "literal_name": "raw",
+          "default": null,
+          "validator": "is_str"
+        },
+        "recursive": {
+          "literal_name": "recursive",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "save-config": {
+          "literal_name": "save-config",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "selector": {
+          "literal_name": "selector",
+          "default": null,
+          "validator": "is_str"
+        },
+        "show-managed-fields": {
+          "literal_name": "show-managed-fields",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "template": {
+          "literal_name": "template",
+          "default": null,
+          "validator": "is_str"
+        },
+        "validate": {
+          "literal_name": "validate",
+          "default": null,
+          "validator": "is_str"
+        },
+        "windows-line-endings": {
+          "literal_name": "windows-line-endings",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "annotation": {
+          "literal_name": "annotation",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "class": {
+          "literal_name": "class",
+          "default": null,
+          "validator": "is_str"
+        },
+        "default-backend": {
+          "literal_name": "default-backend",
+          "default": null,
+          "validator": "is_str"
+        },
+        "rule": {
+          "literal_name": "rule",
+          "default": null,
+          "validator": "is_str_or_list"
+        }
+      },
+      "parse": "json"
+    },
+    "create_job": {
+      "cli_command": [
+        "create",
+        "job"
+      ],
+      "default_flags": {
+        "output": "json"
+      },
+      "args": {
+        "allow-missing-template-keys": {
+          "literal_name": "allow-missing-template-keys",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "dry-run": {
+          "literal_name": "dry-run",
+          "default": null,
+          "validator": "is_str"
+        },
+        "edit": {
+          "literal_name": "edit",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "field-manager": {
+          "literal_name": "field-manager",
+          "default": null,
+          "validator": "is_str"
+        },
+        "filename": {
+          "literal_name": "filename",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "kustomize": {
+          "literal_name": "kustomize",
+          "default": null,
+          "validator": "is_str"
+        },
+        "output": {
+          "literal_name": "output",
+          "default": null,
+          "validator": "is_str"
+        },
+        "raw": {
+          "literal_name": "raw",
+          "default": null,
+          "validator": "is_str"
+        },
+        "recursive": {
+          "literal_name": "recursive",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "save-config": {
+          "literal_name": "save-config",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "selector": {
+          "literal_name": "selector",
+          "default": null,
+          "validator": "is_str"
+        },
+        "show-managed-fields": {
+          "literal_name": "show-managed-fields",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "template": {
+          "literal_name": "template",
+          "default": null,
+          "validator": "is_str"
+        },
+        "validate": {
+          "literal_name": "validate",
+          "default": null,
+          "validator": "is_str"
+        },
+        "windows-line-endings": {
+          "literal_name": "windows-line-endings",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "from": {
+          "literal_name": "from",
+          "default": null,
+          "validator": "is_str"
+        },
+        "image": {
+          "literal_name": "image",
+          "default": null,
+          "validator": "is_str"
+        }
+      },
+      "parse": "json"
+    },
+    "create_namespace": {
+      "cli_command": [
+        "create",
+        "namespace"
+      ],
+      "default_flags": {
+        "output": "json"
+      },
+      "args": {
+        "allow-missing-template-keys": {
+          "literal_name": "allow-missing-template-keys",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "dry-run": {
+          "literal_name": "dry-run",
+          "default": null,
+          "validator": "is_str"
+        },
+        "edit": {
+          "literal_name": "edit",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "field-manager": {
+          "literal_name": "field-manager",
+          "default": null,
+          "validator": "is_str"
+        },
+        "filename": {
+          "literal_name": "filename",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "kustomize": {
+          "literal_name": "kustomize",
+          "default": null,
+          "validator": "is_str"
+        },
+        "output": {
+          "literal_name": "output",
+          "default": null,
+          "validator": "is_str"
+        },
+        "raw": {
+          "literal_name": "raw",
+          "default": null,
+          "validator": "is_str"
+        },
+        "recursive": {
+          "literal_name": "recursive",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "save-config": {
+          "literal_name": "save-config",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "selector": {
+          "literal_name": "selector",
+          "default": null,
+          "validator": "is_str"
+        },
+        "show-managed-fields": {
+          "literal_name": "show-managed-fields",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "template": {
+          "literal_name": "template",
+          "default": null,
+          "validator": "is_str"
+        },
+        "validate": {
+          "literal_name": "validate",
+          "default": null,
+          "validator": "is_str"
+        },
+        "windows-line-endings": {
+          "literal_name": "windows-line-endings",
+          "default": null,
+          "validator": "is_bool"
+        }
+      },
+      "parse": "json"
+    },
+    "create_poddisruptionbudget": {
+      "cli_command": [
+        "create",
+        "poddisruptionbudget"
+      ],
+      "default_flags": {
+        "output": "json"
+      },
+      "args": {
+        "allow-missing-template-keys": {
+          "literal_name": "allow-missing-template-keys",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "dry-run": {
+          "literal_name": "dry-run",
+          "default": null,
+          "validator": "is_str"
+        },
+        "edit": {
+          "literal_name": "edit",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "field-manager": {
+          "literal_name": "field-manager",
+          "default": null,
+          "validator": "is_str"
+        },
+        "filename": {
+          "literal_name": "filename",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "kustomize": {
+          "literal_name": "kustomize",
+          "default": null,
+          "validator": "is_str"
+        },
+        "output": {
+          "literal_name": "output",
+          "default": null,
+          "validator": "is_str"
+        },
+        "raw": {
+          "literal_name": "raw",
+          "default": null,
+          "validator": "is_str"
+        },
+        "recursive": {
+          "literal_name": "recursive",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "save-config": {
+          "literal_name": "save-config",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "selector": {
+          "literal_name": "selector",
+          "default": null,
+          "validator": "is_str"
+        },
+        "show-managed-fields": {
+          "literal_name": "show-managed-fields",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "template": {
+          "literal_name": "template",
+          "default": null,
+          "validator": "is_str"
+        },
+        "validate": {
+          "literal_name": "validate",
+          "default": null,
+          "validator": "is_str"
+        },
+        "windows-line-endings": {
+          "literal_name": "windows-line-endings",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "max-unavailable": {
+          "literal_name": "max-unavailable",
+          "default": null,
+          "validator": "is_str"
+        },
+        "min-available": {
+          "literal_name": "min-available",
+          "default": null,
+          "validator": "is_str"
+        }
+      },
+      "parse": "json"
+    },
+    "create_priorityclass": {
+      "cli_command": [
+        "create",
+        "priorityclass"
+      ],
+      "default_flags": {
+        "output": "json"
+      },
+      "args": {
+        "allow-missing-template-keys": {
+          "literal_name": "allow-missing-template-keys",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "dry-run": {
+          "literal_name": "dry-run",
+          "default": null,
+          "validator": "is_str"
+        },
+        "edit": {
+          "literal_name": "edit",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "field-manager": {
+          "literal_name": "field-manager",
+          "default": null,
+          "validator": "is_str"
+        },
+        "filename": {
+          "literal_name": "filename",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "kustomize": {
+          "literal_name": "kustomize",
+          "default": null,
+          "validator": "is_str"
+        },
+        "output": {
+          "literal_name": "output",
+          "default": null,
+          "validator": "is_str"
+        },
+        "raw": {
+          "literal_name": "raw",
+          "default": null,
+          "validator": "is_str"
+        },
+        "recursive": {
+          "literal_name": "recursive",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "save-config": {
+          "literal_name": "save-config",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "selector": {
+          "literal_name": "selector",
+          "default": null,
+          "validator": "is_str"
+        },
+        "show-managed-fields": {
+          "literal_name": "show-managed-fields",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "template": {
+          "literal_name": "template",
+          "default": null,
+          "validator": "is_str"
+        },
+        "validate": {
+          "literal_name": "validate",
+          "default": null,
+          "validator": "is_str"
+        },
+        "windows-line-endings": {
+          "literal_name": "windows-line-endings",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "description": {
+          "literal_name": "description",
+          "default": null,
+          "validator": "is_str"
+        },
+        "global-default": {
+          "literal_name": "global-default",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "preemption-policy": {
+          "literal_name": "preemption-policy",
+          "default": null,
+          "validator": "is_str"
+        },
+        "value": {
+          "literal_name": "value",
+          "default": null,
+          "validator": "is_str"
+        }
+      },
+      "parse": "json"
+    },
+    "create_quota": {
+      "cli_command": [
+        "create",
+        "quota"
+      ],
+      "default_flags": {
+        "output": "json"
+      },
+      "args": {
+        "allow-missing-template-keys": {
+          "literal_name": "allow-missing-template-keys",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "dry-run": {
+          "literal_name": "dry-run",
+          "default": null,
+          "validator": "is_str"
+        },
+        "edit": {
+          "literal_name": "edit",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "field-manager": {
+          "literal_name": "field-manager",
+          "default": null,
+          "validator": "is_str"
+        },
+        "filename": {
+          "literal_name": "filename",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "kustomize": {
+          "literal_name": "kustomize",
+          "default": null,
+          "validator": "is_str"
+        },
+        "output": {
+          "literal_name": "output",
+          "default": null,
+          "validator": "is_str"
+        },
+        "raw": {
+          "literal_name": "raw",
+          "default": null,
+          "validator": "is_str"
+        },
+        "recursive": {
+          "literal_name": "recursive",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "save-config": {
+          "literal_name": "save-config",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "selector": {
+          "literal_name": "selector",
+          "default": null,
+          "validator": "is_str"
+        },
+        "show-managed-fields": {
+          "literal_name": "show-managed-fields",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "template": {
+          "literal_name": "template",
+          "default": null,
+          "validator": "is_str"
+        },
+        "validate": {
+          "literal_name": "validate",
+          "default": null,
+          "validator": "is_str"
+        },
+        "windows-line-endings": {
+          "literal_name": "windows-line-endings",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "hard": {
+          "literal_name": "hard",
+          "default": null,
+          "validator": "is_str"
+        },
+        "scopes": {
+          "literal_name": "scopes",
+          "default": null,
+          "validator": "is_str"
+        }
+      },
+      "parse": "json"
+    },
+    "create_role": {
+      "cli_command": [
+        "create",
+        "role"
+      ],
+      "default_flags": {
+        "output": "json"
+      },
+      "args": {
+        "allow-missing-template-keys": {
+          "literal_name": "allow-missing-template-keys",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "dry-run": {
+          "literal_name": "dry-run",
+          "default": null,
+          "validator": "is_str"
+        },
+        "edit": {
+          "literal_name": "edit",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "field-manager": {
+          "literal_name": "field-manager",
+          "default": null,
+          "validator": "is_str"
+        },
+        "filename": {
+          "literal_name": "filename",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "kustomize": {
+          "literal_name": "kustomize",
+          "default": null,
+          "validator": "is_str"
+        },
+        "output": {
+          "literal_name": "output",
+          "default": null,
+          "validator": "is_str"
+        },
+        "raw": {
+          "literal_name": "raw",
+          "default": null,
+          "validator": "is_str"
+        },
+        "recursive": {
+          "literal_name": "recursive",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "save-config": {
+          "literal_name": "save-config",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "selector": {
+          "literal_name": "selector",
+          "default": null,
+          "validator": "is_str"
+        },
+        "show-managed-fields": {
+          "literal_name": "show-managed-fields",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "template": {
+          "literal_name": "template",
+          "default": null,
+          "validator": "is_str"
+        },
+        "validate": {
+          "literal_name": "validate",
+          "default": null,
+          "validator": "is_str"
+        },
+        "windows-line-endings": {
+          "literal_name": "windows-line-endings",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "resource": {
+          "literal_name": "resource",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "resource-name": {
+          "literal_name": "resource-name",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "verb": {
+          "literal_name": "verb",
+          "default": null,
+          "validator": "is_str_or_list"
+        }
+      },
+      "parse": "json"
+    },
+    "create_rolebinding": {
+      "cli_command": [
+        "create",
+        "rolebinding"
+      ],
+      "default_flags": {
+        "output": "json"
+      },
+      "args": {
+        "allow-missing-template-keys": {
+          "literal_name": "allow-missing-template-keys",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "dry-run": {
+          "literal_name": "dry-run",
+          "default": null,
+          "validator": "is_str"
+        },
+        "edit": {
+          "literal_name": "edit",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "field-manager": {
+          "literal_name": "field-manager",
+          "default": null,
+          "validator": "is_str"
+        },
+        "filename": {
+          "literal_name": "filename",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "kustomize": {
+          "literal_name": "kustomize",
+          "default": null,
+          "validator": "is_str"
+        },
+        "output": {
+          "literal_name": "output",
+          "default": null,
+          "validator": "is_str"
+        },
+        "raw": {
+          "literal_name": "raw",
+          "default": null,
+          "validator": "is_str"
+        },
+        "recursive": {
+          "literal_name": "recursive",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "save-config": {
+          "literal_name": "save-config",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "selector": {
+          "literal_name": "selector",
+          "default": null,
+          "validator": "is_str"
+        },
+        "show-managed-fields": {
+          "literal_name": "show-managed-fields",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "template": {
+          "literal_name": "template",
+          "default": null,
+          "validator": "is_str"
+        },
+        "validate": {
+          "literal_name": "validate",
+          "default": null,
+          "validator": "is_str"
+        },
+        "windows-line-endings": {
+          "literal_name": "windows-line-endings",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "clusterrole": {
+          "literal_name": "clusterrole",
+          "default": null,
+          "validator": "is_str"
+        },
+        "group": {
+          "literal_name": "group",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "role": {
+          "literal_name": "role",
+          "default": null,
+          "validator": "is_str"
+        },
+        "serviceaccount": {
+          "literal_name": "serviceaccount",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "user": {
+          "literal_name": "user",
+          "default": null,
+          "validator": "is_str_or_list"
+        }
+      },
+      "parse": "json"
+    },
+    "create_secret": {
+      "cli_command": [
+        "create",
+        "secret"
+      ],
+      "default_flags": {
+        "output": "json"
+      },
+      "args": {
+        "allow-missing-template-keys": {
+          "literal_name": "allow-missing-template-keys",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "dry-run": {
+          "literal_name": "dry-run",
+          "default": null,
+          "validator": "is_str"
+        },
+        "edit": {
+          "literal_name": "edit",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "field-manager": {
+          "literal_name": "field-manager",
+          "default": null,
+          "validator": "is_str"
+        },
+        "filename": {
+          "literal_name": "filename",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "kustomize": {
+          "literal_name": "kustomize",
+          "default": null,
+          "validator": "is_str"
+        },
+        "output": {
+          "literal_name": "output",
+          "default": null,
+          "validator": "is_str"
+        },
+        "raw": {
+          "literal_name": "raw",
+          "default": null,
+          "validator": "is_str"
+        },
+        "recursive": {
+          "literal_name": "recursive",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "save-config": {
+          "literal_name": "save-config",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "selector": {
+          "literal_name": "selector",
+          "default": null,
+          "validator": "is_str"
+        },
+        "show-managed-fields": {
+          "literal_name": "show-managed-fields",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "template": {
+          "literal_name": "template",
+          "default": null,
+          "validator": "is_str"
+        },
+        "validate": {
+          "literal_name": "validate",
+          "default": null,
+          "validator": "is_str"
+        },
+        "windows-line-endings": {
+          "literal_name": "windows-line-endings",
+          "default": null,
+          "validator": "is_bool"
+        }
+      },
+      "parse": "json"
+    },
+    "create_service": {
+      "cli_command": [
+        "create",
+        "service"
+      ],
+      "default_flags": {
+        "output": "json"
+      },
+      "args": {
+        "allow-missing-template-keys": {
+          "literal_name": "allow-missing-template-keys",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "dry-run": {
+          "literal_name": "dry-run",
+          "default": null,
+          "validator": "is_str"
+        },
+        "edit": {
+          "literal_name": "edit",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "field-manager": {
+          "literal_name": "field-manager",
+          "default": null,
+          "validator": "is_str"
+        },
+        "filename": {
+          "literal_name": "filename",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "kustomize": {
+          "literal_name": "kustomize",
+          "default": null,
+          "validator": "is_str"
+        },
+        "output": {
+          "literal_name": "output",
+          "default": null,
+          "validator": "is_str"
+        },
+        "raw": {
+          "literal_name": "raw",
+          "default": null,
+          "validator": "is_str"
+        },
+        "recursive": {
+          "literal_name": "recursive",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "save-config": {
+          "literal_name": "save-config",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "selector": {
+          "literal_name": "selector",
+          "default": null,
+          "validator": "is_str"
+        },
+        "show-managed-fields": {
+          "literal_name": "show-managed-fields",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "template": {
+          "literal_name": "template",
+          "default": null,
+          "validator": "is_str"
+        },
+        "validate": {
+          "literal_name": "validate",
+          "default": null,
+          "validator": "is_str"
+        },
+        "windows-line-endings": {
+          "literal_name": "windows-line-endings",
+          "default": null,
+          "validator": "is_bool"
+        }
+      },
+      "parse": "json"
+    },
+    "create_serviceaccount": {
+      "cli_command": [
+        "create",
+        "serviceaccount"
+      ],
+      "default_flags": {
+        "output": "json"
+      },
+      "args": {
+        "allow-missing-template-keys": {
+          "literal_name": "allow-missing-template-keys",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "dry-run": {
+          "literal_name": "dry-run",
+          "default": null,
+          "validator": "is_str"
+        },
+        "edit": {
+          "literal_name": "edit",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "field-manager": {
+          "literal_name": "field-manager",
+          "default": null,
+          "validator": "is_str"
+        },
+        "filename": {
+          "literal_name": "filename",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "kustomize": {
+          "literal_name": "kustomize",
+          "default": null,
+          "validator": "is_str"
+        },
+        "output": {
+          "literal_name": "output",
+          "default": null,
+          "validator": "is_str"
+        },
+        "raw": {
+          "literal_name": "raw",
+          "default": null,
+          "validator": "is_str"
+        },
+        "recursive": {
+          "literal_name": "recursive",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "save-config": {
+          "literal_name": "save-config",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "selector": {
+          "literal_name": "selector",
+          "default": null,
+          "validator": "is_str"
+        },
+        "show-managed-fields": {
+          "literal_name": "show-managed-fields",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "template": {
+          "literal_name": "template",
+          "default": null,
+          "validator": "is_str"
+        },
+        "validate": {
+          "literal_name": "validate",
+          "default": null,
+          "validator": "is_str"
+        },
+        "windows-line-endings": {
+          "literal_name": "windows-line-endings",
+          "default": null,
+          "validator": "is_bool"
+        }
+      },
+      "parse": "json"
+    },
+    "create_token": {
+      "cli_command": [
+        "create",
+        "token"
+      ],
+      "default_flags": {
+        "output": "json"
+      },
+      "args": {
+        "allow-missing-template-keys": {
+          "literal_name": "allow-missing-template-keys",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "dry-run": {
+          "literal_name": "dry-run",
+          "default": null,
+          "validator": "is_str"
+        },
+        "edit": {
+          "literal_name": "edit",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "field-manager": {
+          "literal_name": "field-manager",
+          "default": null,
+          "validator": "is_str"
+        },
+        "filename": {
+          "literal_name": "filename",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "kustomize": {
+          "literal_name": "kustomize",
+          "default": null,
+          "validator": "is_str"
+        },
+        "output": {
+          "literal_name": "output",
+          "default": null,
+          "validator": "is_str"
+        },
+        "raw": {
+          "literal_name": "raw",
+          "default": null,
+          "validator": "is_str"
+        },
+        "recursive": {
+          "literal_name": "recursive",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "save-config": {
+          "literal_name": "save-config",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "selector": {
+          "literal_name": "selector",
+          "default": null,
+          "validator": "is_str"
+        },
+        "show-managed-fields": {
+          "literal_name": "show-managed-fields",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "template": {
+          "literal_name": "template",
+          "default": null,
+          "validator": "is_str"
+        },
+        "validate": {
+          "literal_name": "validate",
+          "default": null,
+          "validator": "is_str"
+        },
+        "windows-line-endings": {
+          "literal_name": "windows-line-endings",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "audience": {
+          "literal_name": "audience",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "bound-object-kind": {
+          "literal_name": "bound-object-kind",
+          "default": null,
+          "validator": "is_str"
+        },
+        "bound-object-name": {
+          "literal_name": "bound-object-name",
+          "default": null,
+          "validator": "is_str"
+        },
+        "bound-object-uid": {
+          "literal_name": "bound-object-uid",
+          "default": null,
+          "validator": "is_str"
+        },
+        "duration": {
+          "literal_name": "duration",
+          "default": null,
+          "validator": "is_str"
+        }
+      },
+      "parse": "json"
+    },
+    "expose": {
+      "cli_command": [
+        "expose"
+      ],
+      "default_flags": {
+        "output": "json"
+      },
+      "args": {
+        "allow-missing-template-keys": {
+          "literal_name": "allow-missing-template-keys",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "cluster-ip": {
+          "literal_name": "cluster-ip",
+          "default": null,
+          "validator": "is_str"
+        },
+        "dry-run": {
+          "literal_name": "dry-run",
+          "default": null,
+          "validator": "is_str"
+        },
+        "external-ip": {
+          "literal_name": "external-ip",
+          "default": null,
+          "validator": "is_str"
+        },
+        "field-manager": {
+          "literal_name": "field-manager",
+          "default": null,
+          "validator": "is_str"
+        },
+        "filename": {
+          "literal_name": "filename",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "kustomize": {
+          "literal_name": "kustomize",
+          "default": null,
+          "validator": "is_str"
+        },
+        "labels": {
+          "literal_name": "labels",
+          "default": null,
+          "validator": "is_str"
+        },
+        "load-balancer-ip": {
+          "literal_name": "load-balancer-ip",
+          "default": null,
+          "validator": "is_str"
+        },
+        "name": {
+          "literal_name": "name",
+          "default": null,
+          "validator": "is_str"
+        },
+        "output": {
+          "literal_name": "output",
+          "default": null,
+          "validator": "is_str"
+        },
+        "override-type": {
+          "literal_name": "override-type",
+          "default": null,
+          "validator": "is_str"
+        },
+        "overrides": {
+          "literal_name": "overrides",
+          "default": null,
+          "validator": "is_str"
+        },
+        "port": {
+          "literal_name": "port",
+          "default": null,
+          "validator": "is_str"
+        },
+        "protocol": {
+          "literal_name": "protocol",
+          "default": null,
+          "validator": "is_str"
+        },
+        "recursive": {
+          "literal_name": "recursive",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "save-config": {
+          "literal_name": "save-config",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "selector": {
+          "literal_name": "selector",
+          "default": null,
+          "validator": "is_str"
+        },
+        "session-affinity": {
+          "literal_name": "session-affinity",
+          "default": null,
+          "validator": "is_str"
+        },
+        "show-managed-fields": {
+          "literal_name": "show-managed-fields",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "target-port": {
+          "literal_name": "target-port",
+          "default": null,
+          "validator": "is_str"
+        },
+        "template": {
+          "literal_name": "template",
+          "default": null,
+          "validator": "is_str"
+        },
+        "type": {
+          "literal_name": "type",
+          "default": null,
+          "validator": "is_str"
+        }
+      },
+      "parse": "json"
+    },
+    "run": {
+      "cli_command": [
+        "run"
+      ],
+      "default_flags": {
+        "output": "json"
+      },
+      "args": {
+        "allow-missing-template-keys": {
+          "literal_name": "allow-missing-template-keys",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "annotations": {
+          "literal_name": "annotations",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "attach": {
+          "literal_name": "attach",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "command": {
+          "literal_name": "command",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "dry-run": {
+          "literal_name": "dry-run",
+          "default": null,
+          "validator": "is_str"
+        },
+        "env": {
+          "literal_name": "env",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "expose": {
+          "literal_name": "expose",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "field-manager": {
+          "literal_name": "field-manager",
+          "default": null,
+          "validator": "is_str"
+        },
+        "image": {
+          "literal_name": "image",
+          "default": null,
+          "validator": "is_str"
+        },
+        "image-pull-policy": {
+          "literal_name": "image-pull-policy",
+          "default": null,
+          "validator": "is_str"
+        },
+        "labels": {
+          "literal_name": "labels",
+          "default": null,
+          "validator": "is_str"
+        },
+        "leave-stdin-open": {
+          "literal_name": "leave-stdin-open",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "output": {
+          "literal_name": "output",
+          "default": null,
+          "validator": "is_str"
+        },
+        "override-type": {
+          "literal_name": "override-type",
+          "default": null,
+          "validator": "is_str"
+        },
+        "overrides": {
+          "literal_name": "overrides",
+          "default": null,
+          "validator": "is_str"
+        },
+        "pod-running-timeout": {
+          "literal_name": "pod-running-timeout",
+          "default": null,
+          "validator": "is_str"
+        },
+        "port": {
+          "literal_name": "port",
+          "default": null,
+          "validator": "is_str"
+        },
+        "privileged": {
+          "literal_name": "privileged",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "quiet": {
+          "literal_name": "quiet",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "restart": {
+          "literal_name": "restart",
+          "default": null,
+          "validator": "is_str"
+        },
+        "rm": {
+          "literal_name": "rm",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "save-config": {
+          "literal_name": "save-config",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "show-managed-fields": {
+          "literal_name": "show-managed-fields",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "stdin": {
+          "literal_name": "stdin",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "template": {
+          "literal_name": "template",
+          "default": null,
+          "validator": "is_str"
+        },
+        "tty": {
+          "literal_name": "tty",
+          "default": null,
+          "validator": "is_bool"
+        }
+      },
+      "parse": "json"
+    },
+    "set": {
+      "cli_command": [
+        "set"
+      ],
+      "default_flags": {},
+      "args": {},
+      "parse": null
+    },
+    "set_env": {
+      "cli_command": [
+        "set",
+        "env"
+      ],
+      "default_flags": {
+        "output": "json"
+      },
+      "args": {
+        "all": {
+          "literal_name": "all",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "allow-missing-template-keys": {
+          "literal_name": "allow-missing-template-keys",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "containers": {
+          "literal_name": "containers",
+          "default": null,
+          "validator": "is_str"
+        },
+        "dry-run": {
+          "literal_name": "dry-run",
+          "default": null,
+          "validator": "is_str"
+        },
+        "env": {
+          "literal_name": "env",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "field-manager": {
+          "literal_name": "field-manager",
+          "default": null,
+          "validator": "is_str"
+        },
+        "filename": {
+          "literal_name": "filename",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "from": {
+          "literal_name": "from",
+          "default": null,
+          "validator": "is_str"
+        },
+        "keys": {
+          "literal_name": "keys",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "kustomize": {
+          "literal_name": "kustomize",
+          "default": null,
+          "validator": "is_str"
+        },
+        "list": {
+          "literal_name": "list",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "local": {
+          "literal_name": "local",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "output": {
+          "literal_name": "output",
+          "default": null,
+          "validator": "is_str"
+        },
+        "overwrite": {
+          "literal_name": "overwrite",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "prefix": {
+          "literal_name": "prefix",
+          "default": null,
+          "validator": "is_str"
+        },
+        "recursive": {
+          "literal_name": "recursive",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "resolve": {
+          "literal_name": "resolve",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "selector": {
+          "literal_name": "selector",
+          "default": null,
+          "validator": "is_str"
+        },
+        "show-managed-fields": {
+          "literal_name": "show-managed-fields",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "template": {
+          "literal_name": "template",
+          "default": null,
+          "validator": "is_str"
+        }
+      },
+      "parse": "json"
+    },
+    "set_image": {
+      "cli_command": [
+        "set",
+        "image"
+      ],
+      "default_flags": {
+        "output": "json"
+      },
+      "args": {
+        "all": {
+          "literal_name": "all",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "allow-missing-template-keys": {
+          "literal_name": "allow-missing-template-keys",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "dry-run": {
+          "literal_name": "dry-run",
+          "default": null,
+          "validator": "is_str"
+        },
+        "field-manager": {
+          "literal_name": "field-manager",
+          "default": null,
+          "validator": "is_str"
+        },
+        "filename": {
+          "literal_name": "filename",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "kustomize": {
+          "literal_name": "kustomize",
+          "default": null,
+          "validator": "is_str"
+        },
+        "local": {
+          "literal_name": "local",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "output": {
+          "literal_name": "output",
+          "default": null,
+          "validator": "is_str"
+        },
+        "recursive": {
+          "literal_name": "recursive",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "selector": {
+          "literal_name": "selector",
+          "default": null,
+          "validator": "is_str"
+        },
+        "show-managed-fields": {
+          "literal_name": "show-managed-fields",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "template": {
+          "literal_name": "template",
+          "default": null,
+          "validator": "is_str"
+        }
+      },
+      "parse": "json"
+    },
+    "set_resources": {
+      "cli_command": [
+        "set",
+        "resources"
+      ],
+      "default_flags": {
+        "output": "json"
+      },
+      "args": {
+        "all": {
+          "literal_name": "all",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "allow-missing-template-keys": {
+          "literal_name": "allow-missing-template-keys",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "containers": {
+          "literal_name": "containers",
+          "default": null,
+          "validator": "is_str"
+        },
+        "dry-run": {
+          "literal_name": "dry-run",
+          "default": null,
+          "validator": "is_str"
+        },
+        "field-manager": {
+          "literal_name": "field-manager",
+          "default": null,
+          "validator": "is_str"
+        },
+        "filename": {
+          "literal_name": "filename",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "kustomize": {
+          "literal_name": "kustomize",
+          "default": null,
+          "validator": "is_str"
+        },
+        "limits": {
+          "literal_name": "limits",
+          "default": null,
+          "validator": "is_str"
+        },
+        "local": {
+          "literal_name": "local",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "output": {
+          "literal_name": "output",
+          "default": null,
+          "validator": "is_str"
+        },
+        "recursive": {
+          "literal_name": "recursive",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "requests": {
+          "literal_name": "requests",
+          "default": null,
+          "validator": "is_str"
+        },
+        "selector": {
+          "literal_name": "selector",
+          "default": null,
+          "validator": "is_str"
+        },
+        "show-managed-fields": {
+          "literal_name": "show-managed-fields",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "template": {
+          "literal_name": "template",
+          "default": null,
+          "validator": "is_str"
+        }
+      },
+      "parse": "json"
+    },
+    "set_selector": {
+      "cli_command": [
+        "set",
+        "selector"
+      ],
+      "default_flags": {
+        "output": "json"
+      },
+      "args": {
+        "all": {
+          "literal_name": "all",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "allow-missing-template-keys": {
+          "literal_name": "allow-missing-template-keys",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "dry-run": {
+          "literal_name": "dry-run",
+          "default": null,
+          "validator": "is_str"
+        },
+        "field-manager": {
+          "literal_name": "field-manager",
+          "default": null,
+          "validator": "is_str"
+        },
+        "filename": {
+          "literal_name": "filename",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "local": {
+          "literal_name": "local",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "output": {
+          "literal_name": "output",
+          "default": null,
+          "validator": "is_str"
+        },
+        "recursive": {
+          "literal_name": "recursive",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "resource-version": {
+          "literal_name": "resource-version",
+          "default": null,
+          "validator": "is_str"
+        },
+        "show-managed-fields": {
+          "literal_name": "show-managed-fields",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "template": {
+          "literal_name": "template",
+          "default": null,
+          "validator": "is_str"
+        }
+      },
+      "parse": "json"
+    },
+    "set_serviceaccount": {
+      "cli_command": [
+        "set",
+        "serviceaccount"
+      ],
+      "default_flags": {
+        "output": "json"
+      },
+      "args": {
+        "all": {
+          "literal_name": "all",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "allow-missing-template-keys": {
+          "literal_name": "allow-missing-template-keys",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "dry-run": {
+          "literal_name": "dry-run",
+          "default": null,
+          "validator": "is_str"
+        },
+        "field-manager": {
+          "literal_name": "field-manager",
+          "default": null,
+          "validator": "is_str"
+        },
+        "filename": {
+          "literal_name": "filename",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "kustomize": {
+          "literal_name": "kustomize",
+          "default": null,
+          "validator": "is_str"
+        },
+        "local": {
+          "literal_name": "local",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "output": {
+          "literal_name": "output",
+          "default": null,
+          "validator": "is_str"
+        },
+        "recursive": {
+          "literal_name": "recursive",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "show-managed-fields": {
+          "literal_name": "show-managed-fields",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "template": {
+          "literal_name": "template",
+          "default": null,
+          "validator": "is_str"
+        }
+      },
+      "parse": "json"
+    },
+    "set_subject": {
+      "cli_command": [
+        "set",
+        "subject"
+      ],
+      "default_flags": {
+        "output": "json"
+      },
+      "args": {
+        "all": {
+          "literal_name": "all",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "allow-missing-template-keys": {
+          "literal_name": "allow-missing-template-keys",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "dry-run": {
+          "literal_name": "dry-run",
+          "default": null,
+          "validator": "is_str"
+        },
+        "field-manager": {
+          "literal_name": "field-manager",
+          "default": null,
+          "validator": "is_str"
+        },
+        "filename": {
+          "literal_name": "filename",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "group": {
+          "literal_name": "group",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "kustomize": {
+          "literal_name": "kustomize",
+          "default": null,
+          "validator": "is_str"
+        },
+        "local": {
+          "literal_name": "local",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "output": {
+          "literal_name": "output",
+          "default": null,
+          "validator": "is_str"
+        },
+        "recursive": {
+          "literal_name": "recursive",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "selector": {
+          "literal_name": "selector",
+          "default": null,
+          "validator": "is_str"
+        },
+        "serviceaccount": {
+          "literal_name": "serviceaccount",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "show-managed-fields": {
+          "literal_name": "show-managed-fields",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "template": {
+          "literal_name": "template",
+          "default": null,
+          "validator": "is_str"
+        },
+        "user": {
+          "literal_name": "user",
+          "default": null,
+          "validator": "is_str_or_list"
+        }
+      },
+      "parse": "json"
+    },
+    "explain": {
+      "cli_command": [
+        "explain"
+      ],
+      "default_flags": {
+        "output": "json"
+      },
+      "args": {
+        "api-version": {
+          "literal_name": "api-version",
+          "default": null,
+          "validator": "is_str"
+        },
+        "output": {
+          "literal_name": "output",
+          "default": null,
+          "validator": "is_str"
+        },
+        "recursive": {
+          "literal_name": "recursive",
+          "default": null,
+          "validator": "is_bool"
+        }
+      },
+      "parse": "json"
+    },
+    "get": {
+      "cli_command": [
+        "get"
+      ],
+      "default_flags": {
+        "output": "json"
+      },
+      "args": {
+        "all-namespaces": {
+          "literal_name": "all-namespaces",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "allow-missing-template-keys": {
+          "literal_name": "allow-missing-template-keys",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "chunk-size": {
+          "literal_name": "chunk-size",
+          "default": null,
+          "validator": "is_str"
+        },
+        "field-selector": {
+          "literal_name": "field-selector",
+          "default": null,
+          "validator": "is_str"
+        },
+        "filename": {
+          "literal_name": "filename",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "ignore-not-found": {
+          "literal_name": "ignore-not-found",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "kustomize": {
+          "literal_name": "kustomize",
+          "default": null,
+          "validator": "is_str"
+        },
+        "label-columns": {
+          "literal_name": "label-columns",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "no-headers": {
+          "literal_name": "no-headers",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "output": {
+          "literal_name": "output",
+          "default": null,
+          "validator": "is_str"
+        },
+        "output-watch-events": {
+          "literal_name": "output-watch-events",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "raw": {
+          "literal_name": "raw",
+          "default": null,
+          "validator": "is_str"
+        },
+        "recursive": {
+          "literal_name": "recursive",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "selector": {
+          "literal_name": "selector",
+          "default": null,
+          "validator": "is_str"
+        },
+        "server-print": {
+          "literal_name": "server-print",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "show-kind": {
+          "literal_name": "show-kind",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "show-labels": {
+          "literal_name": "show-labels",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "show-managed-fields": {
+          "literal_name": "show-managed-fields",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "sort-by": {
+          "literal_name": "sort-by",
+          "default": null,
+          "validator": "is_str"
+        },
+        "subresource": {
+          "literal_name": "subresource",
+          "default": null,
+          "validator": "is_str"
+        },
+        "template": {
+          "literal_name": "template",
+          "default": null,
+          "validator": "is_str"
+        },
+        "watch": {
+          "literal_name": "watch",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "watch-only": {
+          "literal_name": "watch-only",
+          "default": null,
+          "validator": "is_bool"
+        }
+      },
+      "parse": "json"
+    },
+    "edit": {
+      "cli_command": [
+        "edit"
+      ],
+      "default_flags": {
+        "output": "json"
+      },
+      "args": {
+        "allow-missing-template-keys": {
+          "literal_name": "allow-missing-template-keys",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "field-manager": {
+          "literal_name": "field-manager",
+          "default": null,
+          "validator": "is_str"
+        },
+        "filename": {
+          "literal_name": "filename",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "kustomize": {
+          "literal_name": "kustomize",
+          "default": null,
+          "validator": "is_str"
+        },
+        "output": {
+          "literal_name": "output",
+          "default": null,
+          "validator": "is_str"
+        },
+        "output-patch": {
+          "literal_name": "output-patch",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "recursive": {
+          "literal_name": "recursive",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "save-config": {
+          "literal_name": "save-config",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "show-managed-fields": {
+          "literal_name": "show-managed-fields",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "subresource": {
+          "literal_name": "subresource",
+          "default": null,
+          "validator": "is_str"
+        },
+        "template": {
+          "literal_name": "template",
+          "default": null,
+          "validator": "is_str"
+        },
+        "validate": {
+          "literal_name": "validate",
+          "default": null,
+          "validator": "is_str"
+        },
+        "windows-line-endings": {
+          "literal_name": "windows-line-endings",
+          "default": null,
+          "validator": "is_bool"
+        }
+      },
+      "parse": "json"
+    },
+    "delete": {
+      "cli_command": [
+        "delete"
+      ],
+      "default_flags": {
+        "output": "json"
+      },
+      "args": {
+        "all": {
+          "literal_name": "all",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "all-namespaces": {
+          "literal_name": "all-namespaces",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "cascade": {
+          "literal_name": "cascade",
+          "default": null,
+          "validator": "is_str"
+        },
+        "dry-run": {
+          "literal_name": "dry-run",
+          "default": null,
+          "validator": "is_str"
+        },
+        "field-selector": {
+          "literal_name": "field-selector",
+          "default": null,
+          "validator": "is_str"
+        },
+        "filename": {
+          "literal_name": "filename",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "force": {
+          "literal_name": "force",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "grace-period": {
+          "literal_name": "grace-period",
+          "default": null,
+          "validator": "is_str"
+        },
+        "ignore-not-found": {
+          "literal_name": "ignore-not-found",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "interactive": {
+          "literal_name": "interactive",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "kustomize": {
+          "literal_name": "kustomize",
+          "default": null,
+          "validator": "is_str"
+        },
+        "now": {
+          "literal_name": "now",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "output": {
+          "literal_name": "output",
+          "default": null,
+          "validator": "is_str"
+        },
+        "raw": {
+          "literal_name": "raw",
+          "default": null,
+          "validator": "is_str"
+        },
+        "recursive": {
+          "literal_name": "recursive",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "selector": {
+          "literal_name": "selector",
+          "default": null,
+          "validator": "is_str"
+        },
+        "timeout": {
+          "literal_name": "timeout",
+          "default": null,
+          "validator": "is_str"
+        },
+        "wait": {
+          "literal_name": "wait",
+          "default": null,
+          "validator": "is_bool"
+        }
+      },
+      "parse": "json"
+    },
+    "rollout": {
+      "cli_command": [
+        "rollout"
+      ],
+      "default_flags": {},
+      "args": {},
+      "parse": null
+    },
+    "rollout_history": {
+      "cli_command": [
+        "rollout",
+        "history"
+      ],
+      "default_flags": {
+        "output": "json"
+      },
+      "args": {
+        "allow-missing-template-keys": {
+          "literal_name": "allow-missing-template-keys",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "filename": {
+          "literal_name": "filename",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "kustomize": {
+          "literal_name": "kustomize",
+          "default": null,
+          "validator": "is_str"
+        },
+        "output": {
+          "literal_name": "output",
+          "default": null,
+          "validator": "is_str"
+        },
+        "recursive": {
+          "literal_name": "recursive",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "revision": {
+          "literal_name": "revision",
+          "default": null,
+          "validator": "is_str"
+        },
+        "selector": {
+          "literal_name": "selector",
+          "default": null,
+          "validator": "is_str"
+        },
+        "show-managed-fields": {
+          "literal_name": "show-managed-fields",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "template": {
+          "literal_name": "template",
+          "default": null,
+          "validator": "is_str"
+        }
+      },
+      "parse": "json"
+    },
+    "rollout_pause": {
+      "cli_command": [
+        "rollout",
+        "pause"
+      ],
+      "default_flags": {
+        "output": "json"
+      },
+      "args": {
+        "allow-missing-template-keys": {
+          "literal_name": "allow-missing-template-keys",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "field-manager": {
+          "literal_name": "field-manager",
+          "default": null,
+          "validator": "is_str"
+        },
+        "filename": {
+          "literal_name": "filename",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "kustomize": {
+          "literal_name": "kustomize",
+          "default": null,
+          "validator": "is_str"
+        },
+        "output": {
+          "literal_name": "output",
+          "default": null,
+          "validator": "is_str"
+        },
+        "recursive": {
+          "literal_name": "recursive",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "selector": {
+          "literal_name": "selector",
+          "default": null,
+          "validator": "is_str"
+        },
+        "show-managed-fields": {
+          "literal_name": "show-managed-fields",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "template": {
+          "literal_name": "template",
+          "default": null,
+          "validator": "is_str"
+        }
+      },
+      "parse": "json"
+    },
+    "rollout_restart": {
+      "cli_command": [
+        "rollout",
+        "restart"
+      ],
+      "default_flags": {
+        "output": "json"
+      },
+      "args": {
+        "allow-missing-template-keys": {
+          "literal_name": "allow-missing-template-keys",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "field-manager": {
+          "literal_name": "field-manager",
+          "default": null,
+          "validator": "is_str"
+        },
+        "filename": {
+          "literal_name": "filename",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "kustomize": {
+          "literal_name": "kustomize",
+          "default": null,
+          "validator": "is_str"
+        },
+        "output": {
+          "literal_name": "output",
+          "default": null,
+          "validator": "is_str"
+        },
+        "recursive": {
+          "literal_name": "recursive",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "selector": {
+          "literal_name": "selector",
+          "default": null,
+          "validator": "is_str"
+        },
+        "show-managed-fields": {
+          "literal_name": "show-managed-fields",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "template": {
+          "literal_name": "template",
+          "default": null,
+          "validator": "is_str"
+        }
+      },
+      "parse": "json"
+    },
+    "rollout_resume": {
+      "cli_command": [
+        "rollout",
+        "resume"
+      ],
+      "default_flags": {
+        "output": "json"
+      },
+      "args": {
+        "allow-missing-template-keys": {
+          "literal_name": "allow-missing-template-keys",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "field-manager": {
+          "literal_name": "field-manager",
+          "default": null,
+          "validator": "is_str"
+        },
+        "filename": {
+          "literal_name": "filename",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "kustomize": {
+          "literal_name": "kustomize",
+          "default": null,
+          "validator": "is_str"
+        },
+        "output": {
+          "literal_name": "output",
+          "default": null,
+          "validator": "is_str"
+        },
+        "recursive": {
+          "literal_name": "recursive",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "selector": {
+          "literal_name": "selector",
+          "default": null,
+          "validator": "is_str"
+        },
+        "show-managed-fields": {
+          "literal_name": "show-managed-fields",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "template": {
+          "literal_name": "template",
+          "default": null,
+          "validator": "is_str"
+        }
+      },
+      "parse": "json"
+    },
+    "rollout_status": {
+      "cli_command": [
+        "rollout",
+        "status"
+      ],
+      "default_flags": {},
+      "args": {
+        "filename": {
+          "literal_name": "filename",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "kustomize": {
+          "literal_name": "kustomize",
+          "default": null,
+          "validator": "is_str"
+        },
+        "recursive": {
+          "literal_name": "recursive",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "revision": {
+          "literal_name": "revision",
+          "default": null,
+          "validator": "is_str"
+        },
+        "selector": {
+          "literal_name": "selector",
+          "default": null,
+          "validator": "is_str"
+        },
+        "timeout": {
+          "literal_name": "timeout",
+          "default": null,
+          "validator": "is_str"
+        },
+        "watch": {
+          "literal_name": "watch",
+          "default": null,
+          "validator": "is_bool"
+        }
+      },
+      "parse": null
+    },
+    "rollout_undo": {
+      "cli_command": [
+        "rollout",
+        "undo"
+      ],
+      "default_flags": {
+        "output": "json"
+      },
+      "args": {
+        "allow-missing-template-keys": {
+          "literal_name": "allow-missing-template-keys",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "dry-run": {
+          "literal_name": "dry-run",
+          "default": null,
+          "validator": "is_str"
+        },
+        "filename": {
+          "literal_name": "filename",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "kustomize": {
+          "literal_name": "kustomize",
+          "default": null,
+          "validator": "is_str"
+        },
+        "output": {
+          "literal_name": "output",
+          "default": null,
+          "validator": "is_str"
+        },
+        "recursive": {
+          "literal_name": "recursive",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "selector": {
+          "literal_name": "selector",
+          "default": null,
+          "validator": "is_str"
+        },
+        "show-managed-fields": {
+          "literal_name": "show-managed-fields",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "template": {
+          "literal_name": "template",
+          "default": null,
+          "validator": "is_str"
+        },
+        "to-revision": {
+          "literal_name": "to-revision",
+          "default": null,
+          "validator": "is_str"
+        }
+      },
+      "parse": "json"
+    },
+    "scale": {
+      "cli_command": [
+        "scale"
+      ],
+      "default_flags": {
+        "output": "json"
+      },
+      "args": {
+        "all": {
+          "literal_name": "all",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "allow-missing-template-keys": {
+          "literal_name": "allow-missing-template-keys",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "current-replicas": {
+          "literal_name": "current-replicas",
+          "default": null,
+          "validator": "is_str"
+        },
+        "dry-run": {
+          "literal_name": "dry-run",
+          "default": null,
+          "validator": "is_str"
+        },
+        "filename": {
+          "literal_name": "filename",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "kustomize": {
+          "literal_name": "kustomize",
+          "default": null,
+          "validator": "is_str"
+        },
+        "output": {
+          "literal_name": "output",
+          "default": null,
+          "validator": "is_str"
+        },
+        "recursive": {
+          "literal_name": "recursive",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "replicas": {
+          "literal_name": "replicas",
+          "default": null,
+          "validator": "is_str"
+        },
+        "resource-version": {
+          "literal_name": "resource-version",
+          "default": null,
+          "validator": "is_str"
+        },
+        "selector": {
+          "literal_name": "selector",
+          "default": null,
+          "validator": "is_str"
+        },
+        "show-managed-fields": {
+          "literal_name": "show-managed-fields",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "template": {
+          "literal_name": "template",
+          "default": null,
+          "validator": "is_str"
+        },
+        "timeout": {
+          "literal_name": "timeout",
+          "default": null,
+          "validator": "is_str"
+        }
+      },
+      "parse": "json"
+    },
+    "autoscale": {
+      "cli_command": [
+        "autoscale"
+      ],
+      "default_flags": {
+        "output": "json"
+      },
+      "args": {
+        "allow-missing-template-keys": {
+          "literal_name": "allow-missing-template-keys",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "cpu-percent": {
+          "literal_name": "cpu-percent",
+          "default": null,
+          "validator": "is_str"
+        },
+        "dry-run": {
+          "literal_name": "dry-run",
+          "default": null,
+          "validator": "is_str"
+        },
+        "field-manager": {
+          "literal_name": "field-manager",
+          "default": null,
+          "validator": "is_str"
+        },
+        "filename": {
+          "literal_name": "filename",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "kustomize": {
+          "literal_name": "kustomize",
+          "default": null,
+          "validator": "is_str"
+        },
+        "max": {
+          "literal_name": "max",
+          "default": null,
+          "validator": "is_str"
+        },
+        "min": {
+          "literal_name": "min",
+          "default": null,
+          "validator": "is_str"
+        },
+        "name": {
+          "literal_name": "name",
+          "default": null,
+          "validator": "is_str"
+        },
+        "output": {
+          "literal_name": "output",
+          "default": null,
+          "validator": "is_str"
+        },
+        "recursive": {
+          "literal_name": "recursive",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "save-config": {
+          "literal_name": "save-config",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "show-managed-fields": {
+          "literal_name": "show-managed-fields",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "template": {
+          "literal_name": "template",
+          "default": null,
+          "validator": "is_str"
+        }
+      },
+      "parse": "json"
+    },
+    "certificate": {
+      "cli_command": [
+        "certificate"
+      ],
+      "default_flags": {},
+      "args": {},
+      "parse": null
+    },
+    "certificate_approve": {
+      "cli_command": [
+        "certificate",
+        "approve"
+      ],
+      "default_flags": {
+        "output": "json"
+      },
+      "args": {
+        "allow-missing-template-keys": {
+          "literal_name": "allow-missing-template-keys",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "filename": {
+          "literal_name": "filename",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "force": {
+          "literal_name": "force",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "kustomize": {
+          "literal_name": "kustomize",
+          "default": null,
+          "validator": "is_str"
+        },
+        "output": {
+          "literal_name": "output",
+          "default": null,
+          "validator": "is_str"
+        },
+        "recursive": {
+          "literal_name": "recursive",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "show-managed-fields": {
+          "literal_name": "show-managed-fields",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "template": {
+          "literal_name": "template",
+          "default": null,
+          "validator": "is_str"
+        }
+      },
+      "parse": "json"
+    },
+    "certificate_deny": {
+      "cli_command": [
+        "certificate",
+        "deny"
+      ],
+      "default_flags": {
+        "output": "json"
+      },
+      "args": {
+        "allow-missing-template-keys": {
+          "literal_name": "allow-missing-template-keys",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "filename": {
+          "literal_name": "filename",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "force": {
+          "literal_name": "force",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "kustomize": {
+          "literal_name": "kustomize",
+          "default": null,
+          "validator": "is_str"
+        },
+        "output": {
+          "literal_name": "output",
+          "default": null,
+          "validator": "is_str"
+        },
+        "recursive": {
+          "literal_name": "recursive",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "show-managed-fields": {
+          "literal_name": "show-managed-fields",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "template": {
+          "literal_name": "template",
+          "default": null,
+          "validator": "is_str"
+        }
+      },
+      "parse": "json"
+    },
+    "cluster_info": {
+      "cli_command": [
+        "cluster_info"
+      ],
+      "default_flags": {},
+      "args": {},
+      "parse": null
+    },
+    "cluster_info_dump": {
+      "cli_command": [
+        "cluster-info",
+        "dump"
+      ],
+      "default_flags": {
+        "output": "json"
+      },
+      "args": {
+        "all-namespaces": {
+          "literal_name": "all-namespaces",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "allow-missing-template-keys": {
+          "literal_name": "allow-missing-template-keys",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "namespaces": {
+          "literal_name": "namespaces",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "output": {
+          "literal_name": "output",
+          "default": null,
+          "validator": "is_str"
+        },
+        "output-directory": {
+          "literal_name": "output-directory",
+          "default": null,
+          "validator": "is_str"
+        },
+        "pod-running-timeout": {
+          "literal_name": "pod-running-timeout",
+          "default": null,
+          "validator": "is_str"
+        },
+        "show-managed-fields": {
+          "literal_name": "show-managed-fields",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "template": {
+          "literal_name": "template",
+          "default": null,
+          "validator": "is_str"
+        }
+      },
+      "parse": "json"
+    },
+    "top": {
+      "cli_command": [
+        "top"
+      ],
+      "default_flags": {},
+      "args": {},
+      "parse": null
+    },
+    "top_node": {
+      "cli_command": [
+        "top",
+        "node"
+      ],
+      "default_flags": {},
+      "args": {
+        "no-headers": {
+          "literal_name": "no-headers",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "selector": {
+          "literal_name": "selector",
+          "default": null,
+          "validator": "is_str"
+        },
+        "show-capacity": {
+          "literal_name": "show-capacity",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "sort-by": {
+          "literal_name": "sort-by",
+          "default": null,
+          "validator": "is_str"
+        },
+        "use-protocol-buffers": {
+          "literal_name": "use-protocol-buffers",
+          "default": null,
+          "validator": "is_bool"
+        }
+      },
+      "parse": null
+    },
+    "top_pod": {
+      "cli_command": [
+        "top",
+        "pod"
+      ],
+      "default_flags": {},
+      "args": {
+        "all-namespaces": {
+          "literal_name": "all-namespaces",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "containers": {
+          "literal_name": "containers",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "field-selector": {
+          "literal_name": "field-selector",
+          "default": null,
+          "validator": "is_str"
+        },
+        "no-headers": {
+          "literal_name": "no-headers",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "selector": {
+          "literal_name": "selector",
+          "default": null,
+          "validator": "is_str"
+        },
+        "sort-by": {
+          "literal_name": "sort-by",
+          "default": null,
+          "validator": "is_str"
+        },
+        "sum": {
+          "literal_name": "sum",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "use-protocol-buffers": {
+          "literal_name": "use-protocol-buffers",
+          "default": null,
+          "validator": "is_bool"
+        }
+      },
+      "parse": null
+    },
+    "cordon": {
+      "cli_command": [
+        "cordon"
+      ],
+      "default_flags": {},
+      "args": {
+        "dry-run": {
+          "literal_name": "dry-run",
+          "default": null,
+          "validator": "is_str"
+        },
+        "selector": {
+          "literal_name": "selector",
+          "default": null,
+          "validator": "is_str"
+        }
+      },
+      "parse": null
+    },
+    "uncordon": {
+      "cli_command": [
+        "uncordon"
+      ],
+      "default_flags": {},
+      "args": {
+        "dry-run": {
+          "literal_name": "dry-run",
+          "default": null,
+          "validator": "is_str"
+        },
+        "selector": {
+          "literal_name": "selector",
+          "default": null,
+          "validator": "is_str"
+        }
+      },
+      "parse": null
+    },
+    "drain": {
+      "cli_command": [
+        "drain"
+      ],
+      "default_flags": {},
+      "args": {
+        "chunk-size": {
+          "literal_name": "chunk-size",
+          "default": null,
+          "validator": "is_str"
+        },
+        "delete-emptydir-data": {
+          "literal_name": "delete-emptydir-data",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "disable-eviction": {
+          "literal_name": "disable-eviction",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "dry-run": {
+          "literal_name": "dry-run",
+          "default": null,
+          "validator": "is_str"
+        },
+        "force": {
+          "literal_name": "force",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "grace-period": {
+          "literal_name": "grace-period",
+          "default": null,
+          "validator": "is_str"
+        },
+        "ignore-daemonsets": {
+          "literal_name": "ignore-daemonsets",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "pod-selector": {
+          "literal_name": "pod-selector",
+          "default": null,
+          "validator": "is_str"
+        },
+        "selector": {
+          "literal_name": "selector",
+          "default": null,
+          "validator": "is_str"
+        },
+        "skip-wait-for-delete-timeout": {
+          "literal_name": "skip-wait-for-delete-timeout",
+          "default": null,
+          "validator": "is_str"
+        },
+        "timeout": {
+          "literal_name": "timeout",
+          "default": null,
+          "validator": "is_str"
+        }
+      },
+      "parse": null
+    },
+    "taint": {
+      "cli_command": [
+        "taint"
+      ],
+      "default_flags": {
+        "output": "json"
+      },
+      "args": {
+        "all": {
+          "literal_name": "all",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "allow-missing-template-keys": {
+          "literal_name": "allow-missing-template-keys",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "dry-run": {
+          "literal_name": "dry-run",
+          "default": null,
+          "validator": "is_str"
+        },
+        "field-manager": {
+          "literal_name": "field-manager",
+          "default": null,
+          "validator": "is_str"
+        },
+        "output": {
+          "literal_name": "output",
+          "default": null,
+          "validator": "is_str"
+        },
+        "overwrite": {
+          "literal_name": "overwrite",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "selector": {
+          "literal_name": "selector",
+          "default": null,
+          "validator": "is_str"
+        },
+        "show-managed-fields": {
+          "literal_name": "show-managed-fields",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "template": {
+          "literal_name": "template",
+          "default": null,
+          "validator": "is_str"
+        },
+        "validate": {
+          "literal_name": "validate",
+          "default": null,
+          "validator": "is_str"
+        }
+      },
+      "parse": "json"
+    },
+    "describe": {
+      "cli_command": [
+        "describe"
+      ],
+      "default_flags": {},
+      "args": {
+        "all-namespaces": {
+          "literal_name": "all-namespaces",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "chunk-size": {
+          "literal_name": "chunk-size",
+          "default": null,
+          "validator": "is_str"
+        },
+        "filename": {
+          "literal_name": "filename",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "kustomize": {
+          "literal_name": "kustomize",
+          "default": null,
+          "validator": "is_str"
+        },
+        "recursive": {
+          "literal_name": "recursive",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "selector": {
+          "literal_name": "selector",
+          "default": null,
+          "validator": "is_str"
+        },
+        "show-events": {
+          "literal_name": "show-events",
+          "default": null,
+          "validator": "is_bool"
+        }
+      },
+      "parse": null
+    },
+    "logs": {
+      "cli_command": [
+        "logs"
+      ],
+      "default_flags": {},
+      "args": {
+        "all-containers": {
+          "literal_name": "all-containers",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "container": {
+          "literal_name": "container",
+          "default": null,
+          "validator": "is_str"
+        },
+        "follow": {
+          "literal_name": "follow",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "ignore-errors": {
+          "literal_name": "ignore-errors",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "insecure-skip-tls-verify-backend": {
+          "literal_name": "insecure-skip-tls-verify-backend",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "limit-bytes": {
+          "literal_name": "limit-bytes",
+          "default": null,
+          "validator": "is_str"
+        },
+        "max-log-requests": {
+          "literal_name": "max-log-requests",
+          "default": null,
+          "validator": "is_str"
+        },
+        "pod-running-timeout": {
+          "literal_name": "pod-running-timeout",
+          "default": null,
+          "validator": "is_str"
+        },
+        "prefix": {
+          "literal_name": "prefix",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "previous": {
+          "literal_name": "previous",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "selector": {
+          "literal_name": "selector",
+          "default": null,
+          "validator": "is_str"
+        },
+        "since": {
+          "literal_name": "since",
+          "default": null,
+          "validator": "is_str"
+        },
+        "since-time": {
+          "literal_name": "since-time",
+          "default": null,
+          "validator": "is_str"
+        },
+        "tail": {
+          "literal_name": "tail",
+          "default": null,
+          "validator": "is_str"
+        },
+        "timestamps": {
+          "literal_name": "timestamps",
+          "default": null,
+          "validator": "is_bool"
+        }
+      },
+      "parse": null
+    },
+    "attach": {
+      "cli_command": [
+        "attach"
+      ],
+      "default_flags": {},
+      "args": {
+        "container": {
+          "literal_name": "container",
+          "default": null,
+          "validator": "is_str"
+        },
+        "pod-running-timeout": {
+          "literal_name": "pod-running-timeout",
+          "default": null,
+          "validator": "is_str"
+        },
+        "quiet": {
+          "literal_name": "quiet",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "stdin": {
+          "literal_name": "stdin",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "tty": {
+          "literal_name": "tty",
+          "default": null,
+          "validator": "is_bool"
+        }
+      },
+      "parse": null
+    },
+    "exec": {
+      "cli_command": [
+        "exec"
+      ],
+      "default_flags": {},
+      "args": {
+        "container": {
+          "literal_name": "container",
+          "default": null,
+          "validator": "is_str"
+        },
+        "filename": {
+          "literal_name": "filename",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "pod-running-timeout": {
+          "literal_name": "pod-running-timeout",
+          "default": null,
+          "validator": "is_str"
+        },
+        "quiet": {
+          "literal_name": "quiet",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "stdin": {
+          "literal_name": "stdin",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "tty": {
+          "literal_name": "tty",
+          "default": null,
+          "validator": "is_bool"
+        }
+      },
+      "parse": null
+    },
+    "port_forward": {
+      "cli_command": [
+        "port_forward"
+      ],
+      "default_flags": {},
+      "args": {
+        "address": {
+          "literal_name": "address",
+          "default": null,
+          "validator": "is_str"
+        },
+        "pod-running-timeout": {
+          "literal_name": "pod-running-timeout",
+          "default": null,
+          "validator": "is_str"
+        }
+      },
+      "parse": null
+    },
+    "proxy": {
+      "cli_command": [
+        "proxy"
+      ],
+      "default_flags": {},
+      "args": {
+        "accept-hosts": {
+          "literal_name": "accept-hosts",
+          "default": null,
+          "validator": "is_str"
+        },
+        "accept-paths": {
+          "literal_name": "accept-paths",
+          "default": null,
+          "validator": "is_str"
+        },
+        "address": {
+          "literal_name": "address",
+          "default": null,
+          "validator": "is_str"
+        },
+        "api-prefix": {
+          "literal_name": "api-prefix",
+          "default": null,
+          "validator": "is_str"
+        },
+        "append-server-path": {
+          "literal_name": "append-server-path",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "disable-filter": {
+          "literal_name": "disable-filter",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "keepalive": {
+          "literal_name": "keepalive",
+          "default": null,
+          "validator": "is_str"
+        },
+        "port": {
+          "literal_name": "port",
+          "default": null,
+          "validator": "is_str"
+        },
+        "reject-methods": {
+          "literal_name": "reject-methods",
+          "default": null,
+          "validator": "is_str"
+        },
+        "reject-paths": {
+          "literal_name": "reject-paths",
+          "default": null,
+          "validator": "is_str"
+        },
+        "unix-socket": {
+          "literal_name": "unix-socket",
+          "default": null,
+          "validator": "is_str"
+        },
+        "www": {
+          "literal_name": "www",
+          "default": null,
+          "validator": "is_str"
+        },
+        "www-prefix": {
+          "literal_name": "www-prefix",
+          "default": null,
+          "validator": "is_str"
+        }
+      },
+      "parse": null
+    },
+    "cp": {
+      "cli_command": [
+        "cp"
+      ],
+      "default_flags": {},
+      "args": {
+        "container": {
+          "literal_name": "container",
+          "default": null,
+          "validator": "is_str"
+        },
+        "no-preserve": {
+          "literal_name": "no-preserve",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "retries": {
+          "literal_name": "retries",
+          "default": null,
+          "validator": "is_str"
+        }
+      },
+      "parse": null
+    },
+    "auth": {
+      "cli_command": [
+        "auth"
+      ],
+      "default_flags": {},
+      "args": {},
+      "parse": null
+    },
+    "auth_can_i": {
+      "cli_command": [
+        "auth",
+        "can-i"
+      ],
+      "default_flags": {},
+      "args": {
+        "all-namespaces": {
+          "literal_name": "all-namespaces",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "list": {
+          "literal_name": "list",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "no-headers": {
+          "literal_name": "no-headers",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "quiet": {
+          "literal_name": "quiet",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "subresource": {
+          "literal_name": "subresource",
+          "default": null,
+          "validator": "is_str"
+        }
+      },
+      "parse": null
+    },
+    "auth_reconcile": {
+      "cli_command": [
+        "auth",
+        "reconcile"
+      ],
+      "default_flags": {
+        "output": "json"
+      },
+      "args": {
+        "allow-missing-template-keys": {
+          "literal_name": "allow-missing-template-keys",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "dry-run": {
+          "literal_name": "dry-run",
+          "default": null,
+          "validator": "is_str"
+        },
+        "filename": {
+          "literal_name": "filename",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "kustomize": {
+          "literal_name": "kustomize",
+          "default": null,
+          "validator": "is_str"
+        },
+        "output": {
+          "literal_name": "output",
+          "default": null,
+          "validator": "is_str"
+        },
+        "recursive": {
+          "literal_name": "recursive",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "remove-extra-permissions": {
+          "literal_name": "remove-extra-permissions",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "remove-extra-subjects": {
+          "literal_name": "remove-extra-subjects",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "show-managed-fields": {
+          "literal_name": "show-managed-fields",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "template": {
+          "literal_name": "template",
+          "default": null,
+          "validator": "is_str"
+        }
+      },
+      "parse": "json"
+    },
+    "auth_whoami": {
+      "cli_command": [
+        "auth",
+        "whoami"
+      ],
+      "default_flags": {
+        "output": "json"
+      },
+      "args": {
+        "allow-missing-template-keys": {
+          "literal_name": "allow-missing-template-keys",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "output": {
+          "literal_name": "output",
+          "default": null,
+          "validator": "is_str"
+        },
+        "show-managed-fields": {
+          "literal_name": "show-managed-fields",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "template": {
+          "literal_name": "template",
+          "default": null,
+          "validator": "is_str"
+        }
+      },
+      "parse": "json"
+    },
+    "debug": {
+      "cli_command": [
+        "debug"
+      ],
+      "default_flags": {},
+      "args": {
+        "arguments-only": {
+          "literal_name": "arguments-only",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "attach": {
+          "literal_name": "attach",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "container": {
+          "literal_name": "container",
+          "default": null,
+          "validator": "is_str"
+        },
+        "copy-to": {
+          "literal_name": "copy-to",
+          "default": null,
+          "validator": "is_str"
+        },
+        "env": {
+          "literal_name": "env",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "filename": {
+          "literal_name": "filename",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "image": {
+          "literal_name": "image",
+          "default": null,
+          "validator": "is_str"
+        },
+        "image-pull-policy": {
+          "literal_name": "image-pull-policy",
+          "default": null,
+          "validator": "is_str"
+        },
+        "profile": {
+          "literal_name": "profile",
+          "default": null,
+          "validator": "is_str"
+        },
+        "quiet": {
+          "literal_name": "quiet",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "replace": {
+          "literal_name": "replace",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "same-node": {
+          "literal_name": "same-node",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "set-image": {
+          "literal_name": "set-image",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "share-processes": {
+          "literal_name": "share-processes",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "stdin": {
+          "literal_name": "stdin",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "target": {
+          "literal_name": "target",
+          "default": null,
+          "validator": "is_str"
+        },
+        "tty": {
+          "literal_name": "tty",
+          "default": null,
+          "validator": "is_bool"
+        }
+      },
+      "parse": null
+    },
+    "events": {
+      "cli_command": [
+        "events"
+      ],
+      "default_flags": {
+        "output": "json"
+      },
+      "args": {
+        "all-namespaces": {
+          "literal_name": "all-namespaces",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "allow-missing-template-keys": {
+          "literal_name": "allow-missing-template-keys",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "chunk-size": {
+          "literal_name": "chunk-size",
+          "default": null,
+          "validator": "is_str"
+        },
+        "for": {
+          "literal_name": "for",
+          "default": null,
+          "validator": "is_str"
+        },
+        "no-headers": {
+          "literal_name": "no-headers",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "output": {
+          "literal_name": "output",
+          "default": null,
+          "validator": "is_str"
+        },
+        "show-managed-fields": {
+          "literal_name": "show-managed-fields",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "template": {
+          "literal_name": "template",
+          "default": null,
+          "validator": "is_str"
+        },
+        "types": {
+          "literal_name": "types",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "watch": {
+          "literal_name": "watch",
+          "default": null,
+          "validator": "is_bool"
+        }
+      },
+      "parse": "json"
+    },
+    "diff": {
+      "cli_command": [
+        "diff"
+      ],
+      "default_flags": {},
+      "args": {
+        "concurrency": {
+          "literal_name": "concurrency",
+          "default": null,
+          "validator": "is_str"
+        },
+        "field-manager": {
+          "literal_name": "field-manager",
+          "default": null,
+          "validator": "is_str"
+        },
+        "filename": {
+          "literal_name": "filename",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "force-conflicts": {
+          "literal_name": "force-conflicts",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "kustomize": {
+          "literal_name": "kustomize",
+          "default": null,
+          "validator": "is_str"
+        },
+        "prune": {
+          "literal_name": "prune",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "prune-allowlist": {
+          "literal_name": "prune-allowlist",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "recursive": {
+          "literal_name": "recursive",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "selector": {
+          "literal_name": "selector",
+          "default": null,
+          "validator": "is_str"
+        },
+        "server-side": {
+          "literal_name": "server-side",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "show-managed-fields": {
+          "literal_name": "show-managed-fields",
+          "default": null,
+          "validator": "is_bool"
+        }
+      },
+      "parse": null
+    },
+    "apply": {
+      "cli_command": [
+        "apply"
+      ],
+      "default_flags": {
+        "output": "json"
+      },
+      "args": {
+        "all": {
+          "literal_name": "all",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "allow-missing-template-keys": {
+          "literal_name": "allow-missing-template-keys",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "cascade": {
+          "literal_name": "cascade",
+          "default": null,
+          "validator": "is_str"
+        },
+        "dry-run": {
+          "literal_name": "dry-run",
+          "default": null,
+          "validator": "is_str"
+        },
+        "field-manager": {
+          "literal_name": "field-manager",
+          "default": null,
+          "validator": "is_str"
+        },
+        "filename": {
+          "literal_name": "filename",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "force": {
+          "literal_name": "force",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "force-conflicts": {
+          "literal_name": "force-conflicts",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "grace-period": {
+          "literal_name": "grace-period",
+          "default": null,
+          "validator": "is_str"
+        },
+        "kustomize": {
+          "literal_name": "kustomize",
+          "default": null,
+          "validator": "is_str"
+        },
+        "openapi-patch": {
+          "literal_name": "openapi-patch",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "output": {
+          "literal_name": "output",
+          "default": null,
+          "validator": "is_str"
+        },
+        "overwrite": {
+          "literal_name": "overwrite",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "prune": {
+          "literal_name": "prune",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "prune-allowlist": {
+          "literal_name": "prune-allowlist",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "recursive": {
+          "literal_name": "recursive",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "selector": {
+          "literal_name": "selector",
+          "default": null,
+          "validator": "is_str"
+        },
+        "server-side": {
+          "literal_name": "server-side",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "show-managed-fields": {
+          "literal_name": "show-managed-fields",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "template": {
+          "literal_name": "template",
+          "default": null,
+          "validator": "is_str"
+        },
+        "timeout": {
+          "literal_name": "timeout",
+          "default": null,
+          "validator": "is_str"
+        },
+        "validate": {
+          "literal_name": "validate",
+          "default": null,
+          "validator": "is_str"
+        },
+        "wait": {
+          "literal_name": "wait",
+          "default": null,
+          "validator": "is_bool"
+        }
+      },
+      "parse": "json"
+    },
+    "apply_edit_last_applied": {
+      "cli_command": [
+        "apply",
+        "edit-last-applied"
+      ],
+      "default_flags": {
+        "output": "json"
+      },
+      "args": {
+        "all": {
+          "literal_name": "all",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "allow-missing-template-keys": {
+          "literal_name": "allow-missing-template-keys",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "cascade": {
+          "literal_name": "cascade",
+          "default": null,
+          "validator": "is_str"
+        },
+        "dry-run": {
+          "literal_name": "dry-run",
+          "default": null,
+          "validator": "is_str"
+        },
+        "field-manager": {
+          "literal_name": "field-manager",
+          "default": null,
+          "validator": "is_str"
+        },
+        "filename": {
+          "literal_name": "filename",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "force": {
+          "literal_name": "force",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "force-conflicts": {
+          "literal_name": "force-conflicts",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "grace-period": {
+          "literal_name": "grace-period",
+          "default": null,
+          "validator": "is_str"
+        },
+        "kustomize": {
+          "literal_name": "kustomize",
+          "default": null,
+          "validator": "is_str"
+        },
+        "openapi-patch": {
+          "literal_name": "openapi-patch",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "output": {
+          "literal_name": "output",
+          "default": null,
+          "validator": "is_str"
+        },
+        "overwrite": {
+          "literal_name": "overwrite",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "prune": {
+          "literal_name": "prune",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "prune-allowlist": {
+          "literal_name": "prune-allowlist",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "recursive": {
+          "literal_name": "recursive",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "selector": {
+          "literal_name": "selector",
+          "default": null,
+          "validator": "is_str"
+        },
+        "server-side": {
+          "literal_name": "server-side",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "show-managed-fields": {
+          "literal_name": "show-managed-fields",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "template": {
+          "literal_name": "template",
+          "default": null,
+          "validator": "is_str"
+        },
+        "timeout": {
+          "literal_name": "timeout",
+          "default": null,
+          "validator": "is_str"
+        },
+        "validate": {
+          "literal_name": "validate",
+          "default": null,
+          "validator": "is_str"
+        },
+        "wait": {
+          "literal_name": "wait",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "windows-line-endings": {
+          "literal_name": "windows-line-endings",
+          "default": null,
+          "validator": "is_bool"
+        }
+      },
+      "parse": "json"
+    },
+    "apply_set_last_applied": {
+      "cli_command": [
+        "apply",
+        "set-last-applied"
+      ],
+      "default_flags": {
+        "output": "json"
+      },
+      "args": {
+        "all": {
+          "literal_name": "all",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "allow-missing-template-keys": {
+          "literal_name": "allow-missing-template-keys",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "cascade": {
+          "literal_name": "cascade",
+          "default": null,
+          "validator": "is_str"
+        },
+        "dry-run": {
+          "literal_name": "dry-run",
+          "default": null,
+          "validator": "is_str"
+        },
+        "field-manager": {
+          "literal_name": "field-manager",
+          "default": null,
+          "validator": "is_str"
+        },
+        "filename": {
+          "literal_name": "filename",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "force": {
+          "literal_name": "force",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "force-conflicts": {
+          "literal_name": "force-conflicts",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "grace-period": {
+          "literal_name": "grace-period",
+          "default": null,
+          "validator": "is_str"
+        },
+        "kustomize": {
+          "literal_name": "kustomize",
+          "default": null,
+          "validator": "is_str"
+        },
+        "openapi-patch": {
+          "literal_name": "openapi-patch",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "output": {
+          "literal_name": "output",
+          "default": null,
+          "validator": "is_str"
+        },
+        "overwrite": {
+          "literal_name": "overwrite",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "prune": {
+          "literal_name": "prune",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "prune-allowlist": {
+          "literal_name": "prune-allowlist",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "recursive": {
+          "literal_name": "recursive",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "selector": {
+          "literal_name": "selector",
+          "default": null,
+          "validator": "is_str"
+        },
+        "server-side": {
+          "literal_name": "server-side",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "show-managed-fields": {
+          "literal_name": "show-managed-fields",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "template": {
+          "literal_name": "template",
+          "default": null,
+          "validator": "is_str"
+        },
+        "timeout": {
+          "literal_name": "timeout",
+          "default": null,
+          "validator": "is_str"
+        },
+        "validate": {
+          "literal_name": "validate",
+          "default": null,
+          "validator": "is_str"
+        },
+        "wait": {
+          "literal_name": "wait",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "create-annotation": {
+          "literal_name": "create-annotation",
+          "default": null,
+          "validator": "is_bool"
+        }
+      },
+      "parse": "json"
+    },
+    "apply_view_last_applied": {
+      "cli_command": [
+        "apply",
+        "view-last-applied"
+      ],
+      "default_flags": {
+        "output": "json"
+      },
+      "args": {
+        "all": {
+          "literal_name": "all",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "allow-missing-template-keys": {
+          "literal_name": "allow-missing-template-keys",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "cascade": {
+          "literal_name": "cascade",
+          "default": null,
+          "validator": "is_str"
+        },
+        "dry-run": {
+          "literal_name": "dry-run",
+          "default": null,
+          "validator": "is_str"
+        },
+        "field-manager": {
+          "literal_name": "field-manager",
+          "default": null,
+          "validator": "is_str"
+        },
+        "filename": {
+          "literal_name": "filename",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "force": {
+          "literal_name": "force",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "force-conflicts": {
+          "literal_name": "force-conflicts",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "grace-period": {
+          "literal_name": "grace-period",
+          "default": null,
+          "validator": "is_str"
+        },
+        "kustomize": {
+          "literal_name": "kustomize",
+          "default": null,
+          "validator": "is_str"
+        },
+        "openapi-patch": {
+          "literal_name": "openapi-patch",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "output": {
+          "literal_name": "output",
+          "default": null,
+          "validator": "is_str"
+        },
+        "overwrite": {
+          "literal_name": "overwrite",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "prune": {
+          "literal_name": "prune",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "prune-allowlist": {
+          "literal_name": "prune-allowlist",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "recursive": {
+          "literal_name": "recursive",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "selector": {
+          "literal_name": "selector",
+          "default": null,
+          "validator": "is_str"
+        },
+        "server-side": {
+          "literal_name": "server-side",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "show-managed-fields": {
+          "literal_name": "show-managed-fields",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "template": {
+          "literal_name": "template",
+          "default": null,
+          "validator": "is_str"
+        },
+        "timeout": {
+          "literal_name": "timeout",
+          "default": null,
+          "validator": "is_str"
+        },
+        "validate": {
+          "literal_name": "validate",
+          "default": null,
+          "validator": "is_str"
+        },
+        "wait": {
+          "literal_name": "wait",
+          "default": null,
+          "validator": "is_bool"
+        }
+      },
+      "parse": "json"
+    },
+    "patch": {
+      "cli_command": [
+        "patch"
+      ],
+      "default_flags": {
+        "output": "json"
+      },
+      "args": {
+        "allow-missing-template-keys": {
+          "literal_name": "allow-missing-template-keys",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "dry-run": {
+          "literal_name": "dry-run",
+          "default": null,
+          "validator": "is_str"
+        },
+        "field-manager": {
+          "literal_name": "field-manager",
+          "default": null,
+          "validator": "is_str"
+        },
+        "filename": {
+          "literal_name": "filename",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "kustomize": {
+          "literal_name": "kustomize",
+          "default": null,
+          "validator": "is_str"
+        },
+        "local": {
+          "literal_name": "local",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "output": {
+          "literal_name": "output",
+          "default": null,
+          "validator": "is_str"
+        },
+        "patch": {
+          "literal_name": "patch",
+          "default": null,
+          "validator": "is_str"
+        },
+        "patch-file": {
+          "literal_name": "patch-file",
+          "default": null,
+          "validator": "is_str"
+        },
+        "recursive": {
+          "literal_name": "recursive",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "show-managed-fields": {
+          "literal_name": "show-managed-fields",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "subresource": {
+          "literal_name": "subresource",
+          "default": null,
+          "validator": "is_str"
+        },
+        "template": {
+          "literal_name": "template",
+          "default": null,
+          "validator": "is_str"
+        },
+        "type": {
+          "literal_name": "type",
+          "default": null,
+          "validator": "is_str"
+        }
+      },
+      "parse": "json"
+    },
+    "replace": {
+      "cli_command": [
+        "replace"
+      ],
+      "default_flags": {
+        "output": "json"
+      },
+      "args": {
+        "allow-missing-template-keys": {
+          "literal_name": "allow-missing-template-keys",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "cascade": {
+          "literal_name": "cascade",
+          "default": null,
+          "validator": "is_str"
+        },
+        "dry-run": {
+          "literal_name": "dry-run",
+          "default": null,
+          "validator": "is_str"
+        },
+        "field-manager": {
+          "literal_name": "field-manager",
+          "default": null,
+          "validator": "is_str"
+        },
+        "filename": {
+          "literal_name": "filename",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "force": {
+          "literal_name": "force",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "grace-period": {
+          "literal_name": "grace-period",
+          "default": null,
+          "validator": "is_str"
+        },
+        "kustomize": {
+          "literal_name": "kustomize",
+          "default": null,
+          "validator": "is_str"
+        },
+        "output": {
+          "literal_name": "output",
+          "default": null,
+          "validator": "is_str"
+        },
+        "raw": {
+          "literal_name": "raw",
+          "default": null,
+          "validator": "is_str"
+        },
+        "recursive": {
+          "literal_name": "recursive",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "save-config": {
+          "literal_name": "save-config",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "show-managed-fields": {
+          "literal_name": "show-managed-fields",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "subresource": {
+          "literal_name": "subresource",
+          "default": null,
+          "validator": "is_str"
+        },
+        "template": {
+          "literal_name": "template",
+          "default": null,
+          "validator": "is_str"
+        },
+        "timeout": {
+          "literal_name": "timeout",
+          "default": null,
+          "validator": "is_str"
+        },
+        "validate": {
+          "literal_name": "validate",
+          "default": null,
+          "validator": "is_str"
+        },
+        "wait": {
+          "literal_name": "wait",
+          "default": null,
+          "validator": "is_bool"
+        }
+      },
+      "parse": "json"
+    },
+    "wait": {
+      "cli_command": [
+        "wait"
+      ],
+      "default_flags": {
+        "output": "json"
+      },
+      "args": {
+        "all": {
+          "literal_name": "all",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "all-namespaces": {
+          "literal_name": "all-namespaces",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "allow-missing-template-keys": {
+          "literal_name": "allow-missing-template-keys",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "field-selector": {
+          "literal_name": "field-selector",
+          "default": null,
+          "validator": "is_str"
+        },
+        "filename": {
+          "literal_name": "filename",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "for": {
+          "literal_name": "for",
+          "default": null,
+          "validator": "is_str"
+        },
+        "local": {
+          "literal_name": "local",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "output": {
+          "literal_name": "output",
+          "default": null,
+          "validator": "is_str"
+        },
+        "recursive": {
+          "literal_name": "recursive",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "selector": {
+          "literal_name": "selector",
+          "default": null,
+          "validator": "is_str"
+        },
+        "show-managed-fields": {
+          "literal_name": "show-managed-fields",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "template": {
+          "literal_name": "template",
+          "default": null,
+          "validator": "is_str"
+        },
+        "timeout": {
+          "literal_name": "timeout",
+          "default": null,
+          "validator": "is_str"
+        }
+      },
+      "parse": "json"
+    },
+    "kustomize": {
+      "cli_command": [
+        "kustomize"
+      ],
+      "default_flags": {
+        "output": "json"
+      },
+      "args": {
+        "as-current-user": {
+          "literal_name": "as-current-user",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "enable-alpha-plugins": {
+          "literal_name": "enable-alpha-plugins",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "enable-helm": {
+          "literal_name": "enable-helm",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "env": {
+          "literal_name": "env",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "helm-command": {
+          "literal_name": "helm-command",
+          "default": null,
+          "validator": "is_str"
+        },
+        "load-restrictor": {
+          "literal_name": "load-restrictor",
+          "default": null,
+          "validator": "is_str"
+        },
+        "mount": {
+          "literal_name": "mount",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "network": {
+          "literal_name": "network",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "network-name": {
+          "literal_name": "network-name",
+          "default": null,
+          "validator": "is_str"
+        },
+        "output": {
+          "literal_name": "output",
+          "default": null,
+          "validator": "is_str"
+        }
+      },
+      "parse": "json"
+    },
+    "label": {
+      "cli_command": [
+        "label"
+      ],
+      "default_flags": {
+        "output": "json"
+      },
+      "args": {
+        "all": {
+          "literal_name": "all",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "all-namespaces": {
+          "literal_name": "all-namespaces",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "allow-missing-template-keys": {
+          "literal_name": "allow-missing-template-keys",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "dry-run": {
+          "literal_name": "dry-run",
+          "default": null,
+          "validator": "is_str"
+        },
+        "field-manager": {
+          "literal_name": "field-manager",
+          "default": null,
+          "validator": "is_str"
+        },
+        "field-selector": {
+          "literal_name": "field-selector",
+          "default": null,
+          "validator": "is_str"
+        },
+        "filename": {
+          "literal_name": "filename",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "kustomize": {
+          "literal_name": "kustomize",
+          "default": null,
+          "validator": "is_str"
+        },
+        "list": {
+          "literal_name": "list",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "local": {
+          "literal_name": "local",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "output": {
+          "literal_name": "output",
+          "default": null,
+          "validator": "is_str"
+        },
+        "overwrite": {
+          "literal_name": "overwrite",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "recursive": {
+          "literal_name": "recursive",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "resource-version": {
+          "literal_name": "resource-version",
+          "default": null,
+          "validator": "is_str"
+        },
+        "selector": {
+          "literal_name": "selector",
+          "default": null,
+          "validator": "is_str"
+        },
+        "show-managed-fields": {
+          "literal_name": "show-managed-fields",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "template": {
+          "literal_name": "template",
+          "default": null,
+          "validator": "is_str"
+        }
+      },
+      "parse": "json"
+    },
+    "annotate": {
+      "cli_command": [
+        "annotate"
+      ],
+      "default_flags": {
+        "output": "json"
+      },
+      "args": {
+        "all": {
+          "literal_name": "all",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "all-namespaces": {
+          "literal_name": "all-namespaces",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "allow-missing-template-keys": {
+          "literal_name": "allow-missing-template-keys",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "dry-run": {
+          "literal_name": "dry-run",
+          "default": null,
+          "validator": "is_str"
+        },
+        "field-manager": {
+          "literal_name": "field-manager",
+          "default": null,
+          "validator": "is_str"
+        },
+        "field-selector": {
+          "literal_name": "field-selector",
+          "default": null,
+          "validator": "is_str"
+        },
+        "filename": {
+          "literal_name": "filename",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "kustomize": {
+          "literal_name": "kustomize",
+          "default": null,
+          "validator": "is_str"
+        },
+        "list": {
+          "literal_name": "list",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "local": {
+          "literal_name": "local",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "output": {
+          "literal_name": "output",
+          "default": null,
+          "validator": "is_str"
+        },
+        "overwrite": {
+          "literal_name": "overwrite",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "recursive": {
+          "literal_name": "recursive",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "resource-version": {
+          "literal_name": "resource-version",
+          "default": null,
+          "validator": "is_str"
+        },
+        "selector": {
+          "literal_name": "selector",
+          "default": null,
+          "validator": "is_str"
+        },
+        "show-managed-fields": {
+          "literal_name": "show-managed-fields",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "template": {
+          "literal_name": "template",
+          "default": null,
+          "validator": "is_str"
+        }
+      },
+      "parse": "json"
+    },
+    "completion": {
+      "cli_command": [
+        "completion"
+      ],
+      "default_flags": {},
+      "args": {},
+      "parse": null
+    },
+    "api_resources": {
+      "cli_command": [
+        "api_resources"
+      ],
+      "default_flags": {
+        "output": "json"
+      },
+      "args": {
+        "api-group": {
+          "literal_name": "api-group",
+          "default": null,
+          "validator": "is_str"
+        },
+        "cached": {
+          "literal_name": "cached",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "categories": {
+          "literal_name": "categories",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "namespaced": {
+          "literal_name": "namespaced",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "no-headers": {
+          "literal_name": "no-headers",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "output": {
+          "literal_name": "output",
+          "default": null,
+          "validator": "is_str"
+        },
+        "sort-by": {
+          "literal_name": "sort-by",
+          "default": null,
+          "validator": "is_str"
+        },
+        "verbs": {
+          "literal_name": "verbs",
+          "default": null,
+          "validator": "is_str_or_list"
+        }
+      },
+      "parse": "json"
+    },
+    "api_versions": {
+      "cli_command": [
+        "api_versions"
+      ],
+      "default_flags": {},
+      "args": {},
+      "parse": null
+    },
+    "config": {
+      "cli_command": [
+        "config"
+      ],
+      "default_flags": {},
+      "args": {},
+      "parse": null
+    },
+    "config_current_context": {
+      "cli_command": [
+        "config",
+        "current-context"
+      ],
+      "default_flags": {},
+      "args": {},
+      "parse": null
+    },
+    "config_delete_cluster": {
+      "cli_command": [
+        "config",
+        "delete-cluster"
+      ],
+      "default_flags": {},
+      "args": {},
+      "parse": null
+    },
+    "config_delete_context": {
+      "cli_command": [
+        "config",
+        "delete-context"
+      ],
+      "default_flags": {},
+      "args": {},
+      "parse": null
+    },
+    "config_delete_user": {
+      "cli_command": [
+        "config",
+        "delete-user"
+      ],
+      "default_flags": {},
+      "args": {},
+      "parse": null
+    },
+    "config_get_clusters": {
+      "cli_command": [
+        "config",
+        "get-clusters"
+      ],
+      "default_flags": {},
+      "args": {},
+      "parse": null
+    },
+    "config_get_contexts": {
+      "cli_command": [
+        "config",
+        "get-contexts"
+      ],
+      "args": {
+        "no-headers": {
+          "literal_name": "no-headers",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "output": {
+          "literal_name": "output",
+          "default": null,
+          "validator": "is_str"
+        }
+      }
+    },
+    "config_get_users": {
+      "cli_command": [
+        "config",
+        "get-users"
+      ],
+      "default_flags": {},
+      "args": {},
+      "parse": null
+    },
+    "config_rename_context": {
+      "cli_command": [
+        "config",
+        "rename-context"
+      ],
+      "default_flags": {},
+      "args": {},
+      "parse": null
+    },
+    "config_set": {
+      "cli_command": [
+        "config",
+        "set"
+      ],
+      "default_flags": {},
+      "args": {
+        "set-raw-bytes": {
+          "literal_name": "set-raw-bytes",
+          "default": null,
+          "validator": "is_bool"
+        }
+      },
+      "parse": null
+    },
+    "config_set_cluster": {
+      "cli_command": [
+        "config",
+        "set-cluster"
+      ],
+      "default_flags": {},
+      "args": {
+        "certificate-authority": {
+          "literal_name": "certificate-authority",
+          "default": null,
+          "validator": "is_str"
+        },
+        "embed-certs": {
+          "literal_name": "embed-certs",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "insecure-skip-tls-verify": {
+          "literal_name": "insecure-skip-tls-verify",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "proxy-url": {
+          "literal_name": "proxy-url",
+          "default": null,
+          "validator": "is_str"
+        },
+        "server": {
+          "literal_name": "server",
+          "default": null,
+          "validator": "is_str"
+        },
+        "tls-server-name": {
+          "literal_name": "tls-server-name",
+          "default": null,
+          "validator": "is_str"
+        }
+      },
+      "parse": null
+    },
+    "config_set_context": {
+      "cli_command": [
+        "config",
+        "set-context"
+      ],
+      "default_flags": {},
+      "args": {
+        "cluster": {
+          "literal_name": "cluster",
+          "default": null,
+          "validator": "is_str"
+        },
+        "current": {
+          "literal_name": "current",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "namespace": {
+          "literal_name": "namespace",
+          "default": null,
+          "validator": "is_str"
+        },
+        "user": {
+          "literal_name": "user",
+          "default": null,
+          "validator": "is_str"
+        }
+      },
+      "parse": null
+    },
+    "config_set_credentials": {
+      "cli_command": [
+        "config",
+        "set-credentials"
+      ],
+      "default_flags": {},
+      "args": {
+        "auth-provider": {
+          "literal_name": "auth-provider",
+          "default": null,
+          "validator": "is_str"
+        },
+        "auth-provider-arg": {
+          "literal_name": "auth-provider-arg",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "client-certificate": {
+          "literal_name": "client-certificate",
+          "default": null,
+          "validator": "is_str"
+        },
+        "client-key": {
+          "literal_name": "client-key",
+          "default": null,
+          "validator": "is_str"
+        },
+        "embed-certs": {
+          "literal_name": "embed-certs",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "exec-api-version": {
+          "literal_name": "exec-api-version",
+          "default": null,
+          "validator": "is_str"
+        },
+        "exec-arg": {
+          "literal_name": "exec-arg",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "exec-command": {
+          "literal_name": "exec-command",
+          "default": null,
+          "validator": "is_str"
+        },
+        "exec-env": {
+          "literal_name": "exec-env",
+          "default": null,
+          "validator": "is_str_or_list"
+        },
+        "exec-interactive-mode": {
+          "literal_name": "exec-interactive-mode",
+          "default": null,
+          "validator": "is_str"
+        },
+        "exec-provide-cluster-info": {
+          "literal_name": "exec-provide-cluster-info",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "password": {
+          "literal_name": "password",
+          "default": null,
+          "validator": "is_str"
+        },
+        "token": {
+          "literal_name": "token",
+          "default": null,
+          "validator": "is_str"
+        },
+        "username": {
+          "literal_name": "username",
+          "default": null,
+          "validator": "is_str"
+        }
+      },
+      "parse": null
+    },
+    "config_unset": {
+      "cli_command": [
+        "config",
+        "unset"
+      ],
+      "default_flags": {},
+      "args": {},
+      "parse": null
+    },
+    "config_use_context": {
+      "cli_command": [
+        "config",
+        "use-context"
+      ],
+      "default_flags": {},
+      "args": {},
+      "parse": null
+    },
+    "config_view": {
+      "cli_command": [
+        "config",
+        "view"
+      ],
+      "default_flags": {
+        "output": "json"
+      },
+      "args": {
+        "allow-missing-template-keys": {
+          "literal_name": "allow-missing-template-keys",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "flatten": {
+          "literal_name": "flatten",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "merge": {
+          "literal_name": "merge",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "minify": {
+          "literal_name": "minify",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "output": {
+          "literal_name": "output",
+          "default": null,
+          "validator": "is_str"
+        },
+        "raw": {
+          "literal_name": "raw",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "show-managed-fields": {
+          "literal_name": "show-managed-fields",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "template": {
+          "literal_name": "template",
+          "default": null,
+          "validator": "is_str"
+        }
+      },
+      "parse": "json"
+    },
+    "plugin": {
+      "cli_command": [
+        "plugin"
+      ],
+      "default_flags": {},
+      "args": {},
+      "parse": null
+    },
+    "plugin_list": {
+      "cli_command": [
+        "plugin",
+        "list"
+      ],
+      "default_flags": {},
+      "args": {
+        "name-only": {
+          "literal_name": "name-only",
+          "default": null,
+          "validator": "is_bool"
+        }
+      },
+      "parse": null
+    },
+    "version": {
+      "cli_command": [
+        "version"
+      ],
+      "default_flags": {
+        "output": "json"
+      },
+      "args": {
+        "client": {
+          "literal_name": "client",
+          "default": null,
+          "validator": "is_bool"
+        },
+        "output": {
+          "literal_name": "output",
+          "default": null,
+          "validator": "is_str"
+        }
+      },
+      "parse": "json"
+    }
+  },
+  "trusting": true,
+  "async_": false,
+  "default_transformer": "snake2kebab",
+  "short_prefix": "-",
+  "long_prefix": "--",
+  "arg_separator": " "
+}

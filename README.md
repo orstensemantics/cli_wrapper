@@ -1,5 +1,10 @@
 # CLI Wrapper
 
+![Codecov](https://img.shields.io/codecov/c/github/orstensemantics/cli_wrapper)
+![PyPI - License](https://img.shields.io/pypi/l/cli_wrapper)
+![PyPI - Version](https://img.shields.io/pypi/v/cli_wrapper)
+
+
 CLI Wrapper uses subprocess to wrap external CLI tools and present an interface that looks more like a python class. CLI
 commands become methods on the class, positional arguments and flags become args and kwargs respectively. It
 supports input validation and output parsing.
@@ -34,16 +39,20 @@ kubectl = CLIWrapper("kubectl")
 # by default, this will translate to `kubectl get pods --namespace default`, and it will return the text output
 kubectl.get("pods", namespace="default")
 # you can refine this by defining the command explicitly:
-kubectl._update_command("get", default_flags={"output": "json"}, parse=["json", "dotted_dict"])
+kubectl.update_command_("get", default_flags={"output": "json"}, parse=["json", "dotted_dict"])
+# (the trailing '_' is to avoid collisions with a cli command)
 a = kubectl.get("pods", namespace="kube-system")
 print(a.items[0].metadata.name)  # prints a pod name
+
 
 # you can do your own parsing:
 def skip_lists(result):
     if result["kind"] == "List":
         return result["items"]
     return result
-kubectl._update_command("get", default_flags={"output": "json"}, parse=["json", skip_lists, "dotted_dict"])
+
+
+kubectl.update_command_("get", default_flags={"output": "json"}, parse=["json", skip_lists, "dotted_dict"])
 a = kubectl.get("pods", namespace="kube-system")
 assert isinstance(a, list)
 a = kubectl.get("pods", a[0].metadata.name, namespace="kube-system")
@@ -88,11 +97,12 @@ pip install dotted_dict # for dotted_dict support shown above
       - We can already do this by putting a function in the parse list, but it would be nice to make this serializable
 - [ ] Custom error handling
 - [ ] Nested wrappers (e.g., `helm.repos.list()` instead of `helm.repos('list')`)]
+  - currently doing helm.repos_list() from help parser
 - [ ] Tool to create configuration dictionaries by parsing help output recursively
-    - [ ] golang flag style help/usage
+    - [x] golang flag style help/usage
     - [ ] argparse style
 - [ ] Configuration dictionaries for common tools
-    - [ ] kubectl
-    - [ ] helm
+    - [x] kubectl
+    - [x] helm
     - [ ] docker
-    - [ ] cilium
+    - [x] cilium
