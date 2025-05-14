@@ -47,6 +47,10 @@ class Validator(CallableChain):
             validator_result = x(value)
             logger.debug(f"Validator {c} result: {validator_result}")
             result = result and validator_result
+            if not result:
+                # don't bother doing other validations once one has failed
+                logger.debug("...failed")
+                break
         return result
 
     def to_dict(self):
