@@ -1,6 +1,5 @@
 from .util.callable_registry import CallableRegistry
 
-
 def snake2kebab(arg: str, value: any) -> tuple[str, any]:
     """
     snake.gravity == 0

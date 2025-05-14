@@ -57,24 +57,24 @@ class CallableRegistry:
             raise KeyError(f"{self.callable_name} '{name}' already registered.")
         self._all[group][name] = callable_
 
-    def register_group(self, name: str, parsers: dict = None):
+    def register_group(self, name: str, callables: dict = None):
         """
         Registers a new parser group with the specified name.
 
         :param name: The name to associate with the parser group.
-        :param parsers: A dictionary of parsers to register in the group.
+        :param callables: A dictionary of parsers to register in the group.
         """
         if name in self._all:
             raise KeyError(f"{self.callable_name} group '{name}' already registered.")
         if "." in name:
             raise KeyError(f"{self.callable_name} group name '{name}' is not valid.")
-        parsers = {} if parsers is None else parsers
-        bad_parser_names = [x for x in parsers.keys() if "." in x]
+        callables = {} if callables is None else callables
+        bad_parser_names = [x for x in callables.keys() if "." in x]
         if bad_parser_names:
             raise KeyError(
                 f"{self.callable_name} group '{name}' contains invalid parser names: {', '.join(bad_parser_names)}"
             )
-        self._all[name] = parsers
+        self._all[name] = callables
 
     def _parse_name(self, name: str) -> tuple[str, str]:
         """

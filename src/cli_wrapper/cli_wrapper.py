@@ -1,7 +1,7 @@
 """
 CLIWrapper represents calls to CLI tools as an object with native python function calls.
 For example:
-``` python
+``
 from json import loads  # or any other parser
 from cli_wrapper import CLIWrapper
 kubectl = CLIWrapper('kubectl')
@@ -14,10 +14,10 @@ kubectl = CLIWrapper('kubectl', async_=True)
 kubectl._update_command("get", default_flags={"output": "json"}, parse=loads)
 result = await kubectl.get("pods", namespace="kube-system")  # same thing but async
 print(result)
-```
+``
 
 You can also override argument names and provide input validators:
-``` python
+``
 from json import loads
 from cli_wrapper import CLIWrapper
 kubectl = CLIWrapper('kubectl')
@@ -33,7 +33,7 @@ def validate_pod_name(name):
     )
 kubectl._update_command("get", validators={1: validate_pod_name})
 result = kubectl.get("pod", "my-pod!!")  # raises ValueError
-```
+``
 
 Attributes:
     trusting: if false, only run defined commands, and validate any arguments that have validation. If true, run
@@ -44,6 +44,8 @@ Attributes:
         that you don't want to bother defining.
     arg_separator: what to put between a flag and its value. default is '=', so `command(arg=val)` would translate
         to `command --arg=val`. If you want to use spaces instead, set this to ' '
+
+
 """
 
 import asyncio.subprocess
@@ -52,6 +54,7 @@ import os
 import subprocess
 from copy import copy
 from itertools import chain
+from typing import Callable
 
 from attrs import define, field
 
@@ -71,7 +74,7 @@ class Argument:
     literal_name: str | None = None
     default: str = None
     validator: Validator | str | dict | list[str | dict] = field(converter=Validator, default=None)
-    transformer: str = "snake2kebab"
+    transformer: Callable | str | dict | list[str | dict] = "snake2kebab"
 
     @classmethod
     def from_dict(cls, arg_dict):
@@ -220,7 +223,7 @@ class Command:  # pylint: disable=too-many-instance-attributes
         positional = copy(self.cli_command) if self.cli_command is not None else []
         params = []
         for arg, value in chain(
-            enumerate(args), kwargs.items(), [(k, v) for k, v in self.default_flags.items() if k not in kwargs]
+                enumerate(args), kwargs.items(), [(k, v) for k, v in self.default_flags.items() if k not in kwargs]
         ):
             logger.debug(f"arg: {arg}, value: {value}")
             if arg in self.args:
@@ -247,13 +250,31 @@ class Command:  # pylint: disable=too-many-instance-attributes
 
 @define
 class CLIWrapper:  # pylint: disable=too-many-instance-attributes
+    """
+    :param path: The path to the CLI tool. This will be passed to subprocess directly, and does not require a full path
+      unless the tool is not in the system path.
+    :param env: A dict of environment variables to be set in the subprocess environment, in addition to and overriding
+      those in os.environ.
+    :param trusting: If True, the wrapper will accept any command and pass them to the cli with default configuration.
+      Otherwise, it will only allow commands that have been defined with update_command_
+    :param raise_exc: If True, the wrapper will raise an exception if a command returns a non-zero exit code.
+    :param async_: If true, the wrapper will return coroutines that must be awaited.
+    :param default_transformer: The transformer configuration to apply to all arguments. The default of snake2kebab will
+      convert pythonic_snake_case_kwargs to kebab-case-arguments
+    :param short_prefix: The string prefix for single-letter arguments
+    :param long_prefix: The string prefix for arguments longer than 1 letter
+    :param arg_separator: The character that separates argument values from names. Defaults to '=', so wrapper.command(arg=value)
+      would become "wrapper command --arg=value"
+    """
     path: str
     env: dict[str, str] = None
     commands: dict[str, Command] = {}
 
+    """ If true, wrapper will take any commands and pass them to the CLI without further validation"""
     trusting: bool = True
     raise_exc: bool = False
     async_: bool = False
+    """ This is the transformer configuration that will be applied to all commands (unless those commands specify their own) """
     default_transformer: str = "snake2kebab"
     short_prefix: str = "-"
     long_prefix: str = "--"
@@ -279,18 +300,19 @@ class CLIWrapper:  # pylint: disable=too-many-instance-attributes
         return self.commands[command]
 
     def update_command_(  # pylint: disable=too-many-arguments
-        self,
-        command: str,
-        *,
-        cli_command: str | list[str] = None,
-        args: dict[str | int, any] = None,
-        default_flags: dict = None,
-        parse=None,
+            self,
+            command: str,
+            *,
+            cli_command: str | list[str] = None,
+            args: dict[str | int, any] = None,
+            default_flags: dict = None,
+            parse=None,
     ):
         """
         update the command to be run with the cli_wrapper
         :param command: the command name for the wrapper
         :param cli_command: the command to be run, if different from the command name
+        :param args: the arguments passed to the command
         :param default_flags: default flags to be used with the command
         :param parse: function to parse the output of the command
         :return:
@@ -307,13 +329,6 @@ class CLIWrapper:  # pylint: disable=too-many-instance-attributes
         )
 
     def _run(self, command: str, *args, **kwargs):
-        """
-        run the command with the cli_wrapper
-        :param command: the subcommand for the cli tool
-        :param args: arguments to be passed to the command
-        :param kwargs: flags to be passed to the command
-        :return:
-        """
         command_obj = self._get_command(command)
         command_obj.validate_args(*args, **kwargs)
         command_args = [self.path] + command_obj.build_args(*args, **kwargs)
@@ -354,6 +369,14 @@ class CLIWrapper:  # pylint: disable=too-many-instance-attributes
         return lambda *args, **kwargs: self._run(item, *args, **kwargs)
 
     def __call__(self, *args, **kwargs):
+        """
+        Invokes the wrapper with no extra arguments. e.g., for the kubectl wrapper, calls bare kubectl.
+        `kubectl(help=True)` will be interpreted as "kubectl --help".
+        :param args: positional arguments to be passed to the command
+        :param kwargs: kwargs will be treated as `--options`. Boolean values will be bare flags, others will be
+          passed as `--kwarg=value` (where `=` is the wrapper's arg_separator)
+        :return:
+        """
         return (self.__getattr__(None))(*args, **kwargs)
 
     @classmethod

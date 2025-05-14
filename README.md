@@ -1,8 +1,8 @@
 # CLI Wrapper
 
-![Codecov](https://img.shields.io/codecov/c/github/orstensemantics/cli_wrapper)
+[![Codecov](https://img.shields.io/codecov/c/github/orstensemantics/cli_wrapper)](https://app.codecov.io/gh/orstensemantics/cli_wrapper)
 ![PyPI - License](https://img.shields.io/pypi/l/cli_wrapper)
-![PyPI - Version](https://img.shields.io/pypi/v/cli_wrapper)
+[![PyPI - Version](https://img.shields.io/pypi/v/cli_wrapper)](https://pypi.org/project/cli-wrapper)
 
 
 CLI Wrapper uses subprocess to wrap external CLI tools and present an interface that looks more like a python class. CLI
@@ -104,5 +104,6 @@ pip install dotted_dict # for dotted_dict support shown above
 - [ ] Configuration dictionaries for common tools
     - [x] kubectl
     - [x] helm
-    - [ ] docker
+    - [x] docker
     - [x] cilium
+    - [ ] ...
