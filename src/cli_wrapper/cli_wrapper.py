@@ -223,7 +223,7 @@ class Command:  # pylint: disable=too-many-instance-attributes
         positional = copy(self.cli_command) if self.cli_command is not None else []
         params = []
         for arg, value in chain(
-                enumerate(args), kwargs.items(), [(k, v) for k, v in self.default_flags.items() if k not in kwargs]
+            enumerate(args), kwargs.items(), [(k, v) for k, v in self.default_flags.items() if k not in kwargs]
         ):
             logger.debug(f"arg: {arg}, value: {value}")
             if arg in self.args:
@@ -263,9 +263,10 @@ class CLIWrapper:  # pylint: disable=too-many-instance-attributes
       convert pythonic_snake_case_kwargs to kebab-case-arguments
     :param short_prefix: The string prefix for single-letter arguments
     :param long_prefix: The string prefix for arguments longer than 1 letter
-    :param arg_separator: The character that separates argument values from names. Defaults to '=', so wrapper.command(arg=value)
-      would become "wrapper command --arg=value"
+    :param arg_separator: The character that separates argument values from names. Defaults to '=', so
+      wrapper.command(arg=value) would become "wrapper command --arg=value"
     """
+
     path: str
     env: dict[str, str] = None
     commands: dict[str, Command] = {}
@@ -274,7 +275,9 @@ class CLIWrapper:  # pylint: disable=too-many-instance-attributes
     trusting: bool = True
     raise_exc: bool = False
     async_: bool = False
-    """ This is the transformer configuration that will be applied to all commands (unless those commands specify their own) """
+    """
+    This is the transformer configuration that will be applied to all commands (unless those commands specify their own)
+    """
     default_transformer: str = "snake2kebab"
     short_prefix: str = "-"
     long_prefix: str = "--"
@@ -300,13 +303,13 @@ class CLIWrapper:  # pylint: disable=too-many-instance-attributes
         return self.commands[command]
 
     def update_command_(  # pylint: disable=too-many-arguments
-            self,
-            command: str,
-            *,
-            cli_command: str | list[str] = None,
-            args: dict[str | int, any] = None,
-            default_flags: dict = None,
-            parse=None,
+        self,
+        command: str,
+        *,
+        cli_command: str | list[str] = None,
+        args: dict[str | int, any] = None,
+        default_flags: dict = None,
+        parse=None,
     ):
         """
         update the command to be run with the cli_wrapper
