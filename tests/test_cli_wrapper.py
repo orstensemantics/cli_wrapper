@@ -21,6 +21,16 @@ class TestArgument:
         with pytest.raises(KeyError):
             Argument("test", validator="not callable")
 
+        def is_invalid(value):
+            return value == "invalid"
+        validators.register("is_invalid", is_invalid)
+
+        arg = Argument("test", default="default", validator=is_invalid)
+        assert arg.is_valid("valid") is False
+        assert arg.is_valid("invalid") is True
+
+        validators._all["core"].pop("is_invalid")
+
     def test_argument_from_dict(self):
         arg = Argument.from_dict({"literal_name": "test", "default": "default", "validator": lambda x: x == "valid"})
 
