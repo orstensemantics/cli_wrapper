@@ -43,16 +43,3 @@ result = kubectl.get("pod", "my-pod!!")  # raises ValueError
 .. include:: ../../doc/transformers.md
 
 """
-
-# from .cli_wrapper import CLIWrapper
-# from .transformers import transformers
-# from .parsers import parsers
-# from .validators import validators
-# from .util import callable_chain, callable_registry
-# from .pre_packaged import get_wrapper
-
-# __all__ = ["CLIWrapper", "get_wrapper", "transformers", "parsers", "validators"]
-
-"""
-.. include:: ./util
-"""
