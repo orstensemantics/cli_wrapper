@@ -34,13 +34,14 @@ def parse_args(argv):
         default="help",
         help="The flag to use for getting help (default: 'help').",
     )
-    parser.add_argument(
-        "--style",
-        type=str,
-        choices=["golang", "argparse"],
-        default="golang",
-        help="The style of cli help output (default: 'golang').",
-    )
+    # Re-add this when some other help format is implemented
+    # parser.add_argument(
+    #     "--style",
+    #     type=str,
+    #     choices=["golang", "argparse"],
+    #     default="golang",
+    #     help="The style of cli help output (default: 'golang').",
+    # )
     parser.add_argument(
         "--default-flags",
         type=str,
@@ -78,6 +79,7 @@ def parse_args(argv):
     )
 
     config = parser.parse_args(argv)
+    config.style = "golang"
     config.default_flags_dict = {}
     for f in config.default_flags:
         if "=" not in f:

@@ -21,6 +21,17 @@ class TestArgument:
         with pytest.raises(KeyError):
             Argument("test", validator="not callable")
 
+        def is_invalid(value):
+            return value == "invalid"
+
+        validators.register("is_invalid", is_invalid)
+
+        arg = Argument("test", default="default", validator=is_invalid)
+        assert arg.is_valid("valid") is False
+        assert arg.is_valid("invalid") is True
+
+        validators._all["core"].pop("is_invalid")
+
     def test_argument_from_dict(self):
         arg = Argument.from_dict({"literal_name": "test", "default": "default", "validator": lambda x: x == "valid"})
 
@@ -150,8 +161,8 @@ class TestCLIWrapper:
         r = kubectl.get("pods", namespace="kube-system")
 
         assert isinstance(r, str)
-        kubectl.commands["get"].default_flags = {"output": "json"}
-        kubectl.commands["get"].parse = ["json"]
+        kubectl._commands["get"].default_flags = {"output": "json"}
+        kubectl._commands["get"].parse = ["json"]
 
         r = kubectl.get("pods", "-A")
         assert r["kind"] == "List"
@@ -170,7 +181,7 @@ class TestCLIWrapper:
         with pytest.raises(ValueError):
             kubectl.describe("pods", namespace="kube-system")
         logger.info("no parser")
-        kubectl.commands["get"].parse = None
+        kubectl._commands["get"].parse = None
         r = kubectl.get("pods", namespace="kube-system")
         assert isinstance(r, str)
 
@@ -185,7 +196,7 @@ class TestCLIWrapper:
 
         with pytest.raises(RuntimeError):
             await kubectl.fake("pods", namespace="kube-system")
-        kubectl.commands["get"].parse = None
+        kubectl._commands["get"].parse = None
         r = await kubectl.get("pods", namespace="kube-system")
         assert isinstance(r, str)
 
@@ -216,11 +227,11 @@ class TestCLIWrapper:
 
         assert cliwrapper.path == "kubectl"
         assert cliwrapper.trusting is True
-        assert cliwrapper.commands["get"].cli_command == ["get"]
-        assert cliwrapper.commands["get"].default_flags == {"output": "json"}
-        assert cliwrapper.commands["get"].parse('"some json"') == "some json"
+        assert cliwrapper._commands["get"].cli_command == ["get"]
+        assert cliwrapper._commands["get"].default_flags == {"output": "json"}
+        assert cliwrapper._commands["get"].parse('"some json"') == "some json"
 
         with pytest.raises(ValueError):
-            cliwrapper.commands["get"].validate_args("pods", "my_cool_pod!!")
+            cliwrapper._commands["get"].validate_args("pods", "my_cool_pod!!")
         with pytest.raises(ValueError):
             cliwrapper.get("pods", "my_cool_pod!!")

@@ -2,10 +2,19 @@ from abc import ABC, abstractmethod
 
 
 class CallableChain(ABC):
+    """
+    A callable object representing a collection of callables.
+    """
+
     chain: list[callable]
     config: list
 
     def __init__(self, config, source):
+        """
+        @public
+        :param config: a callable, a string, a dictionary with one key and config, or a list of the previous
+        :param source: a `CallableRegistry` to get callables from
+        """
         self.chain = []
         self.config = config
         if callable(config):
@@ -30,7 +39,8 @@ class CallableChain(ABC):
     @abstractmethod
     def __call__(self, value):
         """
-        Calls the chain of functions with the given value.
+        This function should be overridden by subclasses to determine how the
+        callable chain is handled.
         """
         raise NotImplementedError()
 

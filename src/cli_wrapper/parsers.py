@@ -3,7 +3,7 @@ import logging
 from .util.callable_chain import CallableChain
 from .util.callable_registry import CallableRegistry
 
-logger = logging.getLogger(__name__)
+_logger = logging.getLogger(__name__)
 
 
 def extract(src: dict, *args) -> dict:
@@ -37,7 +37,10 @@ try:
     def yaml_loads(src: str) -> dict:  # pragma: no cover
         #  pylint: disable=missing-function-docstring
         yaml = YAML(typ="safe")
-        return yaml.load(src)
+        result = list(yaml.load_all(src))
+        if len(result) == 1:
+            return result[0]
+        return result
 
     core_parsers["yaml"] = yaml_loads
 except ImportError:  # pragma: no cover
@@ -68,11 +71,24 @@ except ImportError:  # pragma: no cover
     pass
 
 parsers = CallableRegistry({"core": core_parsers}, callable_name="Parser")
+"""
+A `CallableRegistry` of parsers. These can be chained in sequence to perform 
+operations on input.
+
+Defaults:
+core parsers:
+ - json - parses the input as json, returns the result
+ - extract - extracts the specified sub-dictionary from the source dictionary
+ - yaml - parses the input as yaml, returns the result (requires ruamel.yaml or pyyaml)
+ - dotted_dict - converts an input dictionary to a dotted_dict (requires dotted_dict)
+"""
 
 
 class Parser(CallableChain):
     """
-    Parser class that allows for the chaining of multiple parsers.
+    @public
+    Parser class that allows for the chaining of multiple parsers. Callables in the configuration are run as a
+    pipeline, with the output of one parser being passed as input to the next.
     """
 
     def __init__(self, config):
@@ -82,6 +98,6 @@ class Parser(CallableChain):
         # For now, parser expects to be called with one input.
         result = src
         for parser in self.chain:
-            logger.debug(result)
+            _logger.debug(result)
             result = parser(result)
         return result
