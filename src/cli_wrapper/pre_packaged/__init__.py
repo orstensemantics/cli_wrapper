@@ -1,10 +1,16 @@
 from json import loads
 from pathlib import Path
 
-from cli_wrapper import CLIWrapper
+from ..cli_wrapper import CLIWrapper
 
 
 def get_wrapper(name, status=None):
+    """
+    Gets a wrapper defined in the beta/stable folders as json.
+    :param name: the name of the wrapper to retrieve
+    :param status: stable/beta/None. None will search stable and beta
+    :return: the requested wrapper
+    """
     if status is None:
         status = ["stable", "beta"]
     if isinstance(status, str):

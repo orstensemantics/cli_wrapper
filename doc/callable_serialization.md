@@ -4,7 +4,7 @@ Argument validation and parser configuration are not straightforward to serializ
 `CallableRegistry` and `CallableChain`. These make it somewhat more straightforward to create more serializable wrapper
 configurations.
 
-### TL;DR
+## TL;DR
 - Functions that perform validation, argument transformation, or output parsing are registered with a name in a
   `CallableRegistry`
 - `CallableChain` resolves a serializable structure to a sequence of calls to those functions
@@ -20,31 +20,15 @@ configurations.
 - A list of parsers will be piped together in sequence
 - Transformers receive an arg name and value, and return another arg and value. They are not chained.
 
+## Implementation
+
 Here's how these work:
 
-## `CallableRegistry`
+### `CallableRegistry`
 
 Callable registries form the basis of serializing callables by mapping strings to functions. If you are doing custom
 parsers and validators and you want these to be serializable, you will use their respective callable registries to
 associate the code with the serializable name.
-
-### `CallableRegistry.register(name: str, callable_: callable, group="core")`
-
-- `name`: the string to associate with the callable, or `group.name`. If you specify a group in the name and in the
-  kwarg, it will raise a `KeyError`.
-- `callable_`: the callable itself
-- `group`: the group to add the callable to. The default, "core", contains all of the prepackaged callables.
-
-Once the callable is registered, it can be retrieved with `get`.
-
-### `CallableRegistry.register_group(name: str, callables: dict = None)`
-
-If you already have a dictionary of things you want to register, this is a shorthand.
-
-### `CallableRegistry.get(self, name: str | Callable, args=None, kwargs=None)`
-
-This function will return a lambda that takes `*nargs` and calls the registered callable `name` (or `name` itself if 
-it's callable) with `*nargs, *args, **kwargs`. This is probably best explained by example:
 
 ```python
 
@@ -65,11 +49,11 @@ assert(not x(1))
 assert(x(3))
 ```
 
-## `CallableChain`
+### `CallableChain`
 
 A callable chain is a serializable structure that gets converted to a sequence of calls to things in a
-`CallableRegistry`. It is an abstract base class, and so shouldn't be created directly; subclasses are expected to
-implement `__call__`. We'll use the `Validator` class as an example. `validators` is a `CallableRegistry` with all of
+`cli_wrapper.util.callable_registry.CallableRegistry`. It is an abstract base class, and so shouldn't be created directly; subclasses are expected to
+implement `__call__`. We'll use the `.validators.Validator` class as an example. `validators` is a `CallableRegistry` with all of
 the base validators (`is_dict`, `is_list`, `is_str`, `startswith`...)
 
 ```python

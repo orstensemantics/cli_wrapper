@@ -3,7 +3,7 @@
 Argument transformers receive an argument (either a numbered positional argument or a string keywork argument/flag) and
 a value. They return a tuple of argument and value that replace the original.
 
-The main transformer used by cli-wrapper is `snake2kebab`, which converts a `an_argument_like_this` to
+The main transformer used by cli-wrapper is `cli_wrapper.transformers.snake2kebab`, which converts a `an_argument_like_this` to
 `an-argument-like-this` and returns the value unchanged. This is the default transformer for all keyword arguments.
 
 Transformers are added to a callable registry, so they can be refernced as a string after they're registered.
