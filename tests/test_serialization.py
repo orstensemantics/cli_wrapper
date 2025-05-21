@@ -1,5 +1,4 @@
-from cli_wrapper import CLIWrapper
-from cli_wrapper.cli_wrapper import Argument
+from cli_wrapper.cli_wrapper import Argument, CLIWrapper
 
 
 class TestSerialization:

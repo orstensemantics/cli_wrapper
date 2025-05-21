@@ -375,7 +375,7 @@ class CLIWrapper:  # pylint: disable=too-many-instance-attributes
             commands[command] = Command.from_dict(config)
 
         return CLIWrapper(
-            _commands=commands,
+            commands=commands,
             **cliwrapper_dict,
         )
 
